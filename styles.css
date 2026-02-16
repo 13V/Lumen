@@ -916,26 +916,26 @@ body::before {
     color: var(--terracotta-dark);
 }
 
-/* Floating WhatsApp Button */
-.whatsapp-float {
+/* Floating SMS Button */
+.sms-float {
     position: fixed;
     bottom: 24px;
     right: 24px;
     width: 60px;
     height: 60px;
-    background: #25D366;
+    background: var(--gradient);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 4px 20px rgba(198, 93, 59, 0.4);
     z-index: 999;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.whatsapp-float:hover {
+.sms-float:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 6px 28px rgba(198, 93, 59, 0.5);
 }
 
 /* Sticky Mobile CTA Bar */
@@ -972,8 +972,8 @@ body::before {
     color: white;
 }
 
-.mobile-cta-whatsapp {
-    background: #25D366;
+.mobile-cta-sms {
+    background: var(--text);
     color: white;
 }
 
@@ -982,7 +982,7 @@ body::before {
         display: flex;
     }
 
-    .whatsapp-float {
+    .sms-float {
         display: none;
     }
 
