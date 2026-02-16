@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Lumen ADL | Common Questions About Web Design & SEO</title>
+    <meta name="description"
+        content="Answers to common questions about web design, SEO, pricing, and how we work with Adelaide trades.">
+    <link rel="canonical" href="https://www.lumenadl.com/faq.html">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ | Lumen ADL">
+    <meta property="og:description" content="Answers to common questions about web design and SEO for Adelaide trades.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lumenadl.com/faq.html">
+    <meta property="og:image" content="https://www.lumenadl.com/australia-map.jpg">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-hero {
+            padding: 120px 0 60px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .faq-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .faq-hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-section:nth-child(even) {
+            background: var(--bg-warm);
+        }
+
+        .faq-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-warm);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--purple);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 32px 24px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer a {
+            color: var(--purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .faq-answer ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .still-have-questions {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .still-have-questions h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .still-have-questions p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 24px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-method-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .contact-method-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .contact-method-value {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .faq-hero h1 {
+                font-size: 36px;
+            }
+
+            .faq-question {
+                padding: 20px 24px;
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                padding: 0 24px 20px;
+            }
+        }
+
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2.5px;
+            background: #C65D3B;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                position: sticky;
+                top: 0;
+                z-index: 999;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+            }
+
+            .nav .container {
+                position: relative;
+                max-width: 100%;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 16px;
+                right: 24px;
+                width: calc(100% - 32px);
+                min-width: calc(100% - 32px);
+                max-width: calc(100% - 32px);
+                background: white;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                gap: 4px;
+                border-radius: 20px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+                transform: translateY(-20px) scale(0.95);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 1000;
+                display: flex !important;
+                box-sizing: border-box;
+            }
+
+            .nav-links.active {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                font-size: 17px;
+                padding: 16px 20px;
+                color: #1f2937 !important;
+                text-align: left;
+                display: flex !important;
+                align-items: center;
+                gap: 14px;
+                width: 100%;
+                text-decoration: none;
+                font-weight: 500;
+                border-radius: 12px;
+                transition: all 0.2s;
+            }
+
+            .nav-links a:hover {
+                background: #f3f4f6;
+            }
+
+            .nav-links a::before {
+                content: "";
+                width: 8px;
+                height: 8px;
+                background: #C65D3B;
+                border-radius: 50%;
+                opacity: 0.3;
+                transition: all 0.2s;
+            }
+
+            .nav-links a:hover::before {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+
+            .nav-links a.nav-cta {
+                margin-top: 8px;
+                text-align: center;
+                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
+                color: white !important;
+                padding: 18px 24px;
+                border-radius: 16px;
+                font-weight: 600;
+                font-size: 16px;
+                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4);
+                justify-content: center;
+                width: 100% !important;
+                min-width: 100% !important;
+                display: flex !important;
+                position: relative;
+                flex-shrink: 0 !important;
+                box-sizing: border-box;
+                white-space: nowrap;
+            }
+
+            .nav-links a.nav-cta::before {
+                display: none !important;
+            }
+
+            .nav-links a.nav-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        @media (max-width: 768px) {
+            .nav .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+
+            .nav-links {
+                width: calc(100% - 32px) !important;
+                min-width: calc(100% - 32px) !important;
+                max-width: calc(100% - 32px) !important;
+            }
+
+            .nav-links a.nav-cta {
+                width: 100% !important;
+                min-width: 100% !important;
+                display: flex !important;
+            }
+
+            .menu-toggle {
+                order: 2 !important;
+                width: 44px;
+                height: 44px;
+                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
+                border-radius: 12px;
+                padding: 12px;
+                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.35);
+            }
+
+            .menu-toggle span {
+                background: white;
+                height: 2px;
+            }
+
+            .logo {
+                order: 1 !important;
+            }
+        }
+    </style>
+    <!-- Navigation -->
+    <nav class="nav" style="position: relative;">
+        <div class="container nav-container"
+            style="display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; flex-direction: row !important; position: relative;">
+            <a href="/" class="logo" style="display: block;">
+                <span class="logo-icon">◐</span>
+                <span>LUMEN</span>
+            </a><button class="menu-toggle" id="menuToggle" aria-label="Open menu"
+                style="position: absolute; right: 24px; top: 100%; transform: translateY(-50%); width: 44px; height: 44px; background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%); border-radius: 12px; padding: 12px; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.35); border: none; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1001;"><span
+                    style="display: block; width: 100%; height: 2px; background: white; border-radius: 2px;"></span><span
+                    style="display: block; width: 100%; height: 2px; background: white; border-radius: 2px;"></span><span
+                    style="display: block; width: 100%; height: 2px; background: white; border-radius: 2px;"></span></button>
+            <div class="nav-links" id="mainNav">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html" class="active">FAQ</a>
+                <a href="/contact.html" class="nav-cta">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about working with us. Can't find what you're looking for? Just ask.</p>
+        </div>
+    </section>
+
+    <!-- Pricing FAQs -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Pricing & Payments</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">How much does a website cost?</div>
+                    <div class="faq-answer">
+                        <p>Our custom websites start at <strong>$2,500</strong>. This includes:</p>
+                        <ul>
+                            <li>Custom design (no templates)</li>
+                            <li>Mobile-first development</li>
+                            <li>SEO-optimized structure</li>
+                            <li>2-week delivery</li>
+                            <li>Google Business integration</li>
+                        </ul>
+                        <p>We also offer a <strong>Bundle</strong> ($3,000) that includes the website plus 3 months of
+                            SEO services — saving you $700.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's included in your SEO service?</div>
+                    <div class="faq-answer">
+                        <p>Our Local SEO service is <strong>$400/month</strong> and includes:</p>
+                        <ul>
+                            <li>Google Business Profile optimization</li>
+                            <li>Local citation building (20+ directories)</li>
+                            <li>Review generation system</li>
+                            <li>On-page SEO optimization</li>
+                            <li>Monthly ranking reports</li>
+                            <li>Competitor monitoring</li>
+                        </ul>
+                        <p>No lock-in contracts — cancel anytime.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you require a deposit?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we require a <strong>50% deposit</strong> to start work, with the remaining 50% due on
+                            completion. For SEO services, payment is monthly in advance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are there any hidden fees?</div>
+                    <div class="faq-answer">
+                        <p><strong>No.</strong> The price we quote is the price you pay. Domain registration and hosting
+                            are separate (we can help you set these up), but there are no surprise charges from us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process FAQs -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>How We Work</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">How long does a website take?</div>
+                    <div class="faq-answer">
+                        <p>Most websites are delivered in <strong>2 weeks</strong> from start to finish. Here's the
+                            typical timeline:</p>
+                        <ul>
+                            <li><strong>Week 1:</strong> Discovery, design, and content</li>
+                            <li><strong>Week 2:</strong> Development, testing, and launch</li>
+                        </ul>
+                        <p>More complex sites may take longer — we'll give you a clear timeline upfront.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you use templates?</div>
+                    <div class="faq-answer">
+                        <p><strong>No.</strong> Every website we build is custom-designed and coded from scratch.
+                            Templates are slow, bloated, and bad for SEO. We write clean, fast code that's optimized for
+                            your business.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if I don't like the design?</div>
+                    <div class="faq-answer">
+                        <p>We work closely with you during the design phase to make sure you love it before we build. We
+                            include <strong>2 rounds of revisions</strong> in our standard package. Our goal is your
+                            complete satisfaction.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Will I be able to update the site myself?</div>
+                    <div class="faq-answer">
+                        <p>Yes. We build sites that are easy to update. For simple changes (text, photos), you can do it
+                            yourself. For more complex updates, we're always here to help — or we can show you how.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you write the content?</div>
+                    <div class="faq-answer">
+                        <p>We can, but we prefer you do. You know your business best. We provide guidance on what to
+                            write and optimize it for SEO. If you need help, we can recommend copywriters or write basic
+                            content for an additional fee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO FAQs -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>About SEO</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">How long does SEO take to work?</div>
+                    <div class="faq-answer">
+                        <p>Most clients see initial improvements within <strong>2-4 weeks</strong>, with significant
+                            results in <strong>6-8 weeks</strong>. SEO is a long game — the work we do now compounds
+                            over time. Our case study with M&K Painting saw them hit #3 for their target keyword in 8
+                            weeks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you guarantee rankings?</div>
+                    <div class="faq-answer">
+                        <p><strong>No one can guarantee #1 rankings</strong> — and you should be suspicious of anyone
+                            who does. What we guarantee is that we'll follow best practices, do the work, and give you
+                            transparent reporting. Most of our clients see significant ranking improvements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What areas do you serve?</div>
+                    <div class="faq-answer">
+                        <p>We're based in Adelaide and specialize in the <strong>northern suburbs</strong>: Mawson
+                            Lakes, Golden Grove, Gawler, Modbury, Para Hills, and surrounding areas. That said, we work
+                            with clients across all of South Australia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I just do SEO without a new website?</div>
+                    <div class="faq-answer">
+                        <p>You can, but results are limited. If your current site is slow, not mobile-friendly, or
+                            poorly structured, you're fighting an uphill battle. We often recommend starting with a
+                            solid foundation (new site) and then layering SEO on top.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support FAQs -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Support & Maintenance</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What happens after the site launches?</div>
+                    <div class="faq-answer">
+                        <p>We don't disappear. All websites include <strong>30 days of free support</strong> after
+                            launch. After that, we're available for updates at our standard hourly rate, or you can sign
+                            up for one of our maintenance packages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer website maintenance?</div>
+                    <div class="faq-answer">
+                        <p>Yes. We offer monthly maintenance packages that include:</p>
+                        <ul>
+                            <li>Security updates</li>
+                            <li>Performance monitoring</li>
+                            <li>Regular backups</li>
+                            <li>Small content updates</li>
+                        </ul>
+                        <p>Ask us for details if you're interested.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Who owns the website?</div>
+                    <div class="faq-answer">
+                        <p><strong>You do.</strong> Once the final payment is made, the website is 100% yours. We use no
+                            proprietary technology — it's clean HTML, CSS, and JavaScript that any developer can work
+                            with.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="still-have-questions">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Can't find the answer you're looking for? Reach out — we're happy to help.</p>
+            <div class="contact-methods">
+                <a href="mailto:hello@lumenadl.com" class="contact-method">
+                    <div class="contact-method-icon">✉️</div>
+                    <div class="contact-method-label">Email us</div>
+                    <div class="contact-method-value">hello@lumenadl.com</div>
+                </a>
+                <a href="tel:+61412345678" class="contact-method">
+                    <div class="contact-method-icon">📞</div>
+                    <div class="contact-method-label">Call us</div>
+                    <div class="contact-method-value">Available on request</div>
+                </a>
+                <a href="/contact.html" class="contact-method">
+                    <div class="contact-method-icon">💬</div>
+                    <div class="contact-method-label">Contact form</div>
+                    <div class="contact-method-value">Send a message →</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">Lumen</a>
+                    <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
+                        suburbs.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Nav</h4>
+                    <ul class="footer-links">
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Website Design</a></li>
+                        <li><a href="/#services">Local SEO</a></li>
+                        <li><a href="/#services">Bundle & Save</a></li>
+                        <li><a href="/contact.html">Free Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
+                        <li><a href="/contact.html">Adelaide, SA</a></li>
+                        <li><a href="/contact.html">Request a call</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lumen ADL. Built with care in Adelaide.</p>
+                <div class="footer-legal">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>const menuToggle = document.getElementById("menuToggle"), mainNav = document.getElementById("mainNav"); menuToggle.addEventListener("click", (() => { menuToggle.classList.toggle("active"), mainNav.classList.toggle("active") })), document.querySelectorAll(".nav-links a").forEach((e => { e.addEventListener("click", (() => { menuToggle.classList.remove("active"), mainNav.classList.remove("active") })) }));</script>
+</body>
+
+</html>

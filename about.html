@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Lumen ADL | Adelaide Web Design & SEO</title>
+    <meta name="description"
+        content="Learn about Lumen ADL — Adelaide's web design and SEO agency for local trades. Based in northern Adelaide, serving all of SA.">
+    <link rel="canonical" href="https://www.lumenadl.com/about.html">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Us | Lumen ADL | Adelaide Web Design & SEO">
+    <meta property="og:description"
+        content="Learn about Lumen ADL — Adelaide's web design and SEO agency for local trades.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lumenadl.com/about.html">
+    <meta property="og:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta property="og:locale" content="en_AU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | Lumen ADL">
+    <meta name="twitter:description" content="Adelaide's web design and SEO agency for local trades.">
+    <meta name="twitter:image" content="https://www.lumenadl.com/australia-map.jpg">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Lumen ADL",
+      "description": "Learn about Lumen ADL — Adelaide's web design and SEO agency for local trades.",
+      "url": "https://www.lumenadl.com/about.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Lumen ADL",
+        "description": "Web design and SEO agency for Adelaide trades",
+        "url": "https://www.lumenadl.com",
+        "areaServed": {
+          "@type": "City",
+          "name": "Adelaide",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "South Australia"
+          }
+        }
+      }
+    }
+    </script>
+    <style>
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2.5px;
+            background: #C65D3B;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                position: sticky;
+                top: 0;
+                z-index: 999;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+            }
+
+            .header .container {
+                position: relative;
+                max-width: 100%;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav {
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 16px;
+                right: 24px;
+                width: calc(100% - 32px);
+                min-width: calc(100% - 32px);
+                max-width: calc(100% - 32px);
+                background: white;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                gap: 4px;
+                border-radius: 20px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+                transform: translateY(-20px) scale(0.95);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 1000;
+                display: flex !important;
+                box-sizing: border-box;
+            }
+
+            .nav.active {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav a {
+                font-size: 17px;
+                padding: 16px 20px;
+                color: #1f2937 !important;
+                text-align: left;
+                display: flex !important;
+                align-items: center;
+                gap: 14px;
+                width: 100%;
+                text-decoration: none;
+                font-weight: 500;
+                border-radius: 12px;
+                transition: all 0.2s;
+            }
+
+            .nav a:hover {
+                background: #f3f4f6;
+            }
+
+            .nav a::before {
+                content: "";
+                width: 8px;
+                height: 8px;
+                background: #C65D3B;
+                border-radius: 50%;
+                opacity: 0.3;
+                transition: all 0.2s;
+            }
+
+            .nav a:hover::before {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+
+            .nav a.nav-cta {
+                margin-top: 8px;
+                text-align: center;
+                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
+                color: white !important;
+                padding: 18px 24px;
+                border-radius: 16px;
+                font-weight: 600;
+                font-size: 16px;
+                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4);
+                justify-content: center;
+                width: 100% !important;
+                min-width: 100% !important;
+                display: flex !important;
+                position: relative;
+                flex-shrink: 0 !important;
+                box-sizing: border-box;
+                white-space: nowrap;
+            }
+
+            .nav a.nav-cta::before {
+                display: none !important;
+            }
+
+            .nav a.nav-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        @media (max-width: 768px) {
+            .header .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+
+            .nav {
+                width: calc(100% - 32px) !important;
+                min-width: calc(100% - 32px) !important;
+                max-width: calc(100% - 32px) !important;
+            }
+
+            .nav a.nav-cta {
+                width: 100% !important;
+                min-width: 100% !important;
+                display: flex !important;
+            }
+
+            .menu-toggle {
+                order: 2 !important;
+            }
+
+            .logo {
+                order: 1 !important;
+            }
+        }
+    </style>
+    <header class="header">
+        <div class="container"
+            style="padding-right: 70px !important; display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" class="logo" style="order: 1;">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu"
+                style="position: absolute; right: 24px; top: 100%; transform: translateY(-50%); width: 44px; height: 44px; background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%); border-radius: 12px; padding: 12px; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.35); border: none; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1001;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="/">Home</a>
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/about.html" class="nav-cta">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding: 80px 0 40px;">
+            <div class="container"
+                style="padding-right: 70px !important; display: flex; justify-content: space-between; align-items: center;">
+                <h1>About Lumen ADL</h1>
+                <p class="lead">Web design and SEO for Adelaide trades. Built by locals, for locals.</p>
+            </div>
+        </section>
+
+        <section style="padding: 40px 0;">
+            <div class="container" style="padding-right: 70px !important; max-width: 700px;">
+                <h2>Who We Are</h2>
+                <p>Lumen ADL is a web design and SEO agency based in Adelaide, South Australia. We specialise in helping
+                    local trades — plumbers, electricians, painters, concreters, and other service businesses — get
+                    found online and attract more customers.</p>
+
+                <p>Unlike big agencies that churn out templated websites, we build custom, fast-loading sites designed
+                    specifically for trades. We understand that you don't need fancy animations or complicated features.
+                    You need a website that loads fast, ranks on Google, and gets the phone ringing.</p>
+
+                <h2>Why We Started</h2>
+                <p>We saw a gap in the market. Local trades in Adelaide's northern suburbs were being overlooked by
+                    digital agencies who either charged too much or delivered cookie-cutter solutions that didn't
+                    actually help them get customers.</p>
+
+                <p>We started Lumen ADL to change that. Fair pricing, fast delivery, and websites that actually work.
+                </p>
+
+                <h2>Our Approach</h2>
+                <ul style="margin: 20px 0; padding-left: 24px;">
+                    <li style="margin-bottom: 12px;"><strong>No templates.</strong> Every site is custom-built for your
+                        business.</li>
+                    <li style="margin-bottom: 12px;"><strong>Mobile-first.</strong> Most customers search on their
+                        phones — your site needs to work perfectly on mobile.</li>
+                    <li style="margin-bottom: 12px;"><strong>SEO included.</strong> We don't just build websites; we
+                        build websites that rank on Google.</li>
+                    <li style="margin-bottom: 12px;"><strong>Fast delivery.</strong> Two weeks from start to finish. No
+                        months of back-and-forth.</li>
+                    <li style="margin-bottom: 12px;"><strong>Local focus.</strong> We understand Adelaide's northern
+                        suburbs market.</li>
+                </ul>
+
+                <h2>Where We Work</h2>
+                <p>We're based in Adelaide and primarily serve businesses in the northern suburbs: <a
+                        href="/blog/web-design-mawson-lakes.html">Mawson Lakes</a>, <a
+                        href="/blog/seo-golden-grove.html">Golden Grove</a>, <a
+                        href="/blog/web-design-gawler.html">Gawler</a>, Modbury, Para Hills, and surrounding areas. That
+                    said, we work with clients across all of South Australia.</p>
+
+                <h2>What Makes Us Different</h2>
+                <p>Most web agencies in Adelaide charge $5,000+ for templated websites that look identical to your
+                    competitor's. We don't. Every site we build is custom-designed for your business, your customers,
+                    and your goals.</p>
+
+                <p>We're also SEO-first. We don't build pretty sites that no one can find. We build sites that rank on
+                    Google from day one. Our approach combines technical SEO, local optimization, and conversion-focused
+                    design.</p>
+
+                <h2>Our Process</h2>
+                <p><strong>Week 1:</strong> Discovery & Design. We learn about your business, your customers, and your
+                    competition. Then we design a site that speaks to your ideal customer.</p>
+
+                <p><strong>Week 2:</strong> Build & Launch. We code your site from scratch — no templates, no bloat.
+                    Fast, mobile-friendly, and optimized for Google. Then we launch and submit to search engines.</p>
+
+                <p><strong>Ongoing:</strong> SEO & Support. We don't disappear after launch. Our SEO packages include
+                    monthly optimization, content updates, and performance tracking.</p>
+
+                <h2>Get in Touch</h2>
+                <p>Want to learn more? <a href="/contact.html">Contact us</a> for a free website audit. We'll show you
+                    exactly what's costing you customers and how we can help.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">Lumen</a>
+                    <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
+                        suburbs.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Nav</h4>
+                    <ul class="footer-links">
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Website Design</a></li>
+                        <li><a href="/#services">Local SEO</a></li>
+                        <li><a href="/#services">Bundle & Save</a></li>
+                        <li><a href="/contact.html">Free Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
+                        <li><a href="/contact.html">Adelaide, SA</a></li>
+                        <li><a href="/contact.html">Request a call</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lumen ADL. Built with care in Adelaide.</p>
+                <div class="footer-legal">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

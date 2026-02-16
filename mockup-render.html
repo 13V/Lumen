@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    background: linear-gradient(135deg, #C65D3B 0%, #D4755E 50%, #c05535 100%); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 500px;
+    padding: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  /* MacBook */
+  .macbook {
+    width: 600px;
+  }
+  .macbook-lid {
+    background: #222;
+    border-radius: 14px 14px 0 0;
+    padding: 18px 18px 14px;
+    position: relative;
+    border: 2.5px solid #1a1a1a;
+    border-bottom: none;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  }
+  .macbook-lid::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px rgba(255,255,255,0.1);
+  }
+  .macbook-lid img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 3px;
+    display: block;
+  }
+  .macbook-bottom {
+    background: linear-gradient(180deg, #e0e0e0 0%, #c8c8c8 30%, #b0b0b0 100%);
+    height: 10px;
+    position: relative;
+  }
+  .macbook-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #999;
+  }
+  .macbook-base {
+    background: linear-gradient(180deg, #d0d0d0 0%, #bbb 100%);
+    height: 16px;
+    border-radius: 0 0 10px 10px;
+    margin: 0 -30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    position: relative;
+  }
+  .macbook-base::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background: #aaa;
+    border-radius: 0 0 6px 6px;
+  }
+  .macbook-base::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  /* iPhone */
+  .iphone {
+    width: 160px;
+  }
+  .iphone-body {
+    background: #1c1c1e;
+    border-radius: 36px;
+    padding: 14px 10px;
+    border: 3px solid #3a3a3c;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 
+                inset 0 1px 0 rgba(255,255,255,0.05);
+    position: relative;
+  }
+  /* Side buttons */
+  .iphone-body::before {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 90px;
+    width: 3px;
+    height: 40px;
+    background: #3a3a3c;
+    border-radius: 0 3px 3px 0;
+  }
+  .iphone-body::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 80px;
+    width: 3px;
+    height: 26px;
+    background: #3a3a3c;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 36px 0 #3a3a3c;
+  }
+  .dynamic-island {
+    width: 72px;
+    height: 18px;
+    background: #000;
+    border-radius: 20px;
+    margin: 0 auto 8px;
+    position: relative;
+    z-index: 2;
+  }
+  .iphone-body img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    display: block;
+  }
+  .home-indicator {
+    width: 40%;
+    height: 5px;
+    background: #fff;
+    opacity: 0.3;
+    border-radius: 5px;
+    margin: 10px auto 0;
+  }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="macbook">
+      <div class="macbook-lid">
+        <img src="file:///C:/Users/Administrator/.openclaw/workspace/lumen-agency/images/mk-desktop.jpg" alt="Desktop">
+      </div>
+      <div class="macbook-bottom"></div>
+      <div class="macbook-base"></div>
+    </div>
+    <div class="iphone">
+      <div class="iphone-body">
+        <div class="dynamic-island"></div>
+        <img src="file:///C:/Users/Administrator/.openclaw/workspace/lumen-agency/images/mk-mobile.jpg" alt="Mobile">
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
