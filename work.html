@@ -676,56 +676,24 @@
 </head>
 
 <body>
-    <style>
-        @media (max-width: 768px) {
-            .nav .container {
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-
-            .nav-links {
-                width: calc(100% - 32px) !important;
-                min-width: calc(100% - 32px) !important;
-                max-width: calc(100% - 32px) !important;
-            }
-
-            .menu-toggle {
-                order: 2 !important;
-            }
-
-            .logo {
-                order: 1 !important;
-            }
-
-            .nav-links a.nav-cta {
-                width: 100% !important;
-                min-width: 100% !important;
-                display: flex !important;
-            }
-        }
-    </style> <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="/" class="logo" style="order: 1;">
-                <span class="logo-icon">?</span>
-                <span>LUMEN</span>
-            </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu"
-                style="position: absolute; right: 24px; top: 100%; transform: translateY(-50%); width: 44px; height: 44px; background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%); border-radius: 12px; padding: 12px; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.35); border: none; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1001;">
+        <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="nav-links" id="mainNav">
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/work.html" class="active">Work</a>
+            <nav class="nav" id="mainNav">
+                <a href="/work.html">Work</a>
                 <a href="/blog.html">Blog</a>
                 <a href="/faq.html">FAQ</a>
-                <a href="/contact.html" class="nav-cta">Get a Quote</a>
-            </div>
+                <a href="/about.html">About</a>
+                <a href="tel:+61421276482" class="nav-phone">&#128222; 0421 276 482</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
     <section class="work-hero">
