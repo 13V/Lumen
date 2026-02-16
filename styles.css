@@ -614,6 +614,96 @@ body::before {
     font-weight: 600;
 }
 
+/* AI Automation Service Card */
+.service-ai {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
+    border: 2px solid var(--terracotta);
+}
+
+.service-badge-new {
+    background: var(--gradient) !important;
+}
+
+.service-price-custom {
+    font-size: 14px !important;
+    color: var(--text-secondary) !important;
+    font-style: italic;
+}
+
+.ai-use-cases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.ai-case {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s ease;
+}
+
+.ai-case:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.ai-case-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--beige);
+    border-radius: 8px;
+}
+
+.ai-case strong {
+    display: block;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.ai-case p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.ai-enquire-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 40px;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 16px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(198, 93, 59, 0.25);
+}
+
+.ai-enquire-btn:hover {
+    box-shadow: 0 8px 25px rgba(198, 93, 59, 0.35);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .ai-use-cases {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Locations */
 .locations {
     padding: 60px 0;
