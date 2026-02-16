@@ -741,7 +741,6 @@ body::before {
     height: auto;
     margin: 0 auto 24px;
     display: block;
-    border-radius: var(--radius-lg);
 }
 
 .map-caption {
