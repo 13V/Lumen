@@ -4,206 +4,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Lumen ADL | Adelaide Web Design & SEO</title>
+    <title>About Us | Lumen ADL | Web Design, SEO & AI Automation Adelaide</title>
     <meta name="description"
-        content="Learn about Lumen ADL — Adelaide's web design and SEO agency for local trades. Based in northern Adelaide, serving all of SA.">
+        content="Lumen ADL builds websites, runs SEO, and automates business operations with AI for Adelaide trades and service businesses.">
     <link rel="canonical" href="https://www.lumenadl.com/about.html">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="About Us | Lumen ADL | Adelaide Web Design & SEO">
-    <meta property="og:description"
-        content="Learn about Lumen ADL — Adelaide's web design and SEO agency for local trades.">
+    <meta property="og:title" content="About Us | Lumen ADL | Web Design, SEO & AI Automation">
+    <meta property="og:description" content="Websites, SEO, and AI automation for Adelaide service businesses.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lumenadl.com/about.html">
     <meta property="og:image" content="https://www.lumenadl.com/australia-map.jpg">
     <meta property="og:locale" content="en_AU">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Us | Lumen ADL">
-    <meta name="twitter:description" content="Adelaide's web design and SEO agency for local trades.">
-    <meta name="twitter:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta name="twitter:description" content="Websites, SEO, and AI automation for Adelaide service businesses.">
 
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "About Lumen ADL",
-      "description": "Learn about Lumen ADL — Adelaide's web design and SEO agency for local trades.",
+      "description": "Web design, SEO, and AI automation agency for Adelaide service businesses.",
       "url": "https://www.lumenadl.com/about.html",
       "mainEntity": {
         "@type": "Organization",
         "name": "Lumen ADL",
-        "description": "Web design and SEO agency for Adelaide trades",
+        "description": "Web design, SEO, and AI automation for Adelaide trades and service businesses",
         "url": "https://www.lumenadl.com",
         "areaServed": {
           "@type": "City",
           "name": "Adelaide",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "South Australia"
-          }
+          "containedInPlace": { "@type": "State", "name": "South Australia" }
         }
       }
     }
     </script>
+
     <style>
-        /* Mobile Menu Styles */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 28px;
-            height: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
+        .about-hero {
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
+        }
+        .about-hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 3.5rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        .about-hero .lead {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        .about-hero .lead strong {
+            color: var(--terracotta);
         }
 
-        .menu-toggle span {
+        .about-section {
+            padding: 80px 0;
+        }
+        .about-section:nth-child(even) {
+            background: var(--bg-warm);
+        }
+        .about-section h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.2rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 700px;
+        }
+
+        /* Three pillars */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .pillar {
+            background: white;
+            border-radius: 16px;
+            padding: 36px 28px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .pillar:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+        .pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
             display: block;
-            width: 100%;
-            height: 2.5px;
-            background: #C65D3B;
-            border-radius: 2px;
-            transition: all 0.3s;
+        }
+        .pillar h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .pillar p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+        /* Process steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 40px;
+            position: relative;
+        }
+        .process-step {
+            text-align: center;
+            padding: 32px 24px;
+            position: relative;
+        }
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 45px;
+            right: 0;
+            width: 1px;
+            height: 40px;
+            background: var(--border);
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        .process-step h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            max-width: 250px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
+        /* Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+            max-width: 800px;
+        }
+        .value-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .value-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--beige);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .value-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .value-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
+        /* CTA */
+        .about-cta {
+            padding: 80px 0;
+            background: var(--gradient);
+            text-align: center;
+        }
+        .about-cta h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .about-cta p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-cta .btn-white {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: var(--terracotta);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .about-cta .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         @media (max-width: 768px) {
-            .header {
-                position: sticky;
-                top: 0;
-                z-index: 999;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-            }
-
-            .header .container {
-                position: relative;
-                max-width: 100%;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav {
-                position: absolute;
-                top: calc(100% + 8px);
-                left: 16px;
-                right: 24px;
-                width: calc(100% - 32px);
-                min-width: calc(100% - 32px);
-                max-width: calc(100% - 32px);
-                background: white;
-                flex-direction: column;
-                align-items: stretch;
-                padding: 12px;
-                gap: 4px;
-                border-radius: 20px;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
-                transform: translateY(-20px) scale(0.95);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-                z-index: 1000;
-                display: flex !important;
-                box-sizing: border-box;
-            }
-
-            .nav.active {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav a {
-                font-size: 17px;
-                padding: 16px 20px;
-                color: #1f2937 !important;
-                text-align: left;
-                display: flex !important;
-                align-items: center;
-                gap: 14px;
-                width: 100%;
-                text-decoration: none;
-                font-weight: 500;
-                border-radius: 12px;
-                transition: all 0.2s;
-            }
-
-            .nav a:hover {
-                background: #f3f4f6;
-            }
-
-            .nav a::before {
-                content: "";
-                width: 8px;
-                height: 8px;
-                background: #C65D3B;
-                border-radius: 50%;
-                opacity: 0.3;
-                transition: all 0.2s;
-            }
-
-            .nav a:hover::before {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-
-            .nav a.nav-cta {
-                margin-top: 8px;
-                text-align: center;
-                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
-                color: white !important;
-                padding: 18px 24px;
-                border-radius: 16px;
-                font-weight: 600;
-                font-size: 16px;
-                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4);
-                justify-content: center;
-                width: 100% !important;
-                min-width: 100% !important;
-                display: flex !important;
-                position: relative;
-                flex-shrink: 0 !important;
-                box-sizing: border-box;
-                white-space: nowrap;
-            }
-
-            .nav a.nav-cta::before {
-                display: none !important;
-            }
-
-            .nav a.nav-cta:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
-            }
+            .about-hero h1 { font-size: 2.4rem; }
+            .pillars { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .process-step:not(:last-child)::after { display: none; }
+            .values-grid { grid-template-columns: 1fr; }
+            .about-cta h2 { font-size: 2rem; }
         }
     </style>
 </head>
 
 <body>
-        <header class="header">
+    <header class="header">
         <div class="container">
             <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon">Lumen</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
@@ -222,77 +274,145 @@
     </header>
 
     <main>
-        <section class="hero" style="padding: 80px 0 40px;">
-            <div class="container"
-                style="padding-right: 70px !important; display: flex; justify-content: space-between; align-items: center;">
-                <h1>About Lumen ADL</h1>
-                <p class="lead">Web design and SEO for Adelaide trades. Built by locals, for locals.</p>
+        <!-- Hero -->
+        <section class="about-hero">
+            <div class="container">
+                <h1>We help businesses<br>work smarter.</h1>
+                <p class="lead">Lumen ADL is an Adelaide-based agency that builds websites, ranks you on Google, and <strong>automates the busywork</strong> so you can focus on what you do best.</p>
             </div>
         </section>
 
-        <section style="padding: 40px 0;">
-            <div class="container" style="padding-right: 70px !important; max-width: 700px;">
-                <h2>Who We Are</h2>
-                <p>Lumen ADL is a web design and SEO agency based in Adelaide, South Australia. We specialise in helping
-                    local trades — plumbers, electricians, painters, concreters, and other service businesses — get
-                    found online and attract more customers.</p>
-
-                <p>Unlike big agencies that churn out templated websites, we build custom, fast-loading sites designed
-                    specifically for trades. We understand that you don't need fancy animations or complicated features.
-                    You need a website that loads fast, ranks on Google, and gets the phone ringing.</p>
-
-                <h2>Why We Started</h2>
-                <p>We saw a gap in the market. Local trades in Adelaide's northern suburbs were being overlooked by
-                    digital agencies who either charged too much or delivered cookie-cutter solutions that didn't
-                    actually help them get customers.</p>
-
-                <p>We started Lumen ADL to change that. Fair pricing, fast delivery, and websites that actually work.
-                </p>
-
-                <h2>Our Approach</h2>
-                <ul style="margin: 20px 0; padding-left: 24px;">
-                    <li style="margin-bottom: 12px;"><strong>No templates.</strong> Every site is custom-built for your
-                        business.</li>
-                    <li style="margin-bottom: 12px;"><strong>Mobile-first.</strong> Most customers search on their
-                        phones — your site needs to work perfectly on mobile.</li>
-                    <li style="margin-bottom: 12px;"><strong>SEO included.</strong> We don't just build websites; we
-                        build websites that rank on Google.</li>
-                    <li style="margin-bottom: 12px;"><strong>Fast delivery.</strong> Two weeks from start to finish. No
-                        months of back-and-forth.</li>
-                    <li style="margin-bottom: 12px;"><strong>Local focus.</strong> We understand Adelaide's northern
-                        suburbs market.</li>
-                </ul>
-
-                <h2>Where We Work</h2>
-                <p>We're based in Adelaide and primarily serve businesses in the northern suburbs: <a
-                        href="/blog/web-design-mawson-lakes.html">Mawson Lakes</a>, <a
-                        href="/blog/seo-golden-grove.html">Golden Grove</a>, <a
-                        href="/blog/web-design-gawler.html">Gawler</a>, Modbury, Para Hills, and surrounding areas. That
-                    said, we work with clients across all of South Australia.</p>
-
-                <h2>What Makes Us Different</h2>
-                <p>Most web agencies in Adelaide charge $5,000+ for templated websites that look identical to your
-                    competitor's. We don't. Every site we build is custom-designed for your business, your customers,
-                    and your goals.</p>
-
-                <p>We're also SEO-first. We don't build pretty sites that no one can find. We build sites that rank on
-                    Google from day one. Our approach combines technical SEO, local optimization, and conversion-focused
-                    design.</p>
-
-                <h2>Our Process</h2>
-                <p><strong>Week 1:</strong> Discovery & Design. We learn about your business, your customers, and your
-                    competition. Then we design a site that speaks to your ideal customer.</p>
-
-                <p><strong>Week 2:</strong> Build & Launch. We code your site from scratch — no templates, no bloat.
-                    Fast, mobile-friendly, and optimized for Google. Then we launch and submit to search engines.</p>
-
-                <p><strong>Ongoing:</strong> SEO & Support. We don't disappear after launch. Our SEO packages include
-                    monthly optimization, content updates, and performance tracking.</p>
-
-                <h2>Get in Touch</h2>
-                <p>Want to learn more? <a href="/contact.html">Contact us</a> for a free website audit. We'll show you
-                    exactly what's costing you customers and how we can help.</p>
+        <!-- Three Pillars -->
+        <section class="about-section">
+            <div class="container">
+                <h2>What We Do</h2>
+                <p>Three services. One goal: grow your business without adding more hours to your day.</p>
+                <div class="pillars">
+                    <div class="pillar">
+                        <span class="pillar-icon">&#127912;</span>
+                        <h3>Website Design</h3>
+                        <p>Custom, mobile-first websites that load fast and convert visitors into customers. No templates, no bloat. Built from scratch in two weeks.</p>
+                    </div>
+                    <div class="pillar">
+                        <span class="pillar-icon">&#128200;</span>
+                        <h3>Local SEO</h3>
+                        <p>Get found when people search "[your trade] near me." We optimise your Google presence, build local citations, and generate reviews that matter.</p>
+                    </div>
+                    <div class="pillar" style="border-color: var(--terracotta);">
+                        <span class="pillar-icon">&#9889;</span>
+                        <h3>AI Automation</h3>
+                        <p>Missed call text-backs, automatic follow-ups, review requests, 24/7 lead qualification. Your business runs while you sleep — no extra staff needed.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Why AI -->
+        <section class="about-section">
+            <div class="container">
+                <h2>Why AI Automation?</h2>
+                <p>Most service businesses lose money the same way: slow replies, forgotten follow-ups, and missed calls. You're busy on the tools — you can't answer every call, chase every quote, or ask every customer for a review.</p>
+                <p style="margin-top: 16px;">That's where automation comes in. We build systems that handle the repetitive stuff automatically — so leads don't slip through the cracks and your calendar stays full.</p>
+                <div class="values-grid" style="margin-top: 32px;">
+                    <div class="value-item">
+                        <div class="value-icon">&#128222;</div>
+                        <div>
+                            <h3>Never miss a lead</h3>
+                            <p>Missed a call on the job? An automatic text goes out in 30 seconds. The customer stays warm instead of calling your competitor.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#9733;</div>
+                        <div>
+                            <h3>Reviews on autopilot</h3>
+                            <p>After every job, your customers get a friendly review request. Go from 5 Google reviews to 50 without lifting a finger.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#128172;</div>
+                        <div>
+                            <h3>24/7 enquiry handling</h3>
+                            <p>An AI assistant qualifies leads on your website around the clock — asks the right questions, captures details, sends them to you.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#128197;</div>
+                        <div>
+                            <h3>Quote follow-ups that close</h3>
+                            <p>Sent a quote and heard nothing? Automated follow-ups at 1, 3, and 7 days convert the jobs you'd otherwise forget about.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="about-section">
+            <div class="container">
+                <h2>How We Work</h2>
+                <p>Simple, fast, no fluff.</p>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Discovery</h3>
+                        <p>We learn your business, your customers, and what's costing you leads right now.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Build & Automate</h3>
+                        <p>We build your site, set up your SEO, and wire up automations. Most projects are live in two weeks.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Grow</h3>
+                        <p>Your site ranks, leads flow in, follow-ups happen automatically. We track everything and optimise monthly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="about-section">
+            <div class="container">
+                <h2>Why Lumen?</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">&#128296;</div>
+                        <div>
+                            <h3>Built for trades</h3>
+                            <p>We specialise in service businesses — tradies, cleaners, landscapers. We know what your customers search for.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#128205;</div>
+                        <div>
+                            <h3>Adelaide local</h3>
+                            <p>Based in Adelaide, serving all of SA. We understand the local market because we're part of it.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#128176;</div>
+                        <div>
+                            <h3>No bloated pricing</h3>
+                            <p>Fair, transparent pricing. No $10K quotes for a brochure site. You get what you pay for and it actually works.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#9889;</div>
+                        <div>
+                            <h3>AI-first thinking</h3>
+                            <p>We use AI to build faster, automate smarter, and deliver results that traditional agencies can't match at our price point.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="about-cta">
+            <h2>Ready to work smarter?</h2>
+            <p>Get a free audit of your website and we'll show you exactly where you're losing leads.</p>
+            <a href="/contact.html" class="btn-white">Get in Touch</a>
         </section>
     </main>
 
@@ -301,8 +421,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon">Lumen</a>
-                    <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
-                        suburbs.</p>
+                    <p class="footer-tagline">Websites, SEO, and AI automation for Adelaide service businesses.</p>
                 </div>
                 <div class="footer-nav">
                     <h4 class="footer-heading">Nav</h4>
@@ -318,7 +437,7 @@
                     <ul class="footer-links">
                         <li><a href="/#services">Website Design</a></li>
                         <li><a href="/#services">Local SEO</a></li>
-                        <li><a href="/#services">Bundle & Save</a></li>
+                        <li><a href="/#services">AI Automation</a></li>
                         <li><a href="/contact.html">Free Audit</a></li>
                     </ul>
                 </div>
@@ -340,6 +459,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
@@ -355,5 +475,4 @@
         });
     </script>
 </body>
-
 </html>
