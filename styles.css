@@ -134,6 +134,14 @@ body::before {
     text-decoration: none;
     color: var(--text);
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    height: 32px;
+    width: auto;
 }
 
 .nav {
@@ -814,8 +822,16 @@ body::before {
     font-weight: 600;
     color: white;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 16px;
+}
+
+.footer-brand .footer-logo .logo-icon {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .footer-tagline {

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lumen Logo Preview</title>
+<style>
+body { font-family: Inter, sans-serif; background: #f0f0f0; padding: 40px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 900px; margin: 0 auto; }
+.card { background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.card.dark { background: #111827; }
+.card.beige { background: #F5F0E8; }
+.card h3 { margin: 15px 0 0; font-size: 14px; color: #666; }
+.card.dark h3 { color: #9ca3af; }
+svg { max-width: 200px; height: auto; }
+.lockup { max-width: 350px; }
+.favicon-box { display: inline-flex; gap: 15px; align-items: center; }
+.favicon-box svg { width: 32px; height: 32px; }
+.favicon-box .tiny { width: 16px; height: 16px; }
+h1 { text-align: center; font-family: 'DM Serif Display', Georgia, serif; color: #2D2420; }
+h2 { color: #2D2420; border-bottom: 2px solid #C65D3B; padding-bottom: 8px; margin-top: 40px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Lumen Logo — Asset Preview</h1>
+
+<h2>Icon Only</h2>
+<div class="grid">
+  <div class="card">
+    <svg id="icon-terracotta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#C65D3B">
+      <rect x="245" y="288" width="22" height="160" rx="3"/>
+      <polygon points="256,288 227,55 285,55"/>
+      <polygon points="256,288 115,100 164,72"/>
+      <polygon points="256,288 348,72 397,100"/>
+      <polygon points="256,288 40,196 68,147"/>
+      <polygon points="256,288 444,147 472,196"/>
+    </svg>
+    <h3>Terracotta on White</h3>
+  </div>
+  <div class="card dark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#FFFFFF">
+      <rect x="245" y="288" width="22" height="160" rx="3"/>
+      <polygon points="256,288 227,55 285,55"/>
+      <polygon points="256,288 115,100 164,72"/>
+      <polygon points="256,288 348,72 397,100"/>
+      <polygon points="256,288 40,196 68,147"/>
+      <polygon points="256,288 444,147 472,196"/>
+    </svg>
+    <h3>White on Dark</h3>
+  </div>
+  <div class="card beige">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#C65D3B">
+      <rect x="245" y="288" width="22" height="160" rx="3"/>
+      <polygon points="256,288 227,55 285,55"/>
+      <polygon points="256,288 115,100 164,72"/>
+      <polygon points="256,288 348,72 397,100"/>
+      <polygon points="256,288 40,196 68,147"/>
+      <polygon points="256,288 444,147 472,196"/>
+    </svg>
+    <h3>Terracotta on Beige</h3>
+  </div>
+</div>
+
+<h2>Full Lockup (Icon + Wordmark)</h2>
+<div class="grid">
+  <div class="card">
+    <svg class="lockup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240">
+      <g fill="#C65D3B" transform="translate(20,10) scale(0.43)">
+        <rect x="245" y="288" width="22" height="160" rx="3"/>
+        <polygon points="256,288 227,55 285,55"/>
+        <polygon points="256,288 115,100 164,72"/>
+        <polygon points="256,288 348,72 397,100"/>
+        <polygon points="256,288 40,196 68,147"/>
+        <polygon points="256,288 444,147 472,196"/>
+      </g>
+      <text x="265" y="165" font-family="'DM Serif Display', Georgia, serif" font-size="145" fill="#2D2420" letter-spacing="2">Lumen</text>
+    </svg>
+    <h3>Full Lockup — Light</h3>
+  </div>
+  <div class="card dark">
+    <svg class="lockup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240">
+      <g fill="#C65D3B" transform="translate(20,10) scale(0.43)">
+        <rect x="245" y="288" width="22" height="160" rx="3"/>
+        <polygon points="256,288 227,55 285,55"/>
+        <polygon points="256,288 115,100 164,72"/>
+        <polygon points="256,288 348,72 397,100"/>
+        <polygon points="256,288 40,196 68,147"/>
+        <polygon points="256,288 444,147 472,196"/>
+      </g>
+      <text x="265" y="165" font-family="'DM Serif Display', Georgia, serif" font-size="145" fill="#FFFFFF" letter-spacing="2">Lumen</text>
+    </svg>
+    <h3>Full Lockup — Dark</h3>
+  </div>
+  <div class="card beige">
+    <svg class="lockup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240">
+      <g fill="#C65D3B" transform="translate(20,10) scale(0.43)">
+        <rect x="245" y="288" width="22" height="160" rx="3"/>
+        <polygon points="256,288 227,55 285,55"/>
+        <polygon points="256,288 115,100 164,72"/>
+        <polygon points="256,288 348,72 397,100"/>
+        <polygon points="256,288 40,196 68,147"/>
+        <polygon points="256,288 444,147 472,196"/>
+      </g>
+      <text x="265" y="165" font-family="'DM Serif Display', Georgia, serif" font-size="145" fill="#2D2420" letter-spacing="2">Lumen</text>
+    </svg>
+    <h3>Full Lockup — Beige</h3>
+  </div>
+</div>
+
+<h2>Favicons (Actual Size)</h2>
+<div class="card" style="max-width: 400px; margin: 20px auto;">
+  <div class="favicon-box">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#C65D3B" style="width:32px;height:32px;">
+        <rect x="245" y="288" width="22" height="160" rx="3"/>
+        <polygon points="256,288 227,55 285,55"/>
+        <polygon points="256,288 115,100 164,72"/>
+        <polygon points="256,288 348,72 397,100"/>
+        <polygon points="256,288 40,196 68,147"/>
+        <polygon points="256,288 444,147 472,196"/>
+      </svg>
+      <div style="font-size:11px;color:#999;">32px</div>
+    </div>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#C65D3B" style="width:16px;height:16px;">
+        <rect x="245" y="288" width="22" height="160" rx="3"/>
+        <polygon points="256,288 227,55 285,55"/>
+        <polygon points="256,288 115,100 164,72"/>
+        <polygon points="256,288 348,72 397,100"/>
+        <polygon points="256,288 40,196 68,147"/>
+        <polygon points="256,288 444,147 472,196"/>
+      </svg>
+      <div style="font-size:11px;color:#999;">16px</div>
+    </div>
+  </div>
+  <h3>Favicons at actual pixel size</h3>
+</div>
+
+</body>
+</html>
