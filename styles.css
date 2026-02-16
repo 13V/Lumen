@@ -891,6 +891,11 @@ body::before {
     box-shadow: 0 0 0 4px rgba(198, 93, 59, 0.1);
 }
 
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
 /* Footer Redesign */
 .footer {
     padding: 80px 0 40px;
