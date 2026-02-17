@@ -1,0 +1,108 @@
+{
+  "name": "Lumen - Contact Form Handler",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lumen-contact",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://www.lumenadl.com,https://lumenadl.com"
+        }
+      },
+      "id": "webhook-1",
+      "name": "Contact Form Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "lumen-contact"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ {\"success\": true, \"message\": \"Thanks! We'll be in touch shortly.\"} }",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-1",
+      "name": "Send Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "hello@lumenadl.com",
+        "subject": "=New Lumen Enquiry: {{ $json.body.name }} - {{ $json.body.service }}",
+        "message": "=<h2>New enquiry from lumenadl.com</h2><table style='border-collapse:collapse;width:100%;max-width:500px;'><tr style='border-bottom:1px solid #eee;'><td style='padding:12px;font-weight:bold;color:#2D2420;'>Name</td><td style='padding:12px;'>{{ $json.body.name }}</td></tr><tr style='border-bottom:1px solid #eee;background:#faf8f5;'><td style='padding:12px;font-weight:bold;color:#2D2420;'>Email</td><td style='padding:12px;'>{{ $json.body.email || 'Not provided' }}</td></tr><tr style='border-bottom:1px solid #eee;'><td style='padding:12px;font-weight:bold;color:#2D2420;'>Phone</td><td style='padding:12px;'>{{ $json.body.phone || 'Not provided' }}</td></tr><tr style='border-bottom:1px solid #eee;background:#faf8f5;'><td style='padding:12px;font-weight:bold;color:#2D2420;'>Business</td><td style='padding:12px;'>{{ $json.body.business || 'Not provided' }}</td></tr><tr style='border-bottom:1px solid #eee;'><td style='padding:12px;font-weight:bold;color:#2D2420;'>Service</td><td style='padding:12px;'>{{ $json.body.service }}</td></tr><tr style='background:#faf8f5;'><td style='padding:12px;font-weight:bold;color:#2D2420;'>Message</td><td style='padding:12px;'>{{ $json.body.message || 'None' }}</td></tr></table><br><p style='color:#888;font-size:12px;'>Submitted: {{ $json.body.submitted || $now.toISO() }}</p>",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "email-1",
+      "name": "Email Notification",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [500, 500]
+    },
+    {
+      "parameters": {
+        "chatId": "6059709311",
+        "text": "=🔔 *New Lumen Lead*\n\n*Name:* {{ $json.body.name }}\n*Phone:* {{ $json.body.phone || 'N/A' }}\n*Email:* {{ $json.body.email || 'N/A' }}\n*Service:* {{ $json.body.service }}\n*Business:* {{ $json.body.business || 'N/A' }}\n*Message:* {{ $json.body.message || 'None' }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-1",
+      "name": "Telegram Alert to Troy",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [500, 700],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Contact Form Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send Success Response",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Email Notification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Telegram Alert to Troy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "Lumen"
+    }
+  ]
+}
