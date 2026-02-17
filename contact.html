@@ -263,7 +263,10 @@
                         </div>
                     </div>
 
-                    <form class="contact-form" aria-label="Contact form" id="contactForm">
+                    <form class="contact-form" aria-label="Contact form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                        <input type="hidden" name="access_key" value="634f3f26-9832-4474-9c47-573ff11a121c">
+                        <input type="hidden" name="subject" value="New Lumen Enquiry">
+                        <input type="hidden" name="from_name" value="Lumen Website">
                         <h3 style="margin-bottom: 24px;">Request a Free Audit</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -360,43 +363,7 @@
         });
     </script>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            const data = {
-                name: form.name.value,
-                email: form.email.value,
-                business: form.business.value,
-                service: form.service.value,
-                message: form.message.value,
-                submitted: new Date().toISOString(),
-                source: 'lumenadl.com/contact'
-            };
-
-            try {
-                const res = await fetch('https://troywatson.app.n8n.cloud/webhook/lumen-contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                if (res.ok) {
-                    form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="color:var(--terracotta);margin-bottom:12px;">Thanks! We\'ll be in touch shortly.</h3><p style="color:var(--text-secondary);">Usually within 24 hours.</p></div>';
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch (err) {
-                btn.textContent = originalText;
-                btn.disabled = false;
-                alert('Something went wrong. Please email us at hello@lumenadl.com instead.');
-            }
-        });
-    </script>
+    
 </body>
 
 </html>
