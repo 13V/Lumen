@@ -905,18 +905,13 @@ body::before {
 
 /* Nav AI Automation highlight */
 .nav-ai {
-    background: #2D2420;
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 6px;
+    color: var(--terracotta) !important;
     font-weight: 600;
-    font-size: 13px;
     white-space: nowrap;
-    transition: background 0.2s ease;
 }
 
 .nav-ai:hover {
-    background: #3d3530;
+    color: var(--terracotta-dark) !important;
 }
 
 /* Nav Phone */
