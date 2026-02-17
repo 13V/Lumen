@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-AU">
 
 <head>
@@ -398,6 +398,21 @@
                 alert('Something went wrong. Please email us at hello@lumenadl.com or text 0421 276 482.');
             }
         });
+
+        // Auto-select service from URL param (e.g. ?service=ai-automation)
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            const serviceSelect = document.getElementById('service');
+            if (serviceSelect) {
+                for (let opt of serviceSelect.options) {
+                    if (opt.value === serviceParam) {
+                        opt.selected = true;
+                        break;
+                    }
+                }
+            }
+        }
 
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', () => {
