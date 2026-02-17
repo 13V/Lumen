@@ -117,6 +117,12 @@
             .how-steps{grid-template-columns:1fr 1fr}
             .how-step:not(:last-child)::after{display:none}
             .industry-grid{grid-template-columns:1fr}
+            .industry-card{max-width:100%}
+            .industry-card [style*="grid-column"]{grid-column:auto !important}
+            .industry-card-header{padding:16px 18px 12px}
+            .industry-card-body{padding:12px 18px 16px}
+            .industry-card-body li{padding:8px 0;font-size:0.85rem}
+            .industry-icon{width:40px;height:40px;font-size:1.2rem}
             .deliverables-grid{grid-template-columns:1fr}
             .results-grid{grid-template-columns:1fr}
             .ai-cta h2{font-size:2rem}
@@ -351,7 +357,7 @@
                     </div>
 
                     <!-- Restaurants / Cafes -->
-                    <div class="industry-card" style="grid-column: 2 / 3;">
+                    <div class="industry-card">
                         <div class="industry-card-header">
                             <div class="industry-icon">&#127869;</div>
                             <div>
