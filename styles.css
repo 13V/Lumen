@@ -903,6 +903,22 @@ body::before {
     min-height: 100px;
 }
 
+/* Nav AI Automation highlight */
+.nav-ai {
+    background: #111827;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.nav-ai:hover {
+    background: #1f2937;
+}
+
 /* Nav Phone */
 .nav-phone {
     color: var(--terracotta);
