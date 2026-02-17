@@ -905,7 +905,7 @@ body::before {
 
 /* Nav AI Automation highlight */
 .nav-ai {
-    background: #111827;
+    background: #2D2420;
     color: white !important;
     padding: 8px 16px;
     border-radius: 6px;
@@ -916,7 +916,7 @@ body::before {
 }
 
 .nav-ai:hover {
-    background: #1f2937;
+    background: #3d3530;
 }
 
 /* Nav Phone */
