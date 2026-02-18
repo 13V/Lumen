@@ -1,25 +1,20 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-AU">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | Lumen ADL | Common Questions About Web Design & SEO</title>
     <meta name="description"
         content="Answers to common questions about web design, SEO, pricing, timelines, and how we work with Adelaide small businesses.">
     <link rel="canonical" href="https://www.lumenadl.com/faq.html">
-    <text y='.9em' font-size='90'>‚óê</text></svg>">
-
     <!-- Open Graph -->
     <meta property="og:title" content="FAQ | Lumen ADL">
     <meta property="og:description" content="Answers to common questions about web design, SEO, and AI automation for Adelaide businesses.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lumenadl.com/faq.html">
     <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
@@ -30,41 +25,34 @@
             border-bottom: 1px solid var(--border);
             text-align: center;
         }
-
         .faq-hero h1 {
             font-size: 48px;
             font-weight: 800;
             margin-bottom: 16px;
             letter-spacing: -0.02em;
         }
-
         .faq-hero p {
             font-size: 20px;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
-
         .faq-section {
             padding: 80px 0;
         }
-
         .faq-section:nth-child(even) {
             background: var(--bg-warm);
         }
-
         .faq-section h2 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 32px;
             text-align: center;
         }
-
         .faq-grid {
             max-width: 800px;
             margin: 0 auto;
         }
-
         .faq-item {
             background: var(--bg);
             border: 1px solid var(--border);
@@ -72,7 +60,6 @@
             margin-bottom: 16px;
             overflow: hidden;
         }
-
         .faq-question {
             padding: 24px 32px;
             font-size: 18px;
@@ -83,22 +70,18 @@
             align-items: center;
             transition: background 0.2s;
         }
-
         .faq-question:hover {
             background: var(--bg-warm);
         }
-
         .faq-question::after {
             content: '+';
             font-size: 24px;
             color: var(--purple);
             transition: transform 0.3s;
         }
-
         .faq-item.active .faq-question::after {
             transform: rotate(45deg);
         }
-
         .faq-answer {
             padding: 0 32px 24px;
             font-size: 16px;
@@ -106,53 +89,44 @@
             color: var(--text-secondary);
             display: none;
         }
-
         .faq-item.active .faq-answer {
             display: block;
         }
-
         .faq-answer a {
             color: var(--purple);
             text-decoration: none;
             font-weight: 500;
         }
-
         .faq-answer ul {
             margin: 16px 0;
             padding-left: 24px;
         }
-
         .faq-answer li {
             margin-bottom: 8px;
         }
-
         .still-have-questions {
             padding: 80px 0;
             background: var(--gradient);
             color: white;
             text-align: center;
         }
-
         .still-have-questions h2 {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 16px;
         }
-
         .still-have-questions p {
             font-size: 18px;
             opacity: 0.9;
             max-width: 500px;
             margin: 0 auto 32px;
         }
-
         .contact-methods {
             display: flex;
             justify-content: center;
             gap: 32px;
             flex-wrap: wrap;
         }
-
         .contact-method {
             background: rgba(255, 255, 255, 0.1);
             padding: 24px 32px;
@@ -161,42 +135,34 @@
             color: white;
             transition: background 0.2s;
         }
-
         .contact-method:hover {
             background: rgba(255, 255, 255, 0.2);
         }
-
         .contact-method-icon {
             font-size: 32px;
             margin-bottom: 8px;
         }
-
         .contact-method-label {
             font-size: 14px;
             opacity: 0.8;
             margin-bottom: 4px;
         }
-
         .contact-method-value {
             font-size: 18px;
             font-weight: 600;
         }
-
         @media (max-width: 600px) {
             .faq-hero h1 {
                 font-size: 36px;
             }
-
             .faq-question {
                 padding: 20px 24px;
                 font-size: 16px;
             }
-
             .faq-answer {
                 padding: 0 24px 20px;
             }
         }
-
         /* Mobile Menu Styles */
         .menu-toggle {
             display: none;
@@ -210,7 +176,6 @@
             padding: 0;
             z-index: 1001;
         }
-
         .menu-toggle span {
             display: block;
             width: 100%;
@@ -219,19 +184,15 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
-
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
         }
-
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
-
         @media (max-width: 768px) {
             .nav {
                 position: sticky;
@@ -240,16 +201,13 @@
                 background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
             }
-
             .nav .container {
                 position: relative;
                 max-width: 100%;
             }
-
             .menu-toggle {
                 display: flex;
             }
-
             .nav-links {
                 position: absolute;
                 top: calc(100% + 8px);
@@ -273,13 +231,11 @@
                 display: flex !important;
                 box-sizing: border-box;
             }
-
             .nav-links.active {
                 transform: translateY(0) scale(1);
                 opacity: 1;
                 visibility: visible;
             }
-
             .nav-links a {
                 font-size: 17px;
                 padding: 16px 20px;
@@ -294,11 +250,9 @@
                 border-radius: 12px;
                 transition: all 0.2s;
             }
-
             .nav-links a:hover {
                 background: #f3f4f6;
             }
-
             .nav-links a::before {
                 content: "";
                 width: 8px;
@@ -308,12 +262,10 @@
                 opacity: 0.3;
                 transition: all 0.2s;
             }
-
             .nav-links a:hover::before {
                 opacity: 1;
                 transform: scale(1.2);
             }
-
             .nav-links a.nav-cta {
                 margin-top: 8px;
                 text-align: center;
@@ -333,11 +285,9 @@
                 box-sizing: border-box;
                 white-space: nowrap;
             }
-
             .nav-links a.nav-cta::before {
                 display: none !important;
             }
-
             .nav-links a.nav-cta:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
@@ -345,7 +295,6 @@
         }
     </style>
 </head>
-
 <body>
         <header class="header">
         <div class="container">
@@ -365,7 +314,6 @@
             </nav>
         </div>
     </header>
-
     <main>
     <!-- Hero -->
     <section class="faq-hero">
@@ -374,7 +322,6 @@
             <p>Everything you need to know about working with us. Can't find what you're looking for? Just ask.</p>
         </div>
     </section>
-
     <!-- Pricing FAQs -->
     <section class="faq-section">
         <div class="container">
@@ -392,10 +339,9 @@
                             <li>Google Business integration</li>
                         </ul>
                         <p>We also offer a <strong>Bundle</strong> ($3,000) that includes the website plus 3 months of
-                            SEO services ‚Äî saving you $700.</p>
+                            SEO services ó saving you $700.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">What's included in your SEO service?</div>
                     <div class="faq-answer">
@@ -408,10 +354,9 @@
                             <li>Monthly ranking reports</li>
                             <li>Competitor monitoring</li>
                         </ul>
-                        <p>No lock-in contracts ‚Äî cancel anytime.</p>
+                        <p>No lock-in contracts ó cancel anytime.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Do you require a deposit?</div>
                     <div class="faq-answer">
@@ -419,7 +364,6 @@
                             completion. For SEO services, payment is monthly in advance.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Are there any hidden fees?</div>
                     <div class="faq-answer">
@@ -430,7 +374,6 @@
             </div>
         </div>
     </section>
-
     <!-- Process FAQs -->
     <section class="faq-section">
         <div class="container">
@@ -445,10 +388,9 @@
                             <li><strong>Week 1:</strong> Discovery, design, and content</li>
                             <li><strong>Week 2:</strong> Development, testing, and launch</li>
                         </ul>
-                        <p>More complex sites may take longer ‚Äî we'll give you a clear timeline upfront.</p>
+                        <p>More complex sites may take longer ó we'll give you a clear timeline upfront.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Do you use templates?</div>
                     <div class="faq-answer">
@@ -457,7 +399,6 @@
                             your business.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">What if I don't like the design?</div>
                     <div class="faq-answer">
@@ -466,15 +407,13 @@
                             complete satisfaction.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Will I be able to update the site myself?</div>
                     <div class="faq-answer">
                         <p>Yes. We build sites that are easy to update. For simple changes (text, photos), you can do it
-                            yourself. For more complex updates, we're always here to help ‚Äî or we can show you how.</p>
+                            yourself. For more complex updates, we're always here to help ó or we can show you how.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Do you write the content?</div>
                     <div class="faq-answer">
@@ -486,7 +425,6 @@
             </div>
         </div>
     </section>
-
     <!-- SEO FAQs -->
     <section class="faq-section">
         <div class="container">
@@ -496,21 +434,19 @@
                     <div class="faq-question">How long does SEO take to work?</div>
                     <div class="faq-answer">
                         <p>Most clients see initial improvements within <strong>2-4 weeks</strong>, with significant
-                            results in <strong>6-8 weeks</strong>. SEO is a long game ‚Äî the work we do now compounds
+                            results in <strong>6-8 weeks</strong>. SEO is a long game ó the work we do now compounds
                             over time. Our case study with M&K Painting saw them hit #3 for their target keyword in 8
                             weeks.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Do you guarantee rankings?</div>
                     <div class="faq-answer">
-                        <p><strong>No one can guarantee #1 rankings</strong> ‚Äî and you should be suspicious of anyone
+                        <p><strong>No one can guarantee #1 rankings</strong> ó and you should be suspicious of anyone
                             who does. What we guarantee is that we'll follow best practices, do the work, and give you
                             transparent reporting. Most of our clients see significant ranking improvements.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">What areas do you serve?</div>
                     <div class="faq-answer">
@@ -519,7 +455,6 @@
                             with clients across all of South Australia.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Can I just do SEO without a new website?</div>
                     <div class="faq-answer">
@@ -531,7 +466,6 @@
             </div>
         </div>
     </section>
-
     <!-- Support FAQs -->
     <section class="faq-section">
         <div class="container">
@@ -545,7 +479,6 @@
                             up for one of our maintenance packages.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Do you offer website maintenance?</div>
                     <div class="faq-answer">
@@ -559,45 +492,42 @@
                         <p>Ask us for details if you're interested.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">Who owns the website?</div>
                     <div class="faq-answer">
                         <p><strong>You do.</strong> Once the final payment is made, the website is 100% yours. We use no
-                            proprietary technology ‚Äî it's clean HTML, CSS, and JavaScript that any developer can work
+                            proprietary technology ó it's clean HTML, CSS, and JavaScript that any developer can work
                             with.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Still Have Questions -->
     <section class="still-have-questions">
         <div class="container">
             <h2>Still Have Questions?</h2>
-            <p>Can't find the answer you're looking for? Reach out ‚Äî we're happy to help.</p>
+            <p>Can't find the answer you're looking for? Reach out ó we're happy to help.</p>
             <div class="contact-methods">
                 <a href="mailto:hello@lumenadl.com" class="contact-method">
-                    <div class="contact-method-icon">‚úâÔ∏è</div>
+                    <div class="contact-method-icon">??</div>
                     <div class="contact-method-label">Email us</div>
                     <div class="contact-method-value">hello@lumenadl.com</div>
                 </a>
                 <a href="tel:+61412345678" class="contact-method">
-                    <div class="contact-method-icon">üìû</div>
+                    <div class="contact-method-icon">??</div>
                     <div class="contact-method-label">Call us</div>
                     <div class="contact-method-value">Available on request</div>
                 </a>
                 <a href="/contact.html" class="contact-method">
-                    <div class="contact-method-icon">üí¨</div>
+                    <div class="contact-method-icon">??</div>
                     <div class="contact-method-label">Contact form</div>
-                    <div class="contact-method-value">Send a message ‚Üí</div>
+                    <div class="contact-method-value">Send a message ?</div>
                 </a>
             </div>
         </div>
     </section>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -641,19 +571,16 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Simple accordion functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
                 const isActive = item.classList.contains('active');
-
                 // Close all others
                 document.querySelectorAll('.faq-item').forEach(faq => {
                     faq.classList.remove('active');
                 });
-
                 // Toggle current
                 if (!isActive) {
                     item.classList.add('active');
@@ -663,5 +590,4 @@
     </script>
     <script>const menuToggle = document.getElementById("menuToggle"), mainNav = document.getElementById("mainNav"); menuToggle.addEventListener("click", (() => { menuToggle.classList.toggle("active"), mainNav.classList.toggle("active") })), document.querySelectorAll(".nav-links a").forEach((e => { e.addEventListener("click", (() => { menuToggle.classList.remove("active"), mainNav.classList.remove("active") })) }));</script>
 </body>
-
 </html>

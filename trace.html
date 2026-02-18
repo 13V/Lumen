@@ -9,20 +9,16 @@ const img = new Image();
 img.onload = () => {
   const c = document.getElementById('c');
   const ctx = c.getContext('2d');
-  
   // Draw image scaled up
   const s = Math.min(1024/img.width, 1024/img.height);
   const w = img.width * s, h = img.height * s;
   const ox = (1024-w)/2, oy = (1024-h)/2;
   ctx.drawImage(img, ox, oy, w, h);
-  
   const data = ctx.getImageData(0, 0, 1024, 1024);
   const px = data.data;
-  
   // Find bounding box of the terracotta colored pixels
   let minX=1024, maxX=0, minY=1024, maxY=0;
   const mask = new Uint8Array(1024*1024);
-  
   for(let y=0; y<1024; y++) {
     for(let x=0; x<1024; x++) {
       const i = (y*1024+x)*4;
@@ -39,18 +35,15 @@ img.onload = () => {
       }
     }
   }
-  
   // Sample horizontal scan lines to find the outline
   const outlines = [];
   const iconW = maxX-minX, iconH = maxY-minY;
-  
   // Scan every 4 pixels vertically
   for(let y=minY; y<=maxY; y+=4) {
     let leftMost = -1, rightMost = -1;
     const segments = [];
     let inShape = false;
     let segStart = -1;
-    
     for(let x=minX; x<=maxX; x++) {
       if(mask[y*1024+x]) {
         if(!inShape) { segStart = x; inShape = true; }
@@ -59,7 +52,6 @@ img.onload = () => {
       }
     }
     if(inShape) segments.push([segStart, maxX]);
-    
     outlines.push({
       y: Math.round((y-minY)/iconH * 512),
       segments: segments.map(s => [
@@ -68,7 +60,6 @@ img.onload = () => {
       ])
     });
   }
-  
   document.getElementById('out').textContent = JSON.stringify({
     bbox: {minX, maxX, minY, maxY, w: iconW, h: iconH},
     scanlines: outlines
@@ -78,3 +69,4 @@ img.src = 'file_53.png';
 </script>
 </body>
 </html>
+

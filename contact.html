@@ -1,17 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-AU">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Lumen ADL | Adelaide Web Design & SEO</title>
     <meta name="description"
         content="Contact Lumen ADL for web design, SEO, and AI automation in Adelaide. Free website audit for small businesses. Based in Adelaide, serving all of SA.">
     <link rel="canonical" href="https://www.lumenadl.com/contact.html">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Contact Us | Lumen ADL | Adelaide Web Design & SEO">
     <meta property="og:description"
@@ -20,17 +17,14 @@
     <meta property="og:url" content="https://www.lumenadl.com/contact.html">
     <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
     <meta property="og:locale" content="en_AU">
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact Us | Lumen ADL">
     <meta name="twitter:description" content="Web design and SEO services in Adelaide. Free audit.">
     <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
-
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -65,7 +59,6 @@
             padding: 0;
             z-index: 1001;
         }
-
         .menu-toggle span {
             display: block;
             width: 100%;
@@ -74,19 +67,15 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
-
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
         }
-
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
-
         @media (max-width: 768px) {
             .header {
                 position: sticky;
@@ -95,16 +84,13 @@
                 background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
             }
-
             .header .container {
                 position: relative;
                 max-width: 100%;
             }
-
             .menu-toggle {
                 display: flex;
             }
-
             .nav {
                 position: absolute;
                 top: calc(100% + 8px);
@@ -128,13 +114,11 @@
                 display: flex !important;
                 box-sizing: border-box;
             }
-
             .nav.active {
                 transform: translateY(0) scale(1);
                 opacity: 1;
                 visibility: visible;
             }
-
             .nav a {
                 font-size: 17px;
                 padding: 16px 20px;
@@ -149,11 +133,9 @@
                 border-radius: 12px;
                 transition: all 0.2s;
             }
-
             .nav a:hover {
                 background: #f3f4f6;
             }
-
             .nav a::before {
                 content: "";
                 width: 8px;
@@ -163,12 +145,10 @@
                 opacity: 0.3;
                 transition: all 0.2s;
             }
-
             .nav a:hover::before {
                 opacity: 1;
                 transform: scale(1.2);
             }
-
             .nav a.nav-cta {
                 margin-top: 8px;
                 text-align: center;
@@ -188,11 +168,9 @@
                 box-sizing: border-box;
                 white-space: nowrap;
             }
-
             .nav a.nav-cta::before {
                 display: none !important;
             }
-
             .nav a.nav-cta:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
@@ -200,7 +178,6 @@
         }
     </style>
 </head>
-
 <body>
         <header class="header">
         <div class="container">
@@ -220,7 +197,6 @@
             </nav>
         </div>
     </header>
-
     <main>
         <section class="hero" style="padding: 100px 0 60px;">
             <div class="container">
@@ -229,14 +205,12 @@
                 <p class="lead">Whether you need a website, SEO, or AI automation &mdash; let's chat about growing your business.</p>
             </div>
         </section>
-
         <section class="contact-section" style="padding: 80px 0;">
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h2>Contact Information</h2>
                         <p>We help Adelaide businesses grow with websites, SEO, and AI automation. Let's discuss what you need.</p>
-
                         <div class="contact-methods" style="margin-top: 32px;">
                             <div class="contact-method">
                                 <span class="contact-label">Email</span>
@@ -247,7 +221,6 @@
                                 <span class="contact-value">Adelaide, South Australia</span>
                             </div>
                         </div>
-
                         <div style="margin-top: 40px;">
                             <h3 style="margin-bottom: 20px;">What to Expect</h3>
                             <ul style="list-style: none; padding: 0;">
@@ -263,7 +236,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <form class="contact-form" aria-label="Contact form" id="contactForm">
                         <h3 style="margin-bottom: 24px;">Start a Conversation</h3>
                         <div class="form-group">
@@ -304,7 +276,6 @@
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -360,17 +331,14 @@
             const form = e.target;
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
-            
             if (!email && !phone) {
                 alert('Please enter either an email or phone number so we can get back to you.');
                 return;
             }
-
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
             btn.textContent = 'Sending...';
             btn.disabled = true;
-
             const data = {
                 name: form.name.value,
                 email: email,
@@ -381,7 +349,6 @@
                 submitted: new Date().toISOString(),
                 source: 'lumenadl.com/contact'
             };
-
             try {
                 const res = await fetch('https://lumenadl.app.n8n.cloud/webhook/lumen-contact', {
                     method: 'POST',
@@ -399,7 +366,6 @@
                 alert('Something went wrong. Please email us at hello@lumenadl.com or text 0421 276 482.');
             }
         });
-
         // Auto-select service from URL param (e.g. ?service=ai-automation)
         const urlParams = new URLSearchParams(window.location.search);
         const serviceParam = urlParams.get('service');
@@ -414,7 +380,6 @@
                 }
             }
         }
-
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
@@ -422,8 +387,6 @@
             });
         });
     </script>
-
-    
 </body>
-
 </html>
+
