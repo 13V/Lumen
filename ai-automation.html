@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation for Small Business | Lumen ADL | Adelaide</title>
+    <meta name="description" content="AI automation for Adelaide businesses. Missed call text-back, quote follow-ups, review requests, booking reminders. All on autopilot. No tech skills needed.">
+    <link rel="canonical" href="https://www.lumenadl.com/ai-automation.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI Automation for Small Business | Lumen ADL">
+    <meta property="og:description" content="Automate your business with AI. Missed call text-back, follow-ups, reviews, bookings on autopilot.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lumenadl.com/ai-automation.html">
+    <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
+    <meta property="og:locale" content="en_AU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Automation for Small Business | Lumen ADL">
+    <meta name="twitter:description" content="Automate your business with AI. Missed call text-back, follow-ups, reviews, bookings on autopilot.">
+    <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"AI Automation for Small Business","description":"Custom AI automation solutions for Adelaide businesses.","url":"https://www.lumenadl.com/ai-automation.html","provider":{"@type":"Organization","name":"Lumen ADL","url":"https://www.lumenadl.com"},"serviceType":"AI Business Automation","areaServed":{"@type":"State","name":"South Australia"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to be tech-savvy?","acceptedAnswer":{"@type":"Answer","text":"Not at all. We handle everything. You just see the results."}},{"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"Most automations are live within 1-2 weeks."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Custom pricing. Get in touch for a quote."}},{"@type":"Question","name":"Can I see it before I commit?","acceptedAnswer":{"@type":"Answer","text":"Yes, we demo exactly what your automations will look like."}},{"@type":"Question","name":"What if I want to change something?","acceptedAnswer":{"@type":"Answer","text":"We adjust and optimise monthly as part of your plan."}}]}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/lumen-icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .ai-hero{padding:120px 0 80px;background:linear-gradient(135deg,#faf8f5 0%,#f5f0e8 50%,#faf8f5 100%);position:relative;overflow:hidden}
+        .ai-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(198,93,59,0.06) 0%,transparent 70%);border-radius:50%}
+        .ai-hero .container{position:relative;z-index:1}
+        .ai-hero .eyebrow{display:inline-block;font-size:0.85rem;font-weight:600;color:var(--terracotta);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
+        .ai-hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:3.8rem;color:var(--text);line-height:1.15;margin-bottom:24px;max-width:700px}
+        .ai-hero .lead{font-size:1.25rem;color:var(--text-secondary);max-width:600px;line-height:1.7;margin-bottom:36px}
+        .ai-hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+        .ai-section{padding:80px 0}
+        .ai-section--alt{background:var(--bg-warm,#f5f0e8)}
+        .ai-section h2{font-family:'DM Serif Display',Georgia,serif;font-size:2.4rem;color:var(--text);margin-bottom:16px}
+        .ai-section .section-lead{font-size:1.15rem;color:var(--text-secondary);max-width:650px;line-height:1.7;margin-bottom:40px}
+        .section-center{text-align:center}
+        .section-center .section-lead{margin-left:auto;margin-right:auto}
+        .what-ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+        .what-ai-text p{font-size:1.05rem;color:var(--text-secondary);line-height:1.8;margin-bottom:16px}
+        .what-ai-analogy{background:white;border-radius:16px;padding:32px 28px;border-left:4px solid var(--terracotta);box-shadow:0 4px 20px rgba(0,0,0,0.04);margin-top:24px}
+        .what-ai-analogy p{font-size:1.05rem;color:var(--text);line-height:1.7;font-style:italic;margin:0}
+        .what-ai-visual{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .what-ai-card{background:white;border-radius:16px;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid var(--border);text-align:center;transition:transform 0.2s,box-shadow 0.2s}
+        .what-ai-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+        .what-ai-card .card-icon{font-size:2.2rem;margin-bottom:12px;display:block}
+        .what-ai-card h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px}
+        .what-ai-card p{font-size:0.85rem;color:var(--text-secondary);line-height:1.5;margin:0}
+        .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
+        .how-step{text-align:center;position:relative}
+        .how-step:not(:last-child)::after{content:'\2192';position:absolute;top:32px;right:-20px;font-size:1.5rem;color:var(--terracotta);opacity:0.4}
+        .how-step-number{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:var(--gradient);color:white;border-radius:50%;font-weight:700;font-size:1.2rem;margin-bottom:20px}
+        .how-step h3{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:10px}
+        .how-step p{font-size:0.92rem;color:var(--text-secondary);line-height:1.6;max-width:240px;margin:0 auto}
+        .industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+        .industry-card{background:white;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid var(--border);overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column}
+        .industry-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.1)}
+        .industry-card-header{padding:24px 24px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px}
+        .industry-icon{width:48px;height:48px;background:var(--beige,#f5f0e8);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+        .industry-card-header h3{font-size:1.1rem;font-weight:700;color:var(--text);margin:0;line-height:1.3}
+        .industry-subtitle{font-size:0.78rem;color:var(--text-secondary);margin-top:2px}
+        .industry-card-body{padding:18px 24px 24px;flex:1}
+        .industry-card-body ul{list-style:none;padding:0;margin:0}
+        .industry-card-body li{padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:0.9rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+        .industry-card-body li:last-child{border-bottom:none}
+        .industry-card-body li .li-icon{flex-shrink:0;color:var(--terracotta);font-size:1rem;margin-top:1px}
+        .deliverables-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px;max-width:800px}
+        .deliverable{display:flex;gap:16px;align-items:flex-start}
+        .deliverable-icon{flex-shrink:0;width:48px;height:48px;background:var(--beige,#f5f0e8);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+        .deliverable h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:4px}
+        .deliverable p{font-size:0.9rem;color:var(--text-secondary);line-height:1.5;margin:0}
+        .no-lockin{display:inline-flex;align-items:center;gap:8px;background:white;border:2px solid var(--terracotta);color:var(--terracotta);padding:12px 24px;border-radius:50px;font-weight:700;font-size:0.95rem;margin-top:32px}
+        .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+        .result-card{background:white;border-radius:16px;padding:36px 28px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid var(--border)}
+        .result-number{font-family:'DM Serif Display',Georgia,serif;font-size:3rem;color:var(--terracotta);display:block;margin-bottom:8px;line-height:1}
+        .result-card p{font-size:0.95rem;color:var(--text-secondary);line-height:1.5;margin:0}
+        .ai-faq{max-width:700px;margin:0 auto}
+        .ai-faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+        .ai-faq-item:first-child{border-top:1px solid var(--border)}
+        .ai-faq-q{font-size:1.1rem;font-weight:700;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;width:100%;text-align:left;padding:0;font-family:inherit}
+        .ai-faq-q::after{content:'+';font-size:1.5rem;color:var(--terracotta);transition:transform 0.3s;flex-shrink:0}
+        .ai-faq-item.active .ai-faq-q::after{content:'\2212'}
+        .ai-faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;font-size:0.95rem;color:var(--text-secondary);line-height:1.7}
+        .ai-faq-item.active .ai-faq-a{max-height:200px}
+        .ai-faq-a p{margin:16px 0 0}
+        .ai-cta{padding:80px 0;background:var(--gradient);text-align:center}
+        .ai-cta h2{font-family:'DM Serif Display',Georgia,serif;font-size:2.5rem;color:white;margin-bottom:16px}
+        .ai-cta p{color:rgba(255,255,255,0.9);font-size:1.1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+        .btn-white{display:inline-block;padding:16px 40px;background:white;color:var(--terracotta);font-weight:700;font-size:1rem;text-decoration:none;border-radius:var(--radius);transition:transform 0.2s,box-shadow 0.2s}
+        .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.15)}
+        .menu-toggle{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:none;border:none;cursor:pointer;padding:0}
+        .menu-toggle span{display:block;width:100%;height:2px;background:#C65D3B;transition:all 0.3s}
+        .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .menu-toggle.active span:nth-child(2){opacity:0}
+        .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-6px)}
+        @media(max-width:768px){
+            .header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px)}
+            .header .container{position:relative}
+            .menu-toggle{display:flex;z-index:1001;width:28px;height:20px}
+            .menu-toggle span{height:2.5px;border-radius:2px}
+            .nav{position:absolute;top:calc(100% + 8px);left:16px;right:16px;background:white;flex-direction:column;align-items:stretch;padding:12px;gap:4px;border-radius:20px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25),0 0 0 1px rgba(0,0,0,0.05);transform:translateY(-20px) scale(0.95);opacity:0;visibility:hidden;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);z-index:1000;display:flex !important}
+            .nav.active{transform:translateY(0) scale(1);opacity:1;visibility:visible}
+            .nav a{font-size:17px;padding:16px 20px;color:#1f2937 !important;text-align:left;display:flex !important;align-items:center;gap:14px;width:100%;text-decoration:none;font-weight:500;border-radius:12px;transition:all 0.2s}
+            .nav a:hover{background:#f3f4f6}
+            .nav a::before{content:"";width:8px;height:8px;background:#C65D3B;border-radius:50%;opacity:0.3;transition:all 0.2s}
+            .nav a:hover::before{opacity:1;transform:scale(1.2)}
+            .nav a.nav-ai{color:#C65D3B !important;font-weight:700}
+            .nav a:last-child{margin-top:8px;text-align:center;background:linear-gradient(135deg,#C65D3B 0%,#D4755E 100%);color:white !important;padding:18px 24px;border-radius:16px;font-weight:600;font-size:16px;justify-content:center}
+            .nav a:last-child::before{display:none}
+            .ai-hero h1{font-size:2.4rem}
+            .what-ai-grid{grid-template-columns:1fr}
+            .how-steps{grid-template-columns:1fr 1fr}
+            .how-step:not(:last-child)::after{display:none}
+            .industry-grid{grid-template-columns:1fr}
+            .industry-card{max-width:100%}
+            .industry-card [style*="grid-column"]{grid-column:auto !important}
+            .industry-card-header{padding:16px 18px 12px}
+            .industry-card-body{padding:12px 18px 16px}
+            .industry-card-body li{padding:8px 0;font-size:0.85rem}
+            .industry-icon{width:40px;height:40px;font-size:1.2rem}
+            .deliverables-grid{grid-template-columns:1fr}
+            .results-grid{grid-template-columns:1fr}
+            .ai-cta h2{font-size:2rem}
+        }
+        @media(max-width:480px){
+            .how-steps{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="ai-hero">
+            <div class="container">
+                <p class="eyebrow">AI Automation &mdash; Adelaide</p>
+                <h1>Your Business,<br>Running on Autopilot.</h1>
+                <p class="lead">Stop losing leads to missed calls and slow replies. We build AI-powered automations that handle the repetitive stuff &mdash; so you can focus on your craft.</p>
+                <div class="ai-hero-actions">
+                    <a href="#how-it-works" class="btn btn-primary">See How It Works</a>
+                    <a href="/contact.html" class="btn btn-text">Get a Free Consultation <span class="arrow">&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Is AI Automation -->
+        <section class="ai-section" id="what-is-ai">
+            <div class="container">
+                <div class="what-ai-grid">
+                    <div class="what-ai-text">
+                        <h2>What Is AI Automation?</h2>
+                        <p>Think of all the small tasks that eat up your day: answering enquiries, following up on quotes, chasing reviews, sending reminders. Important stuff &mdash; but it pulls you away from the work that actually makes you money.</p>
+                        <p>AI automation takes those tasks and runs them for you. Automatically. Around the clock. No extra staff. No apps to learn. No tech degree required.</p>
+                        <p><strong>You don&rsquo;t need to understand how it works &mdash; you just get the results.</strong></p>
+                        <div class="what-ai-analogy">
+                            <p>&ldquo;It&rsquo;s like hiring a virtual receptionist, follow-up assistant, and marketing manager &mdash; that works 24/7 and never takes a sick day.&rdquo;</p>
+                        </div>
+                    </div>
+                    <div class="what-ai-visual">
+                        <div class="what-ai-card">
+                            <span class="card-icon">&#128222;</span>
+                            <h3>Missed Call Text-Back</h3>
+                            <p>Can&rsquo;t answer? Your business texts them back instantly.</p>
+                        </div>
+                        <div class="what-ai-card">
+                            <span class="card-icon">&#9733;</span>
+                            <h3>Review Requests</h3>
+                            <p>Customers get a friendly nudge to leave a Google review.</p>
+                        </div>
+                        <div class="what-ai-card">
+                            <span class="card-icon">&#128172;</span>
+                            <h3>Lead Qualification</h3>
+                            <p>An AI assistant answers enquiries 24/7 and sends you the details.</p>
+                        </div>
+                        <div class="what-ai-card">
+                            <span class="card-icon">&#128200;</span>
+                            <h3>Quote Follow-Ups</h3>
+                            <p>Automated reminders at 1, 3, and 7 days close forgotten jobs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="ai-section ai-section--alt" id="how-it-works">
+            <div class="container section-center">
+                <h2>How It Works</h2>
+                <p class="section-lead">Four simple steps. No tech jargon. No complicated setup on your end.</p>
+                <div class="how-steps">
+                    <div class="how-step">
+                        <div class="how-step-number">1</div>
+                        <h3>We Audit Your Business</h3>
+                        <p>We look at where you&rsquo;re losing leads and wasting time. Every business is different &mdash; we find your gaps.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step-number">2</div>
+                        <h3>We Build Your Automations</h3>
+                        <p>Custom workflows tailored to your business. Not a one-size-fits-all template &mdash; built specifically for how you work.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step-number">3</div>
+                        <h3>Everything Runs Automatically</h3>
+                        <p>Your automations go live. Leads get followed up, reviews get requested, reminders go out &mdash; all without you lifting a finger.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step-number">4</div>
+                        <h3>We Monitor &amp; Optimise</h3>
+                        <p>We track performance monthly, tweak what&rsquo;s working, and improve what isn&rsquo;t. Your automations get better over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Use Cases -->
+        <section class="ai-section" id="industries">
+            <div class="container section-center">
+                <h2>AI Automation for Your Industry</h2>
+                <p class="section-lead">Every business is different. Here&rsquo;s what automation looks like for yours.</p>
+
+                <div class="industry-grid">
+                    <!-- Tradies -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#128296;</div>
+                            <div>
+                                <h3>Tradies</h3>
+                                <div class="industry-subtitle">Plumbers, Electricians, Painters</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Missed call text-back &mdash; never lose a lead while you&rsquo;re on the tools</li>
+                                <li><span class="li-icon">&#10003;</span> Automatic quote follow-ups at 1, 3, and 7 days</li>
+                                <li><span class="li-icon">&#10003;</span> Google review requests sent after every job</li>
+                                <li><span class="li-icon">&#10003;</span> Booking confirmations &amp; reminders to reduce no-shows</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Lawyers -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#9878;</div>
+                            <div>
+                                <h3>Lawyers</h3>
+                                <div class="industry-subtitle">Law Firms &amp; Legal Practices</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Client intake forms auto-processed and organised</li>
+                                <li><span class="li-icon">&#10003;</span> Appointment reminders via SMS and email</li>
+                                <li><span class="li-icon">&#10003;</span> Document follow-ups &mdash; chase outstanding paperwork automatically</li>
+                                <li><span class="li-icon">&#10003;</span> After-consultation feedback surveys</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Medical / Dentists -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#127973;</div>
+                            <div>
+                                <h3>Medical &amp; Dental</h3>
+                                <div class="industry-subtitle">Clinics, Dentists, Allied Health</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Appointment booking &amp; automated reminders</li>
+                                <li><span class="li-icon">&#10003;</span> No-show follow-ups to rebook missed appointments</li>
+                                <li><span class="li-icon">&#10003;</span> Recall reminders for 6-month checkups and reviews</li>
+                                <li><span class="li-icon">&#10003;</span> Patient feedback surveys after visits</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Mechanics -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#128663;</div>
+                            <div>
+                                <h3>Mechanics</h3>
+                                <div class="industry-subtitle">Auto Repair &amp; Service Centres</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Service reminders based on last visit date</li>
+                                <li><span class="li-icon">&#10003;</span> Quote follow-ups for pending repair approvals</li>
+                                <li><span class="li-icon">&#10003;</span> Google review requests after service completion</li>
+                                <li><span class="li-icon">&#10003;</span> Parts-ready notifications via SMS</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Barbers / Hair Salons -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#9986;</div>
+                            <div>
+                                <h3>Barbers &amp; Salons</h3>
+                                <div class="industry-subtitle">Hair Salons, Barber Shops, Beauty</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Rebooking reminders when clients are due for their next cut</li>
+                                <li><span class="li-icon">&#10003;</span> Loyalty program automation &mdash; track visits, send rewards</li>
+                                <li><span class="li-icon">&#10003;</span> No-show follow-ups to fill empty chairs</li>
+                                <li><span class="li-icon">&#10003;</span> Birthday offers sent automatically</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Real Estate -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#127968;</div>
+                            <div>
+                                <h3>Real Estate</h3>
+                                <div class="industry-subtitle">Agents &amp; Property Managers</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> New listing alerts to your buyer database instantly</li>
+                                <li><span class="li-icon">&#10003;</span> Open home follow-ups &mdash; gauge interest automatically</li>
+                                <li><span class="li-icon">&#10003;</span> Vendor reporting delivered on schedule</li>
+                                <li><span class="li-icon">&#10003;</span> Review requests after settlement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Restaurants / Cafes -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#127869;</div>
+                            <div>
+                                <h3>Restaurants &amp; Cafes</h3>
+                                <div class="industry-subtitle">Hospitality &amp; Food Service</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Reservation confirmations &amp; reminders</li>
+                                <li><span class="li-icon">&#10003;</span> Post-visit feedback requests</li>
+                                <li><span class="li-icon">&#10003;</span> Loyalty program &mdash; reward repeat customers automatically</li>
+                                <li><span class="li-icon">&#10003;</span> Event &amp; special promotions sent to your customer list</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- eCommerce -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#128722;</div>
+                            <div>
+                                <h3>eCommerce</h3>
+                                <div class="industry-subtitle">Online Stores &amp; Retail</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Abandoned cart recovery texts &amp; emails</li>
+                                <li><span class="li-icon">&#10003;</span> Order confirmation &amp; shipping updates</li>
+                                <li><span class="li-icon">&#10003;</span> Post-purchase review requests</li>
+                                <li><span class="li-icon">&#10003;</span> Restock reminders for repeat buyers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Fitness / Gyms -->
+                    <div class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#127947;</div>
+                            <div>
+                                <h3>Fitness &amp; Gyms</h3>
+                                <div class="industry-subtitle">Personal Trainers &amp; Studios</div>
+                            </div>
+                        </div>
+                        <div class="industry-card-body">
+                            <ul>
+                                <li><span class="li-icon">&#10003;</span> Class booking confirmations &amp; reminders</li>
+                                <li><span class="li-icon">&#10003;</span> Membership renewal nudges before expiry</li>
+                                <li><span class="li-icon">&#10003;</span> Win-back messages for inactive members</li>
+                                <li><span class="li-icon">&#10003;</span> Referral program automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 40px; font-size: 1.05rem; color: var(--text-secondary);">Don&rsquo;t see your industry? <a href="/contact.html" style="color: var(--terracotta); font-weight: 600;">Get in touch</a> &mdash; we can automate almost any business.</p>
+            </div>
+        </section>
+
+        <!-- Try It Yourself - Live Demo -->
+        <section style="padding: 80px 0; background: linear-gradient(135deg, #2D2420 0%, #3d3530 100%);">
+            <div class="container" style="max-width: 800px; text-align: center;">
+                <p style="color: var(--terracotta-light); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Try It Yourself</p>
+                <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; color: white; margin-bottom: 16px;">See Our AI in Action</h2>
+                <p style="color: rgba(255,255,255,0.7); font-size: 1.15rem; line-height: 1.7; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Don&rsquo;t take our word for it. Fill out the contact form with your phone number and experience exactly what your customers would.</p>
+
+                <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px 32px; max-width: 580px; margin: 0 auto 40px; backdrop-filter: blur(10px);">
+                    <div style="display: flex; flex-direction: column; gap: 20px; text-align: left;">
+                        <div style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white; flex-shrink: 0;">1</div>
+                            <div>
+                                <div style="color: white; font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Fill out the form</div>
+                                <div style="color: rgba(255,255,255,0.55); font-size: 0.9rem;">Include your mobile number and tell us about your business.</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white; flex-shrink: 0;">2</div>
+                            <div>
+                                <div style="color: white; font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Get an instant text</div>
+                                <div style="color: rgba(255,255,255,0.55); font-size: 0.9rem;">Our AI reaches out within seconds &mdash; just like it would for your customers.</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white; flex-shrink: 0;">3</div>
+                            <div>
+                                <div style="color: white; font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">Have a conversation</div>
+                                <div style="color: rgba(255,255,255,0.55); font-size: 0.9rem;">Reply naturally. The AI qualifies you, asks smart questions, and keeps the conversation going.</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: #10b981; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 700; color: white; flex-shrink: 0;">&#10003;</div>
+                            <div>
+                                <div style="color: white; font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">We get a full report</div>
+                                <div style="color: rgba(255,255,255,0.55); font-size: 0.9rem;">Behind the scenes, the AI scores the lead and sends us a summary. No effort from you.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/contact.html?service=ai-automation" style="display: inline-block; padding: 16px 44px; background: var(--gradient); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 20px rgba(198, 93, 59, 0.5); transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(198,93,59,0.6)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(198,93,59,0.5)'">Try It Now &rarr;</a>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 16px;">No obligation. Just a taste of what AI can do for your business.</p>
+            </div>
+        </section>
+        <!-- What You Get -->
+        <section class="ai-section ai-section--alt">
+            <div class="container">
+                <h2>What You Get</h2>
+                <p class="section-lead">No fluff. Here&rsquo;s exactly what&rsquo;s included when you work with us.</p>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable">
+                        <div class="deliverable-icon">&#9881;</div>
+                        <div>
+                            <h3>Custom-Built Workflows</h3>
+                            <p>Automations designed around your business &mdash; not a generic template. Built for how you actually work.</p>
+                        </div>
+                    </div>
+                    <div class="deliverable">
+                        <div class="deliverable-icon">&#128202;</div>
+                        <div>
+                            <h3>Dashboard &amp; Visibility</h3>
+                            <p>See what&rsquo;s happening in real time. How many leads came in, which follow-ups went out, what&rsquo;s converting.</p>
+                        </div>
+                    </div>
+                    <div class="deliverable">
+                        <div class="deliverable-icon">&#128203;</div>
+                        <div>
+                            <h3>Monthly Reporting</h3>
+                            <p>A clear summary every month showing exactly what your automations did and how they performed.</p>
+                        </div>
+                    </div>
+                    <div class="deliverable">
+                        <div class="deliverable-icon">&#128588;</div>
+                        <div>
+                            <h3>Ongoing Support</h3>
+                            <p>Questions? Need changes? We&rsquo;re here. Ongoing support is included &mdash; not an add-on.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-lockin">
+                    &#10003; No lock-in contracts &nbsp;&bull;&nbsp; &#9889; Live in days, not months
+                </div>
+            </div>
+        </section>
+
+        <!-- Results / Numbers -->
+        <section class="ai-section" id="results">
+            <div class="container section-center">
+                <h2>The Numbers Speak</h2>
+                <p class="section-lead">What happens when you stop letting leads slip through the cracks.</p>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <span class="result-number">10x</span>
+                        <p>Faster response time to new leads with automated text-back</p>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">30%</span>
+                        <p>Of lost quotes recovered through automated follow-up sequences</p>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">5x</span>
+                        <p>More Google reviews with automatic post-job review requests</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="ai-section ai-section--alt" id="faq">
+            <div class="container section-center">
+                <h2>Common Questions</h2>
+                <p class="section-lead">Everything you need to know before getting started.</p>
+
+                <div class="ai-faq">
+                    <div class="ai-faq-item">
+                        <button class="ai-faq-q">Do I need to be tech-savvy?</button>
+                        <div class="ai-faq-a">
+                            <p>Not at all. We handle everything &mdash; the setup, the tech, the ongoing management. You just see the results: more leads, more reviews, less admin. If you can read a text message, you can use what we build.</p>
+                        </div>
+                    </div>
+                    <div class="ai-faq-item">
+                        <button class="ai-faq-q">How long does setup take?</button>
+                        <div class="ai-faq-a">
+                            <p>Most automations are live within 1&ndash;2 weeks. Simple setups like missed call text-back can be running in days. We&rsquo;ll give you a clear timeline before we start.</p>
+                        </div>
+                    </div>
+                    <div class="ai-faq-item">
+                        <button class="ai-faq-q">What does it cost?</button>
+                        <div class="ai-faq-a">
+                            <p>Pricing is custom based on what you need. A single automation costs less than you&rsquo;d think &mdash; and far less than hiring someone to do the same job manually. <a href="/contact.html" style="color:var(--terracotta);font-weight:600;">Get in touch</a> for a quote tailored to your business.</p>
+                        </div>
+                    </div>
+                    <div class="ai-faq-item">
+                        <button class="ai-faq-q">Can I see it before I commit?</button>
+                        <div class="ai-faq-a">
+                            <p>Absolutely. We&rsquo;ll walk you through a demo of exactly what your automations will look like and how they&rsquo;ll work &mdash; before you spend a cent.</p>
+                        </div>
+                    </div>
+                    <div class="ai-faq-item">
+                        <button class="ai-faq-q">What if I want to change something?</button>
+                        <div class="ai-faq-a">
+                            <p>No problem. We adjust and optimise your automations monthly as part of your plan. Your business evolves, your automations evolve with it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="ai-section ai-section--alt">
+            <div class="container section-center">
+                <h2>Learn More About AI Automation</h2>
+                <p class="section-lead">Dive deeper into how AI automation works for your business.</p>
+                <div class="industry-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <a href="/blog/ai-automation-tradies-adelaide.html" style="text-decoration: none; color: inherit;" class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#128296;</div>
+                            <div><h3>AI for Adelaide Tradies</h3><div class="industry-subtitle">Save 10+ hours a week</div></div>
+                        </div>
+                        <div class="industry-card-body">
+                            <p style="padding: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">Missed calls, forgotten follow-ups, and manual admin are costing you thousands. See how AI automation gives tradies an extra day every week.</p>
+                            <p style="padding: 8px 0 0; color: var(--terracotta); font-weight: 600; font-size: 0.9rem;">Read article &rarr;</p>
+                        </div>
+                    </a>
+                    <a href="/blog/missed-call-text-back.html" style="text-decoration: none; color: inherit;" class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#128222;</div>
+                            <div><h3>Missed Call Text-Back</h3><div class="industry-subtitle">Never lose a lead again</div></div>
+                        </div>
+                        <div class="industry-card-body">
+                            <p style="padding: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">85% of callers who reach voicemail never call back. Missed call text-back captures every lead in 30 seconds flat.</p>
+                            <p style="padding: 8px 0 0; color: var(--terracotta); font-weight: 600; font-size: 0.9rem;">Read article &rarr;</p>
+                        </div>
+                    </a>
+                    <a href="/blog/ai-lead-qualification.html" style="text-decoration: none; color: inherit;" class="industry-card">
+                        <div class="industry-card-header">
+                            <div class="industry-icon">&#128172;</div>
+                            <div><h3>AI Lead Qualification</h3><div class="industry-subtitle">Close more deals on autopilot</div></div>
+                        </div>
+                        <div class="industry-card-body">
+                            <p style="padding: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">Stop chasing tyre-kickers. Let AI score and qualify your leads so you only call the ones ready to buy.</p>
+                            <p style="padding: 8px 0 0; color: var(--terracotta); font-weight: 600; font-size: 0.9rem;">Read article &rarr;</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="ai-cta">
+            <h2>Ready to automate your business?</h2>
+            <p>Let us show you exactly how automation can save you time and win you more customers.</p>
+            <a href="/contact.html" class="btn-white">Enquire Now</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
+                    <p class="footer-tagline">Websites, SEO, and AI automation for Adelaide service businesses.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Nav</h4>
+                    <ul class="footer-links">
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Website Design</a></li>
+                        <li><a href="/#services">Local SEO</a></li>
+                        <li><a href="/ai-automation.html">AI Automation</a></li>
+                        <li><a href="/contact.html">Free Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
+                        <li><a href="/contact.html">Adelaide, SA</a></li>
+                        <li><a href="/contact.html">Request a call</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lumen ADL. Built with care in Adelaide.</p>
+                <div class="footer-legal">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.ai-faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.ai-faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.industry-card, .how-step, .result-card, .deliverable, .what-ai-card');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 80) {
+                    el.style.opacity = '1';
+                    el.style.transform = el.style.transform || 'translateY(0)';
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

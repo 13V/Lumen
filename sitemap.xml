@@ -2,46 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.lumenadl.com/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.lumenadl.com/work.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.lumenadl.com/about.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.lumenadl.com/contact.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lumenadl.com/work.html</loc>
-    <lastmod>2026-02-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.lumenadl.com/blog.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.lumenadl.com/faq.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.lumenadl.com/ai-automation.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.lumenadl.com/privacy.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <!-- Blog Posts -->
   <url>
     <loc>https://www.lumenadl.com/blog/web-design-mawson-lakes.html</loc>
     <lastmod>2026-02-18</lastmod>
@@ -62,6 +69,24 @@
   </url>
   <url>
     <loc>https://www.lumenadl.com/blog/ai-for-tradies-adelaide.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lumenadl.com/blog/ai-automation-tradies-adelaide.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lumenadl.com/blog/missed-call-text-back.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lumenadl.com/blog/ai-lead-qualification.html</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

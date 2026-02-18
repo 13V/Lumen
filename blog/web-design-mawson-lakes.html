@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-AU">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design Mawson Lakes: Why Tradies Need a Site | Lumen</title>
     <meta name="description"
@@ -12,8 +15,7 @@
     <link rel="canonical" href="https://www.lumenadl.com/blog/web-design-mawson-lakes.html">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+    <text y='.9em' font-size='90'>◐</text></svg>">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Web Design in Mawson Lakes: Why Tradies Need a Website">
@@ -21,7 +23,7 @@
         content="Fast, mobile-friendly websites for Mawson Lakes trades. Rank on Google and get more customers.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.lumenadl.com/blog/web-design-mawson-lakes.html">
-    <meta property="og:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
     <meta property="og:locale" content="en_AU">
     <meta property="article:published_time" content="2026-02-14">
 
@@ -29,7 +31,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Web Design in Mawson Lakes: Why Tradies Need a Website">
     <meta name="twitter:description" content="Fast, mobile-friendly websites for Mawson Lakes trades.">
-    <meta name="twitter:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -58,6 +60,9 @@
     }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="blog-styles.css">
 </head>
@@ -67,65 +72,24 @@
     <div class="reading-progress">
         <div class="reading-progress-bar" id="progressBar"></div>
     </div>
-
-    <style>
-        @media (max-width: 768px) {
-            .nav .container {
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 0 16px !important;
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: center !important;
-            }
-
-            .nav-links {
-                width: calc(100% - 32px) !important;
-                left: 16px !important;
-                right: 16px !important;
-            }
-
-            .nav-links a {
-                width: 100% !important;
-            }
-
-            .nav-links a.nav-cta {
-                width: 100% !important;
-                min-width: 100% !important;
-                display: flex !important;
-            }
-
-            .menu-toggle {
-                order: 2 !important;
-            }
-
-            .logo {
-                order: 1 !important;
-            }
-        }
-    </style>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container"
-            style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="../index.html" class="logo" style="order: 1;">
-                <span class="logo-icon">◐</span>
-                <span>LUMEN</span>
-            </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu"
-                style="position: absolute; right: 24px; top: 100%; transform: translateY(-50%); width: 44px; height: 44px; background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%); border-radius: 12px; padding: 12px; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.35); border: none; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1001;">
+        <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="../images/lumen-icon.png" alt="Lumen logo" class="logo-icon">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="nav-links" id="mainNav">
-                <a href="../index.html#services">Services</a>
-                <a href="../index.html#work">Work</a>
-                <a href="../blog.html" class="active">Blog</a>
-                <a href="../index.html#contact" class="nav-cta">Get a Quote</a>
-            </div>
+            <nav class="nav" id="mainNav">
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <main>
         <!-- Article Header -->
@@ -184,7 +148,7 @@
             <div class="container">
                 <img src="../australia-map.jpg"
                     alt="Map of Australia showing South Australia with Mawson Lakes service area highlighted"
-                    width="1200" height="630">
+                    width="1200" height="630" loading="lazy">
                 <p class="image-caption">Serving Mawson Lakes and surrounding Adelaide northern suburbs</p>
             </div>
         </div>
@@ -456,7 +420,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="footer-logo">Lumen</a>
+                    <a href="/" class="footer-logo"><img src="../images/lumen-icon.png" alt="Lumen logo" class="logo-icon" loading="lazy">Lumen</a>
                     <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
                         suburbs.</p>
                 </div>

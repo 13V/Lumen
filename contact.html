@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-AU">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Lumen ADL | Adelaide Web Design & SEO</title>
     <meta name="description"
-        content="Contact Lumen ADL for web design and SEO services in Adelaide. Free website audit. Based in Adelaide, serving all of South Australia.">
+        content="Contact Lumen ADL for web design, SEO, and AI automation in Adelaide. Free website audit for small businesses. Based in Adelaide, serving all of SA.">
     <link rel="canonical" href="https://www.lumenadl.com/contact.html">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Contact Us | Lumen ADL | Adelaide Web Design & SEO">
@@ -17,15 +18,17 @@
         content="Contact Lumen ADL for web design and SEO services in Adelaide. Free website audit.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lumenadl.com/contact.html">
-    <meta property="og:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
     <meta property="og:locale" content="en_AU">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact Us | Lumen ADL">
     <meta name="twitter:description" content="Web design and SEO services in Adelaide. Free audit.">
-    <meta name="twitter:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
 
     <!-- JSON-LD Structured Data -->
@@ -199,21 +202,21 @@
 </head>
 
 <body>
-    <header class="header">
+        <header class="header">
         <div class="container">
-            <a href="/" class="logo">Lumen</a>
+            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <nav class="nav" id="mainNav">
-                <a href="/">Home</a>
                 <a href="/work.html">Work</a>
                 <a href="/blog.html">Blog</a>
                 <a href="/faq.html">FAQ</a>
+                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
                 <a href="/about.html">About</a>
-                <a href="/contact.html" class="nav-cta">Contact</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
             </nav>
         </div>
     </header>
@@ -223,7 +226,7 @@
             <div class="container">
                 <p class="eyebrow">Contact Us</p>
                 <h1>Get in Touch</h1>
-                <p class="lead">Ready for a website that actually brings you customers? Let's talk.</p>
+                <p class="lead">Whether you need a website, SEO, or AI automation &mdash; let's chat about growing your business.</p>
             </div>
         </section>
 
@@ -232,8 +235,7 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h2>Contact Information</h2>
-                        <p>We're based in Adelaide and serve the entire northern region. Let's discuss your next
-                            project.</p>
+                        <p>We help Adelaide businesses grow with websites, SEO, and AI automation. Let's discuss what you need.</p>
 
                         <div class="contact-methods" style="margin-top: 32px;">
                             <div class="contact-method">
@@ -250,20 +252,20 @@
                             <h3 style="margin-bottom: 20px;">What to Expect</h3>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                                    <span style="color: var(--terracotta);">✓</span> Free 2-minute website audit
+                                    <span style="color: var(--terracotta);">&#10003;</span> Free consultation &mdash; no strings attached
                                 </li>
                                 <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                                    <span style="color: var(--terracotta);">✓</span> Response within 24 hours
+                                    <span style="color: var(--terracotta);">&#10003;</span> Response within 24 hours
                                 </li>
                                 <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                                    <span style="color: var(--terracotta);">✓</span> Clear, upfront pricing
+                                    <span style="color: var(--terracotta);">&#10003;</span> Clear, upfront pricing
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <form class="contact-form" aria-label="Contact form">
-                        <h3 style="margin-bottom: 24px;">Request a Free Audit</h3>
+                    <form class="contact-form" aria-label="Contact form" id="contactForm">
+                        <h3 style="margin-bottom: 24px;">Start a Conversation</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required
@@ -271,8 +273,11 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required
-                                aria-required="true">
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX">
                         </div>
                         <div class="form-group">
                             <label for="business">Business Name</label>
@@ -293,7 +298,7 @@
                             <textarea id="message" name="message" rows="3"
                                 placeholder="Tell us about your project..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-full">Get in Touch</button>
                     </form>
                 </div>
             </div>
@@ -304,9 +309,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="footer-logo">Lumen</a>
-                    <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
-                        suburbs.</p>
+                    <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
+                    <p class="footer-tagline">Websites, SEO, and AI automation for Adelaide small businesses.</p>
                 </div>
                 <div class="footer-nav">
                     <h4 class="footer-heading">Nav</h4>
@@ -351,6 +355,66 @@
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
         });
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            
+            if (!email && !phone) {
+                alert('Please enter either an email or phone number so we can get back to you.');
+                return;
+            }
+
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const data = {
+                name: form.name.value,
+                email: email,
+                phone: phone,
+                business: form.business.value,
+                service: form.service.value,
+                message: form.message.value,
+                submitted: new Date().toISOString(),
+                source: 'lumenadl.com/contact'
+            };
+
+            try {
+                const res = await fetch('https://lumenadl.app.n8n.cloud/webhook/lumen-contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (res.ok) {
+                    form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="color:var(--terracotta);margin-bottom:12px;">Thanks! We will be in touch shortly.</h3><p style="color:var(--text-secondary);">Usually within 24 hours.</p></div>';
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch (err) {
+                btn.textContent = originalText;
+                btn.disabled = false;
+                alert('Something went wrong. Please email us at hello@lumenadl.com or text 0421 276 482.');
+            }
+        });
+
+        // Auto-select service from URL param (e.g. ?service=ai-automation)
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            const serviceSelect = document.getElementById('service');
+            if (serviceSelect) {
+                for (let opt of serviceSelect.options) {
+                    if (opt.value === serviceParam) {
+                        opt.selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
@@ -358,6 +422,8 @@
             });
         });
     </script>
+
+    
 </body>
 
 </html>

@@ -3,21 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Lumen ADL | Web Design & SEO Tips for Adelaide Tradies</title>
+    <title>Blog | Lumen ADL | SEO & Web Design Tips Adelaide</title>
     <meta name="description"
         content="Learn about web design, SEO, and digital marketing for Adelaide trades. Tips to get found on Google and grow your business.">
     <link rel="canonical" href="https://www.lumenadl.com/blog.html">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+    <text y='.9em' font-size='90'>◐</text></svg>">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Blog | Lumen ADL | Web Design & SEO Tips">
     <meta property="og:description" content="Learn about web design, SEO, and digital marketing for Adelaide trades.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lumenadl.com/blog.html">
-    <meta property="og:image" content="https://www.lumenadl.com/australia-map.jpg">
+    <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <style>
         .blog-hero {
@@ -365,28 +369,26 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container"><button class="menu-toggle" id="menuToggle" aria-label="Open menu"
-                style="position: absolute; right: 24px; top: 100%; transform: translateY(-50%); width: 44px; height: 44px; background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%); border-radius: 12px; padding: 12px; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.35); border: none; display: flex; flex-direction: column; justify-content: space-between; align-items: center; z-index: 1001;"><span
-                    style="display: block; width: 100%; height: 2px; background: white; border-radius: 2px;"></span><span
-                    style="display: block; width: 100%; height: 2px; background: white; border-radius: 2px;"></span><span
-                    style="display: block; width: 100%; height: 2px; background: white; border-radius: 2px;"></span></button><a
-                href="/" class="logo" style="order: 1;">
-                <span class="logo-icon">◐</span>
-                <span>LUMEN</span>
-            </a>
-            <div class="nav-links" id="mainNav">
-                <a href="/">Home</a>
-                <a href="work.html">Work</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="faq.html">FAQ</a>
-                <a href="about.html">About</a>
-                <a href="contact.html" class="nav-cta">Get a Quote</a>
-            </div>
+        <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
+    <main>
     <!-- Hero -->
     <section class="blog-hero">
         <div class="container"
@@ -544,6 +546,51 @@
                         </div>
                     </div>
                 </a>
+
+                <!-- Post 4 - AI Automation for Tradies -->
+                <a href="/blog/ai-automation-tradies-adelaide.html" class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #C65D3B 0%, #A84D2F 100%);">&#129302;</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AI Automation</span>
+                        <h2>How AI Automation Saves Adelaide Tradies 10+ Hours a Week</h2>
+                        <p>Missed calls, forgotten follow-ups, and no-show bookings are costing you thousands. Here&rsquo;s how AI fixes all of it.</p>
+                        <div class="blog-card-meta">
+                            <span>February 17, 2026</span>
+                            <span class="dot"></span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 5 - Missed Call Text-Back -->
+                <a href="/blog/missed-call-text-back.html" class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">&#128241;</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AI Automation</span>
+                        <h2>Missed Call Text-Back: The Feature Adelaide Businesses Are Missing</h2>
+                        <p>Every missed call is a lost customer. Missed call text-back texts callers within 30 seconds automatically.</p>
+                        <div class="blog-card-meta">
+                            <span>February 17, 2026</span>
+                            <span class="dot"></span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 6 - AI Lead Qualification -->
+                <a href="/blog/ai-lead-qualification.html" class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">&#127919;</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AI Automation</span>
+                        <h2>AI Lead Qualification: Close More Deals on Autopilot</h2>
+                        <p>Stop chasing tyre-kickers. AI qualifies and scores your leads via SMS so you only call the ones worth calling.</p>
+                        <div class="blog-card-meta">
+                            <span>February 17, 2026</span>
+                            <span class="dot"></span>
+                            <span>7 min read</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -562,17 +609,18 @@
             <p style="font-size: 14px; opacity: 0.7; margin-top: 16px;">No spam. Unsubscribe anytime.</p>
         </div>
     </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="footer-logo">Lumen</a>
+                    <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
                     <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
                         suburbs.</p>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-heading">Nav</h4>
+                    <h3 class="footer-heading">Nav</h3>
                     <ul class="footer-links">
                         <li><a href="/work.html">Work</a></li>
                         <li><a href="/blog.html">Blog</a></li>
@@ -581,7 +629,7 @@
                     </ul>
                 </div>
                 <div class="footer-services">
-                    <h4 class="footer-heading">Services</h4>
+                    <h3 class="footer-heading">Services</h3>
                     <ul class="footer-links">
                         <li><a href="/#services">Website Design</a></li>
                         <li><a href="/#services">Local SEO</a></li>
@@ -590,7 +638,7 @@
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4 class="footer-heading">Contact</h4>
+                    <h3 class="footer-heading">Contact</h3>
                     <ul class="footer-links">
                         <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
                         <li><a href="/contact.html">Adelaide, SA</a></li>
