@@ -11,70 +11,237 @@
     <meta name="description"
         content="Learn about web design, SEO, and digital marketing for Adelaide trades. Tips to get found on Google and grow your business.">
     <link rel="canonical" href="https://www.lumenadl.com/blog.html">
-    <text y='.9em' font-size='90'>◐</text></svg>">
     <!-- Open Graph -->
     <meta property="og:title" content="Blog | Lumen ADL | Web Design & SEO Tips">
     <meta property="og:description" content="Learn about web design, SEO, and digital marketing for Adelaide trades.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lumenadl.com/blog.html">
     <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
+    <meta property="og:site_name" content="Lumen ADL">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* ====== HERO ====== */
         .blog-hero {
-            padding: 120px 0 60px;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
+            padding: 140px 0 80px;
+            background: linear-gradient(165deg, #faf8f5 0%, #fff 40%, #fef3ee 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(198,93,59,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: heroGlow 6s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes heroGlow {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.15) translate(20px, -10px); }
+        }
+        .blog-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(198,93,59,0.1), rgba(99,102,241,0.1));
+            border: 1px solid rgba(198,93,59,0.15);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .hero-eyebrow .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
         }
         .blog-hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+        .blog-hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--terracotta) 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .blog-hero p {
             font-size: 20px;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 560px;
+            line-height: 1.6;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
         }
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+        .hero-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .hero-stat .number {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--terracotta);
+        }
+        .hero-stat .label {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ====== FILTER TABS ====== */
+        .filter-bar {
+            padding: 0;
+            position: sticky;
+            top: 64px;
+            z-index: 50;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            padding: 16px 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .filter-tabs::-webkit-scrollbar { display: none; }
+        .filter-tab {
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1.5px solid var(--border);
+            background: var(--bg);
+            color: var(--text-secondary);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+            user-select: none;
+        }
+        .filter-tab:hover {
+            border-color: var(--terracotta-light);
+            color: var(--terracotta);
+            background: rgba(198,93,59,0.04);
+        }
+        .filter-tab.active {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(198,93,59,0.25);
+        }
+
+        /* ====== BLOG GRID ====== */
         .blog-grid {
-            padding: 60px 0;
+            padding: 48px 0 80px;
         }
         .blog-grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 28px;
         }
+
+        /* ====== BLOG CARDS ====== */
         .blog-card {
-            background: var(--bg-warm);
-            border-radius: 16px;
+            background: var(--bg);
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border);
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .blog-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
         .blog-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--purple);
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+            border-color: transparent;
+        }
+        .blog-card.hidden-card {
+            display: none;
         }
         .blog-card-image {
-            height: 200px;
-            background: var(--gradient);
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 56px;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.08) 100%);
+        }
+        .blog-card-image .card-emoji {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+        .blog-card:hover .card-emoji {
+            transform: scale(1.15) rotate(-5deg);
         }
         .blog-card-content {
             padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
         .blog-card-category {
             display: inline-block;
-            background: var(--gradient);
-            color: white;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 11px;
@@ -82,24 +249,26 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 12px;
+            width: fit-content;
         }
         .blog-card h2 {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text);
-            line-height: 1.4;
+            line-height: 1.35;
         }
         .blog-card p {
-            font-size: 15px;
+            font-size: 14.5px;
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: 16px;
+            flex: 1;
         }
         .blog-card-meta {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-size: 13px;
             color: var(--text-tertiary);
         }
@@ -109,33 +278,108 @@
             background: var(--text-tertiary);
             border-radius: 50%;
         }
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+        .read-arrow {
+            font-size: 18px;
+            color: var(--terracotta);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover .read-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Category colors */
+        .cat-ai { background: rgba(59,130,246,0.1); color: #2563eb; }
+        .cat-legal { background: rgba(30,41,59,0.08); color: #1e293b; }
+        .cat-medical { background: rgba(14,165,233,0.1); color: #0284c7; }
+        .cat-auto { background: rgba(239,68,68,0.1); color: #dc2626; }
+        .cat-lifestyle { background: rgba(244,114,182,0.1); color: #db2777; }
+        .cat-realestate { background: rgba(139,92,246,0.1); color: #7c3aed; }
+        .cat-hospitality { background: rgba(249,115,22,0.1); color: #ea580c; }
+        .cat-ecommerce { background: rgba(99,102,241,0.1); color: #4f46e5; }
+        .cat-fitness { background: rgba(16,185,129,0.1); color: #059669; }
+
+        /* ====== FEATURED POST ====== */
         .featured-post {
-            grid-column: span 2;
+            grid-column: 1 / -1;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 1fr;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1.5px solid var(--border);
+            background: var(--bg);
         }
         .featured-post .blog-card-image {
             height: 100%;
-            min-height: 300px;
+            min-height: 320px;
+            font-size: 72px;
         }
         .featured-post .blog-card-content {
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--terracotta);
+            margin-bottom: 16px;
+        }
+        .featured-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--terracotta);
+            border-radius: 50%;
+        }
         .featured-post h2 {
             font-size: 28px;
+            line-height: 1.25;
+            margin-bottom: 14px;
         }
+        .featured-post p {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        /* ====== NEWSLETTER ====== */
         .newsletter-section {
-            background: var(--gradient);
+            background: linear-gradient(135deg, var(--terracotta-dark) 0%, var(--terracotta) 40%, #6366f1 100%);
             padding: 80px 0;
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .newsletter-section .container {
+            position: relative;
+            z-index: 1;
         }
         .newsletter-section h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
         .newsletter-section p {
             font-size: 18px;
@@ -153,178 +397,124 @@
         }
         .newsletter-form input {
             flex: 1;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 8px;
+            padding: 16px 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
             font-size: 16px;
-        }
-        .newsletter-form button {
-            background: var(--text);
+            background: rgba(255,255,255,0.1);
             color: white;
-            padding: 14px 24px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .newsletter-form button:hover {
-            opacity: 0.9;
-        }
-        @media (max-width: 900px) {
-            .blog-grid-container {
-                grid-template-columns: 1fr;
-            }
-            .featured-post {
-                grid-column: span 1;
-                grid-template-columns: 1fr;
-            }
-            .featured-post .blog-card-image {
-                min-height: 200px;
-            }
-            .blog-hero h1 {
-                font-size: 36px;
-            }
-        }
-        /* Mobile Menu Styles */
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 28px;
-            height: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
-        }
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 2.5px;
-            background: #C65D3B;
-            border-radius: 2px;
+            backdrop-filter: blur(4px);
             transition: all 0.3s;
         }
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.5);
         }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.15);
         }
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
+        .newsletter-form button {
+            background: white;
+            color: var(--terracotta);
+            padding: 16px 28px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* ====== "NO RESULTS" STATE ====== */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            display: none;
+        }
+        .no-results .nr-emoji {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        .no-results h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .no-results p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 1024px) {
+            .blog-grid-container { grid-template-columns: repeat(2, 1fr); }
+            .featured-post { grid-column: 1 / -1; }
         }
         @media (max-width: 768px) {
-            .nav {
-                position: sticky;
-                top: 0;
-                z-index: 999;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-            }
-            .nav-container {
-                position: relative;
-                max-width: 100%;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            .nav-links {
-                width: calc(100% - 32px) !important;
-                min-width: calc(100% - 32px) !important;
-                max-width: calc(100% - 32px) !important;
-            }
-            .menu-toggle {
-                order: 2 !important;
-            }
-            .logo {
-                order: 1 !important;
-            }
-            .nav-links.active {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-                visibility: visible;
-            }
-            .nav-links a {
-                font-size: 17px;
-                padding: 16px 20px;
-                color: #1f2937 !important;
-                text-align: left;
-                display: flex !important;
-                align-items: center;
-                gap: 14px;
-                width: 100%;
-                text-decoration: none;
-                font-weight: 500;
-                border-radius: 12px;
-                transition: all 0.2s;
-            }
-            .nav-links a:hover {
-                background: #f3f4f6;
-            }
-            .nav-links a::before {
-                content: "";
-                width: 8px;
-                height: 8px;
-                background: #C65D3B;
-                border-radius: 50%;
-                opacity: 0.3;
-                transition: all 0.2s;
-            }
-            .nav-links a:hover::before {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            .nav-links a.nav-cta {
-                margin-top: 8px;
-                text-align: center;
-                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
-                color: white !important;
-                padding: 18px 24px;
-                border-radius: 16px;
-                font-weight: 600;
-                font-size: 16px;
-                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4);
-                justify-content: center;
-                width: 100% !important;
-                min-width: 100% !important;
-                display: flex !important;
-                position: relative;
-                flex-shrink: 0 !important;
-                box-sizing: border-box;
-                white-space: nowrap;
-            }
-            .nav-links a.nav-cta::before {
-                display: none !important;
-            }
-            .nav-links a.nav-cta:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
-            }
+            .blog-grid-container { grid-template-columns: 1fr; }
+            .featured-post { grid-template-columns: 1fr; }
+            .featured-post .blog-card-image { min-height: 200px; }
+            .featured-post .blog-card-content { padding: 24px; }
+            .featured-post h2 { font-size: 22px; }
+            .blog-hero { padding: 120px 0 60px; }
+            .blog-hero h1 { font-size: 36px; }
+            .hero-stats { gap: 20px; flex-wrap: wrap; }
+            .hero-stat .number { font-size: 22px; }
+            .filter-tabs { gap: 6px; }
+            .filter-tab { padding: 7px 14px; font-size: 13px; }
+            .newsletter-section h2 { font-size: 28px; }
+            .newsletter-form { flex-direction: column; }
+        }
+
+        /* ====== MOBILE MENU ====== */
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .menu-toggle {
+            display: none; flex-direction: column; justify-content: space-between;
+            width: 28px; height: 20px; background: none; border: none; cursor: pointer;
+            padding: 0; z-index: 1001;
+        }
+        .menu-toggle span {
+            display: block; width: 100%; height: 2.5px; background: #C65D3B;
+            border-radius: 2px; transition: all 0.3s;
+        }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        @media (max-width: 768px) {
+            .nav { position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
+            .nav-container { position: relative; max-width: 100%; }
+            .menu-toggle { display: flex; }
+            .nav-links { width: calc(100% - 32px) !important; min-width: calc(100% - 32px) !important; max-width: calc(100% - 32px) !important; }
+            .menu-toggle { order: 2 !important; }
+            .logo { order: 1 !important; }
+            .nav-links.active { transform: translateY(0) scale(1); opacity: 1; visibility: visible; }
+            .nav-links a { font-size: 17px; padding: 16px 20px; color: #1f2937 !important; text-align: left; display: flex !important; align-items: center; gap: 14px; width: 100%; text-decoration: none; font-weight: 500; border-radius: 12px; transition: all 0.2s; }
+            .nav-links a:hover { background: #f3f4f6; }
+            .nav-links a::before { content: ""; width: 8px; height: 8px; background: #C65D3B; border-radius: 50%; opacity: 0.3; transition: all 0.2s; }
+            .nav-links a:hover::before { opacity: 1; transform: scale(1.2); }
+            .nav-links a.nav-cta { margin-top: 8px; text-align: center; background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%); color: white !important; padding: 18px 24px; border-radius: 16px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4); justify-content: center; width: 100% !important; min-width: 100% !important; display: flex !important; position: relative; flex-shrink: 0 !important; box-sizing: border-box; white-space: nowrap; }
+            .nav-links a.nav-cta::before { display: none !important; }
+            .nav-links a.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5); }
+            .filter-bar { top: 56px; }
         }
     </style>
 </head>
 <body>
-        <header class="header">
+    <header class="header">
         <div class="container">
             <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav" id="mainNav">
                 <a href="/work.html">Work</a>
@@ -336,222 +526,257 @@
             </nav>
         </div>
     </header>
+
     <main>
     <!-- Hero -->
     <section class="blog-hero">
-        <div class="container"
-            style="padding-right: 70px !important; display: flex; justify-content: space-between; align-items: center;">
-            <h1>From the Blog</h1>
-            <p>Tips, insights, and strategies for Adelaide trades to get found online and grow their business.</p>
-        </div>
-    </section>
-    <!-- Blog Grid -->
-    <section class="blog-grid">
-        <div class="container"
-            style="padding-right: 70px !important; display: flex; justify-content: space-between; align-items: center;">
-            <div class="blog-grid-container">
-                <!-- Post 4: AI for Tradies -->
-                <a href="/blog/ai-for-tradies-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
-                        🛠️</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">AI & Automation</span>
-                        <h2>AI & Web Design for Adelaide Tradies</h2>
-                        <p>How AI is revolutionizing how Adelaide tradies win jobs and manage their sites.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>15 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 5: Law Firms -->
-                <a href="/blog/web-design-law-firms-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
-                        ⚖️</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Legal</span>
-                        <h2>Web Design for Adelaide Law Firms</h2>
-                        <p>Premium, high-trust web design strategies for modern Adelaide legal practices.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>14 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 6: Medical/Dental -->
-                <a href="/blog/medical-dental-automation-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
-                        🏥</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Medical</span>
-                        <h2>AI Automation for Medical & Dental</h2>
-                        <p>Streamline your Adelaide clinic with AI-driven booking and patient management.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>15 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 7: Mechanics -->
-                <a href="/blog/mechanic-marketing-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
-                        🔧</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Automotive</span>
-                        <h2>Online Bookings for Adelaide Mechanics</h2>
-                        <p>Fill your workshop with a high-performance booking site and local SEO.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>14 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 8: Barbers & Salons -->
-                <a href="/blog/barber-salon-marketing-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);">
-                        ✂️</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Lifestyle</span>
-                        <h2>Marketing for Adelaide Barbers & Salons</h2>
-                        <p>How to build a loyal local clientele with visual-first web design and social SEO.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>14 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 9: Real Estate -->
-                <a href="/blog/real-estate-web-design-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
-                        🏠</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Real Estate</span>
-                        <h2>Real Estate Web Design Adelaide</h2>
-                        <p>Win more listings with high-speed, luxury web design for Adelaide agencies.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>14 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 10: Restaurants -->
-                <a href="/blog/restaurant-marketing-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
-                        🍕</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Hospitality</span>
-                        <h2>Restaurant & Cafe SEO Adelaide</h2>
-                        <p>Fill every table with local SEO and seamless mobile booking systems.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>14 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 11: eCommerce -->
-                <a href="/blog/ecommerce-adelaide-small-business.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
-                        🛍️</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">eCommerce</span>
-                        <h2>eCommerce for Adelaide Small Business</h2>
-                        <p>Scale your online revenue with high-conversion eCommerce design and SEO.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>15 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 12: Fitness -->
-                <a href="/blog/fitness-marketing-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                        💪</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">Fitness</span>
-                        <h2>Fitness & Gym Marketing Adelaide</h2>
-                        <p>Build a thriving community and drive memberships with modern gym web design.</p>
-                        <div class="blog-card-meta">
-                            <span>February 18, 2026</span>
-                            <span class="dot"></span>
-                            <span>14 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 4 - AI Automation for Tradies -->
-                <a href="/blog/ai-automation-tradies-adelaide.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #C65D3B 0%, #A84D2F 100%);">&#129302;</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">AI Automation</span>
-                        <h2>How AI Automation Saves Adelaide Tradies 10+ Hours a Week</h2>
-                        <p>Missed calls, forgotten follow-ups, and no-show bookings are costing you thousands. Here&rsquo;s how AI fixes all of it.</p>
-                        <div class="blog-card-meta">
-                            <span>February 17, 2026</span>
-                            <span class="dot"></span>
-                            <span>6 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 5 - Missed Call Text-Back -->
-                <a href="/blog/missed-call-text-back.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">&#128241;</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">AI Automation</span>
-                        <h2>Missed Call Text-Back: The Feature Adelaide Businesses Are Missing</h2>
-                        <p>Every missed call is a lost customer. Missed call text-back texts callers within 30 seconds automatically.</p>
-                        <div class="blog-card-meta">
-                            <span>February 17, 2026</span>
-                            <span class="dot"></span>
-                            <span>6 min read</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Post 6 - AI Lead Qualification -->
-                <a href="/blog/ai-lead-qualification.html" class="blog-card">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">&#127919;</div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-category">AI Automation</span>
-                        <h2>AI Lead Qualification: Close More Deals on Autopilot</h2>
-                        <p>Stop chasing tyre-kickers. AI qualifies and scores your leads via SMS so you only call the ones worth calling.</p>
-                        <div class="blog-card-meta">
-                            <span>February 17, 2026</span>
-                            <span class="dot"></span>
-                            <span>7 min read</span>
-                        </div>
-                    </div>
-                </a>
+        <div class="container">
+            <div class="hero-eyebrow"><span class="pulse-dot"></span> Fresh guides for Adelaide businesses</div>
+            <h1>Insights that <span class="gradient-text">actually rank.</span></h1>
+            <p>No fluff. Just deep, practical guides on web design, SEO, and AI automation — written specifically for Adelaide industries.</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="number">12</span><span class="label">Deep Guides</span></div>
+                <div class="hero-stat"><span class="number">9</span><span class="label">Industries</span></div>
+                <div class="hero-stat"><span class="number">14+</span><span class="label">Min Avg Read</span></div>
             </div>
         </div>
     </section>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar">
+        <div class="container">
+            <div class="filter-tabs" role="tablist">
+                <button class="filter-tab active" data-filter="all" role="tab">All Posts</button>
+                <button class="filter-tab" data-filter="industry" role="tab">Industry Guides</button>
+                <button class="filter-tab" data-filter="ai" role="tab">AI & Automation</button>
+                <button class="filter-tab" data-filter="trades" role="tab">Trades</button>
+                <button class="filter-tab" data-filter="professional" role="tab">Professional</button>
+                <button class="filter-tab" data-filter="lifestyle" role="tab">Lifestyle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+        <div class="container">
+            <div class="blog-grid-container">
+                <!-- FEATURED: AI for Tradies -->
+                <a href="/blog/ai-for-tradies-adelaide.html" class="blog-card featured-post" data-category="ai trades industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);">
+                        <span class="card-emoji">🛠️</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="featured-badge">Featured Guide</span>
+                        <span class="blog-card-category cat-ai">AI & Automation</span>
+                        <h2>AI & Web Design for Adelaide Tradies</h2>
+                        <p>How AI is revolutionizing how Adelaide tradies win jobs and manage their sites. The complete playbook for plumbers, sparkies, and painters.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta">
+                                <span>February 18, 2026</span>
+                                <span class="dot"></span>
+                                <span>15 min read</span>
+                            </div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Law Firms -->
+                <a href="/blog/web-design-law-firms-adelaide.html" class="blog-card" data-category="professional industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
+                        <span class="card-emoji">⚖️</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-legal">Legal</span>
+                        <h2>Web Design for Adelaide Law Firms</h2>
+                        <p>Premium, high-trust web design strategies for modern Adelaide legal practices.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>14 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Medical/Dental -->
+                <a href="/blog/medical-dental-automation-adelaide.html" class="blog-card" data-category="professional industry ai">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                        <span class="card-emoji">🏥</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-medical">Medical</span>
+                        <h2>AI Automation for Medical & Dental</h2>
+                        <p>Streamline your Adelaide clinic with AI-driven booking and patient management.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>15 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Mechanics -->
+                <a href="/blog/mechanic-marketing-adelaide.html" class="blog-card" data-category="trades industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                        <span class="card-emoji">🔧</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-auto">Automotive</span>
+                        <h2>Online Bookings for Adelaide Mechanics</h2>
+                        <p>Fill your workshop bays with a high-performance booking site and local SEO.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>14 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Barbers & Salons -->
+                <a href="/blog/barber-salon-marketing-adelaide.html" class="blog-card" data-category="lifestyle industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);">
+                        <span class="card-emoji">✂️</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-lifestyle">Lifestyle</span>
+                        <h2>Marketing for Adelaide Barbers & Salons</h2>
+                        <p>Build a loyal local clientele with visual-first web design and social SEO.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>14 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Real Estate -->
+                <a href="/blog/real-estate-web-design-adelaide.html" class="blog-card" data-category="professional industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <span class="card-emoji">🏠</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-realestate">Real Estate</span>
+                        <h2>Real Estate Web Design Adelaide</h2>
+                        <p>Win more listings with high-speed, luxury web design for Adelaide agencies.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>14 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Restaurants -->
+                <a href="/blog/restaurant-marketing-adelaide.html" class="blog-card" data-category="lifestyle industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                        <span class="card-emoji">🍕</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-hospitality">Hospitality</span>
+                        <h2>Restaurant & Cafe SEO Adelaide</h2>
+                        <p>Fill every table with local SEO and seamless mobile booking systems.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>14 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- eCommerce -->
+                <a href="/blog/ecommerce-adelaide-small-business.html" class="blog-card" data-category="industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
+                        <span class="card-emoji">🛍️</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-ecommerce">eCommerce</span>
+                        <h2>eCommerce for Adelaide Small Business</h2>
+                        <p>Scale your online revenue with high-conversion eCommerce design and SEO.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>15 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Fitness -->
+                <a href="/blog/fitness-marketing-adelaide.html" class="blog-card" data-category="lifestyle industry">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="card-emoji">💪</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-fitness">Fitness</span>
+                        <h2>Fitness & Gym Marketing Adelaide</h2>
+                        <p>Build a thriving community and drive memberships with modern gym web design.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 18, 2026</span><span class="dot"></span><span>14 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- AI Automation for Tradies -->
+                <a href="/blog/ai-automation-tradies-adelaide.html" class="blog-card" data-category="ai trades">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #C65D3B 0%, #A84D2F 100%);">
+                        <span class="card-emoji">&#129302;</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-ai">AI Automation</span>
+                        <h2>How AI Automation Saves Adelaide Tradies 10+ Hours a Week</h2>
+                        <p>Missed calls, forgotten follow-ups, and no-show bookings are costing you thousands. Here&rsquo;s how AI fixes all of it.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 17, 2026</span><span class="dot"></span><span>6 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Missed Call Text-Back -->
+                <a href="/blog/missed-call-text-back.html" class="blog-card" data-category="ai">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+                        <span class="card-emoji">&#128241;</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-ai">AI Automation</span>
+                        <h2>Missed Call Text-Back: The Feature Adelaide Businesses Are Missing</h2>
+                        <p>Every missed call is a lost customer. Missed call text-back texts callers within 30 seconds automatically.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 17, 2026</span><span class="dot"></span><span>6 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- AI Lead Qualification -->
+                <a href="/blog/ai-lead-qualification.html" class="blog-card" data-category="ai">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                        <span class="card-emoji">&#127919;</span></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category cat-ai">AI Automation</span>
+                        <h2>AI Lead Qualification: Close More Deals on Autopilot</h2>
+                        <p>Stop chasing tyre-kickers. AI qualifies and scores your leads via SMS so you only call the ones worth calling.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-meta"><span>February 17, 2026</span><span class="dot"></span><span>7 min read</span></div>
+                            <span class="read-arrow">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- No Results -->
+                <div class="no-results">
+                    <div class="nr-emoji">🔍</div>
+                    <h3>No posts in this category yet</h3>
+                    <p>Check back soon — we're always writing new guides.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Newsletter -->
     <section class="newsletter-section">
-        <div class="container"
-            style="padding-right: 70px !important; display: flex; justify-content: space-between; align-items: center;">
-            <h2>Get SEO Tips in Your Inbox</h2>
-            <p>Join 50+ Adelaide trades getting weekly tips on ranking higher on Google.</p>
+        <div class="container" style="text-align: center;">
+            <h2>Don't miss the next guide.</h2>
+            <p>Join Adelaide business owners getting actionable SEO and web design tips — straight to your inbox.</p>
             <form class="newsletter-form" action="mailto:hello@lumenadl.com" method="post" enctype="text/plain">
                 <label for="newsletter-email" class="visually-hidden">Email address</label>
                 <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" required>
                 <button type="submit">Subscribe</button>
             </form>
-            <p style="font-size: 14px; opacity: 0.7; margin-top: 16px;">No spam. Unsubscribe anytime.</p>
+            <p style="font-size: 14px; opacity: 0.6; margin-top: 16px;">No spam. Unsubscribe anytime. We promise.</p>
         </div>
     </section>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
-                    <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern
-                        suburbs.</p>
+                    <p class="footer-tagline">Clean, fast, and SEO-optimized websites for trades in Adelaide's northern suburbs.</p>
                 </div>
                 <div class="footer-nav">
                     <h3 class="footer-heading">Nav</h3>
@@ -589,7 +814,64 @@
             </div>
         </div>
     </footer>
-    <script>const menuToggle = document.getElementById("menuToggle"), mainNav = document.getElementById("mainNav"); menuToggle.addEventListener("click", (() => { menuToggle.classList.toggle("active"), mainNav.classList.toggle("active") })), document.querySelectorAll(".nav-links a").forEach((e => { e.addEventListener("click", (() => { menuToggle.classList.remove("active"), mainNav.classList.remove("active") })) }));</script>
+
+    <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
+
+    // Filter tabs
+    const tabs = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.blog-card');
+    const noResults = document.querySelector('.no-results');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const filter = tab.dataset.filter;
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cats = card.dataset.category || '';
+                if (filter === 'all' || cats.includes(filter)) {
+                    card.classList.remove('hidden-card');
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden-card');
+                    card.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+    });
+
+    // Staggered reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                const idx = Array.from(cards).indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('revealed');
+                }, idx * 80);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    cards.forEach(card => observer.observe(card));
+    </script>
 </body>
 </html>
-
