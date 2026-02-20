@@ -11,6 +11,7 @@
     <meta name="description"
         content="Web design, SEO & AI automation for Adelaide small businesses. Mawson Lakes, Golden Grove, Gawler. Websites that rank, automations that close. Tradies, lawyers, dentists, salons & more.">
     <link rel="canonical" href="https://www.lumenadl.com/">
+    <link rel="alternate" hreflang="en-au" href="https://www.lumenadl.com/">
     <meta name="robots" content="index, follow">
     <!-- Open Graph -->
     <meta property="og:title" content="Lumen ADL  Websites, SEO & AI Automation for Adelaide Small Business">
@@ -20,6 +21,7 @@
     <meta property="og:url" content="https://www.lumenadl.com/">
     <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
     <meta property="og:locale" content="en_AU">
+    <meta property="og:site_name" content="Lumen ADL">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lumen ADL  Websites, SEO & AI Automation">
@@ -27,8 +29,9 @@
     <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="mk-mockup-browser.png?v=1">
     <link rel="stylesheet" href="styles.css">
     <!-- JSON-LD Structured Data -->
@@ -40,7 +43,7 @@
       "image": "https://www.lumenadl.com/australia-map.jpg",
       "@id": "https://www.lumenadl.com",
       "url": "https://www.lumenadl.com",
-      "telephone": "+61412345678",
+      "telephone": "+61421276482",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -91,6 +94,12 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Lumen ADL","url":"https://www.lumenadl.com","potentialAction":{"@type":"SearchAction","target":"https://www.lumenadl.com/blog.html?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.lumenadl.com/"}]}
+</script>
     <style>
         /* Mobile Menu Styles */
         .menu-toggle {
@@ -601,7 +610,6 @@
                                 <span class="contact-value">hello@lumenadl.com</span>
                             </a>
                             <div class="contact-method">
-                                <span class="contact-label">Based in</span>
                                 <span class="contact-label">Based in</span>
                                 <span class="contact-value">Adelaide, SA</span>
                             </div>
