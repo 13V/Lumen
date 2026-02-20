@@ -196,104 +196,11 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
         @media (max-width: 768px) {
-            .nav {
-                position: sticky;
-                top: 0;
-                z-index: 999;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-            }
-            .nav .container {
-                position: relative;
-                max-width: 100%;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            .nav-links {
-                position: absolute;
-                top: calc(100% + 8px);
-                left: 16px;
-                right: 24px;
-                width: calc(100% - 32px);
-                min-width: calc(100% - 32px);
-                max-width: calc(100% - 32px);
-                background: white;
-                flex-direction: column;
-                align-items: stretch;
-                padding: 12px;
-                gap: 4px;
-                border-radius: 20px;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
-                transform: translateY(-20px) scale(0.95);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-                z-index: 1000;
-                display: flex !important;
-                box-sizing: border-box;
-            }
-            .nav-links.active {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-                visibility: visible;
-            }
-            .nav-links a {
-                font-size: 17px;
-                padding: 16px 20px;
-                color: #1f2937 !important;
-                text-align: left;
-                display: flex !important;
-                align-items: center;
-                gap: 14px;
-                width: 100%;
-                text-decoration: none;
-                font-weight: 500;
-                border-radius: 12px;
-                transition: all 0.2s;
-            }
-            .nav-links a:hover {
-                background: #f3f4f6;
-            }
-            .nav-links a::before {
-                content: "";
-                width: 8px;
-                height: 8px;
-                background: #C65D3B;
-                border-radius: 50%;
-                opacity: 0.3;
-                transition: all 0.2s;
-            }
-            .nav-links a:hover::before {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            .nav-links a.nav-cta {
-                margin-top: 8px;
-                text-align: center;
-                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
-                color: white !important;
-                padding: 18px 24px;
-                border-radius: 16px;
-                font-weight: 600;
-                font-size: 16px;
-                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4);
-                justify-content: center;
-                width: 100% !important;
-                min-width: 100% !important;
-                display: flex !important;
-                position: relative;
-                flex-shrink: 0 !important;
-                box-sizing: border-box;
-                white-space: nowrap;
-            }
-            .nav-links a.nav-cta::before {
-                display: none !important;
-            }
-            .nav-links a.nav-cta:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
-            }
+            .faq-hero { padding: 60px 0 40px; }
+            .faq-hero h1 { font-size: 32px; }
+            .faq-section { padding: 48px 0; }
+            .still-have-questions { padding: 48px 0; }
+            .still-have-questions h2 { font-size: 24px; }
         }
     </style>
 </head>
@@ -341,7 +248,7 @@
                             <li>Google Business integration</li>
                         </ul>
                         <p>We also offer a <strong>Bundle</strong> ($3,000) that includes the website plus 3 months of
-                            SEO services ó saving you $700.</p>
+                            SEO services ù saving you $700.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -356,7 +263,7 @@
                             <li>Monthly ranking reports</li>
                             <li>Competitor monitoring</li>
                         </ul>
-                        <p>No lock-in contracts ó cancel anytime.</p>
+                        <p>No lock-in contracts ù cancel anytime.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -390,7 +297,7 @@
                             <li><strong>Week 1:</strong> Discovery, design, and content</li>
                             <li><strong>Week 2:</strong> Development, testing, and launch</li>
                         </ul>
-                        <p>More complex sites may take longer ó we'll give you a clear timeline upfront.</p>
+                        <p>More complex sites may take longer ù we'll give you a clear timeline upfront.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -413,7 +320,7 @@
                     <div class="faq-question">Will I be able to update the site myself?</div>
                     <div class="faq-answer">
                         <p>Yes. We build sites that are easy to update. For simple changes (text, photos), you can do it
-                            yourself. For more complex updates, we're always here to help ó or we can show you how.</p>
+                            yourself. For more complex updates, we're always here to help ù or we can show you how.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -436,7 +343,7 @@
                     <div class="faq-question">How long does SEO take to work?</div>
                     <div class="faq-answer">
                         <p>Most clients see initial improvements within <strong>2-4 weeks</strong>, with significant
-                            results in <strong>6-8 weeks</strong>. SEO is a long game ó the work we do now compounds
+                            results in <strong>6-8 weeks</strong>. SEO is a long game ù the work we do now compounds
                             over time. Our case study with M&K Painting saw them hit #3 for their target keyword in 8
                             weeks.</p>
                     </div>
@@ -444,7 +351,7 @@
                 <div class="faq-item">
                     <div class="faq-question">Do you guarantee rankings?</div>
                     <div class="faq-answer">
-                        <p><strong>No one can guarantee #1 rankings</strong> ó and you should be suspicious of anyone
+                        <p><strong>No one can guarantee #1 rankings</strong> ù and you should be suspicious of anyone
                             who does. What we guarantee is that we'll follow best practices, do the work, and give you
                             transparent reporting. Most of our clients see significant ranking improvements.</p>
                     </div>
@@ -498,7 +405,7 @@
                     <div class="faq-question">Who owns the website?</div>
                     <div class="faq-answer">
                         <p><strong>You do.</strong> Once the final payment is made, the website is 100% yours. We use no
-                            proprietary technology ó it's clean HTML, CSS, and JavaScript that any developer can work
+                            proprietary technology ù it's clean HTML, CSS, and JavaScript that any developer can work
                             with.</p>
                     </div>
                 </div>
@@ -509,7 +416,7 @@
     <section class="still-have-questions">
         <div class="container">
             <h2>Still Have Questions?</h2>
-            <p>Can't find the answer you're looking for? Reach out ó we're happy to help.</p>
+            <p>Can't find the answer you're looking for? Reach out ù we're happy to help.</p>
             <div class="contact-methods">
                 <a href="mailto:hello@lumenadl.com" class="contact-method">
                     <div class="contact-method-icon">??</div>
@@ -590,7 +497,7 @@
             });
         });
     </script>
-    <script>const menuToggle = document.getElementById("menuToggle"), mainNav = document.getElementById("mainNav"); menuToggle.addEventListener("click", (() => { menuToggle.classList.toggle("active"), mainNav.classList.toggle("active") })), document.querySelectorAll(".nav-links a").forEach((e => { e.addEventListener("click", (() => { menuToggle.classList.remove("active"), mainNav.classList.remove("active") })) }));</script>
+    <script>const menuToggle = document.getElementById("menuToggle"), mainNav = document.getElementById("mainNav"); menuToggle.addEventListener("click", (() => { menuToggle.classList.toggle("active"), mainNav.classList.toggle("active") })), document.querySelectorAll(".nav a").forEach((e => { e.addEventListener("click", (() => { menuToggle.classList.remove("active"), mainNav.classList.remove("active") })) }));</script>
 </body>
 </html>
 

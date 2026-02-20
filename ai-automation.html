@@ -132,8 +132,15 @@
             .results-grid{grid-template-columns:1fr}
             .ai-cta h2{font-size:2rem}
         }
+        .try-it-section{padding:80px 0}
+        @media(max-width:768px){
+            .try-it-section{padding:48px 0}
+            .try-it-section h2{font-size:1.8rem !important}
+        }
         @media(max-width:480px){
             .how-steps{grid-template-columns:1fr}
+            .try-it-section{padding:36px 0}
+            .try-it-section .container{padding:0 16px}
         }
     </style>
 </head>
@@ -409,7 +416,7 @@
             </div>
         </section>
         <!-- Try It Yourself - Live Demo -->
-        <section style="padding: 80px 0; background: linear-gradient(135deg, #2D2420 0%, #3d3530 100%);">
+        <section class="try-it-section" style="background: linear-gradient(135deg, #2D2420 0%, #3d3530 100%);">
             <div class="container" style="max-width: 800px; text-align: center;">
                 <p style="color: var(--terracotta-light); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Try It Yourself</p>
                 <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; color: white; margin-bottom: 16px;">See Our AI in Action</h2>
@@ -555,7 +562,7 @@
             <div class="container section-center">
                 <h2>Learn More About AI Automation</h2>
                 <p class="section-lead">Dive deeper into how AI automation works for your business.</p>
-                <div class="industry-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="industry-grid">
                     <a href="/blog/ai-automation-tradies-adelaide.html" style="text-decoration: none; color: inherit;" class="industry-card">
                         <div class="industry-card-header">
                             <div class="industry-icon">&#128296;</div>

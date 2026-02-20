@@ -456,6 +456,20 @@
             .work-hero h1 {
                 font-size: 36px;
             }
+            .work-cta-heading {
+                font-size: 28px !important;
+            }
+        }
+        .work-cta-heading {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .work-cta-lead {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 32px;
         }
         /* Mobile Menu Styles */
         .menu-toggle {
@@ -502,81 +516,11 @@
             .menu-toggle {
                 display: flex;
             }
-            .nav-links {
-                width: calc(100% - 32px) !important;
-                min-width: calc(100% - 32px) !important;
-                max-width: calc(100% - 32px) !important;
-            }
-            .menu-toggle {
-                order: 2 !important;
-            }
-            .logo {
-                order: 1 !important;
-            }
-            .nav-links.active {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-                visibility: visible;
-            }
-            .nav-links a {
-                font-size: 17px;
-                padding: 16px 20px;
-                color: #1f2937 !important;
-                text-align: left;
-                display: flex !important;
-                align-items: center;
-                gap: 14px;
-                width: 100%;
-                text-decoration: none;
-                font-weight: 500;
-                border-radius: 12px;
-                transition: all 0.2s;
-            }
-            .nav-links a:hover {
-                background: #f3f4f6;
-            }
-            .nav-links a::before {
-                content: "";
-                width: 8px;
-                height: 8px;
-                background: #C65D3B;
-                border-radius: 50%;
-                opacity: 0.3;
-                transition: all 0.2s;
-            }
-            .nav-links a:hover::before {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-            .nav-links a.nav-cta {
-                margin-top: 8px;
-                text-align: center;
-                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
-                color: white !important;
-                padding: 18px 24px;
-                border-radius: 16px;
-                font-weight: 600;
-                font-size: 16px;
-                box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4);
-                justify-content: center;
-                width: 100% !important;
-                min-width: 100% !important;
-                display: flex !important;
-                position: relative;
-                flex-shrink: 0 !important;
-                box-sizing: border-box;
-                white-space: nowrap;
-            }
-            .nav-links a.nav-cta::before {
-                display: none !important;
-            }
-            .nav-links a.nav-cta:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(198, 93, 59, 0.5);
-            }
-            .nav-links a.nav-cta.active {
-                background: linear-gradient(135deg, #C65D3B 0%, #D4755E 100%);
-            }
+            .case-study { padding: 60px 0; }
+            .case-study-content h2 { font-size: 24px; }
+            .case-study-visual { padding: 24px 20px 20px; }
+            .testimonial-block { padding: 20px 24px; }
+            .case-study-cta { flex-direction: column; }
         }
     </style>
 </head>
@@ -776,8 +720,8 @@
     <section style="padding: 100px 0; background: var(--gradient); color: white; text-align: center;">
         <div class="container"
             >
-            <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 16px;">Want Results Like This?</h2>
-            <p style="font-size: 18px; opacity: 0.9; max-width: 500px; margin: 0 auto 32px;">Let's talk about how we can
+            <h2 class="work-cta-heading">Want Results Like This?</h2>
+            <p class="work-cta-lead">Let's talk about how we can
                 help your business get found on Google and bring in more customers.</p>
             <a href="/contact.html" class="btn btn-primary"
                 style="background: white; color: var(--terracotta); padding: 16px 32px; font-size: 18px;">Get Your Free
@@ -837,7 +781,7 @@
             mainNav.classList.toggle('active');
         });
         // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 mainNav.classList.remove('active');

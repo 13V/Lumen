@@ -33,6 +33,7 @@ body::before {
 }
 
 /* Navigation Active State */
+.nav a.active,
 .nav-links a.active {
     color: var(--text);
     font-weight: 600;
@@ -183,8 +184,8 @@ body::before {
 }
 
 .share-btn {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -857,6 +858,7 @@ body::before {
 .footer-links {
     display: flex;
     gap: 60px;
+    flex-wrap: wrap;
 }
 
 .footer-column h5 {
@@ -1165,5 +1167,7 @@ body::before {
     }
     
     /* Smooth scrolling */
-    -webkit-overflow-scrolling: touch;
+    html, body {
+        -webkit-overflow-scrolling: touch;
+    }
 }

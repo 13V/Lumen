@@ -7,13 +7,13 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumen ADL ó Websites, SEO & AI Automation for Adelaide Small Business</title>
+    <title>Lumen ADL ù Websites, SEO & AI Automation for Adelaide Small Business</title>
     <meta name="description"
         content="Web design, SEO & AI automation for Adelaide small businesses. Mawson Lakes, Golden Grove, Gawler. Websites that rank, automations that close. Tradies, lawyers, dentists, salons & more.">
     <link rel="canonical" href="https://www.lumenadl.com/">
     <meta name="robots" content="index, follow">
     <!-- Open Graph -->
-    <meta property="og:title" content="Lumen ADL ó Websites, SEO & AI Automation for Adelaide Small Business">
+    <meta property="og:title" content="Lumen ADL ù Websites, SEO & AI Automation for Adelaide Small Business">
     <meta property="og:description"
         content="Web design, SEO & AI automation for Adelaide small businesses. Clean, fast websites that rank on Google.">
     <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
     <meta property="og:locale" content="en_AU">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Lumen ADL ó Websites, SEO & AI Automation">
+    <meta name="twitter:title" content="Lumen ADL ù Websites, SEO & AI Automation">
     <meta name="twitter:description" content="Web design, SEO & AI automation for Adelaide small businesses.">
     <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,6 +119,46 @@
         }
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
+        }
+        /* AI Teaser Section */
+        .ai-teaser {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #2D2420 0%, #3d3530 100%);
+            text-align: center;
+        }
+        .ai-teaser-inner {
+            max-width: 700px;
+        }
+        .ai-teaser-eyebrow {
+            color: var(--terracotta-light);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+        .ai-teaser-heading {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .ai-teaser-body {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .ai-teaser-link {
+            color: var(--terracotta-light);
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .ai-teaser { padding: 40px 0; }
+            .ai-teaser-heading { font-size: 1.6rem; }
+        }
+        @media (max-width: 480px) {
+            .ai-teaser-heading { font-size: 1.4rem; }
         }
         @media (max-width: 768px) {
             .header {
@@ -240,10 +280,10 @@
     <main>
         <section class="hero">
             <div class="container">
-                <p class="eyebrow">Web Design, SEO &amp; AI Automation ó Northern Adelaide</p>
-                <h1>Websites, SEO &amp;<br>AI Automation for<br>Adelaide Businesses.</h1>
+                <p class="eyebrow">Web Design, SEO &amp; AI Automation ù Northern Adelaide</p>
+                <h1>Websites, SEO &amp; AI Automation for Adelaide Businesses.</h1>
                 <p class="lead">We build fast, conversion-focused websites for trades in Mawson Lakes, Golden Grove,
-                    Gawler & surrounding suburbs ó then automate your leads with AI so nothing slips through the cracks.
+                    Gawler & surrounding suburbs ù then automate your leads with AI so nothing slips through the cracks.
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Start a project</a>
@@ -470,27 +510,20 @@
             </div>
         </section>
         <!-- AI Teaser -->
-        <section
-            style="padding: 60px 0; background: linear-gradient(135deg, #2D2420 0%, #3d3530 100%); text-align: center;">
-            <div class="container" style="max-width: 700px;">
-                <p
-                    style="color: var(--terracotta-light); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
-                    AI Automation</p>
-                <h2
-                    style="font-family: 'DM Serif Display', Georgia, serif; font-size: 2.2rem; color: white; margin-bottom: 16px;">
-                    Your competitors reply in 30 seconds. Do you?</h2>
-                <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.7; margin-bottom: 28px;">
+        <section class="ai-teaser">
+            <div class="container ai-teaser-inner">
+                <p class="ai-teaser-eyebrow">AI Automation</p>
+                <h2 class="ai-teaser-heading">Your competitors reply in 30 seconds. Do you?</h2>
+                <p class="ai-teaser-body">
                     Missed calls answered in 30 seconds. Quotes chased at 1, 3, and 7 days. Google reviews requested
                     after every job. All on autopilot &mdash; zero effort from you. <a
                         href="/blog/ai-automation-tradies-adelaide.html"
-                        style="color: var(--terracotta-light); text-decoration: underline;">See how AI saves small
+                        class="ai-teaser-link">See how AI saves small
                         businesses 10+ hours a week</a>.</p>
-                <a href="/ai-automation.html"
-                    style="display: inline-block; padding: 14px 36px; background: var(--gradient); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 14px rgba(198, 93, 59, 0.4); transition: transform 0.2s;">See
-                    How AI Automation Works ?</a>
+                <a href="/ai-automation.html" class="btn btn-primary">See How AI Automation Works ?</a>
             </div>
         </section>
-        <section class="content-section" style="padding: 80px 0; background: var(--bg-secondary);">
+        <section class="content-section" style="padding: 60px 0; background: var(--bg-secondary);">
             <div class="container" style="max-width: 800px;">
                 <h2>Web Design, SEO &amp; AI for Adelaide Businesses</h2>
                 <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 32px;">Websites that rank.
@@ -536,7 +569,7 @@
                         class="map-image" width="400" height="320" loading="lazy">
                     <div class="map-caption">
                         <span class="map-state">South Australia</span>
-                        <span class="map-based">Based in Adelaide ï Serving all of SA</span>
+                        <span class="map-based">Based in Adelaide ù Serving all of SA</span>
                     </div>
                 </div>
                 <div class="suburbs-list">

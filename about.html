@@ -249,12 +249,20 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         @media (max-width: 768px) {
-            .about-hero h1 { font-size: 2.4rem; }
+            .about-hero { padding: 60px 0 40px; }
+            .about-hero h1 { font-size: 2rem; }
+            .about-section { padding: 48px 0; }
+            .about-section h2 { font-size: 1.8rem; }
             .pillars { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr; }
             .process-step:not(:last-child)::after { display: none; }
+            .process-step p { max-width: 100%; }
             .values-grid { grid-template-columns: 1fr; }
-            .about-cta h2 { font-size: 2rem; }
+            .about-cta { padding: 48px 0; }
+            .about-cta h2 { font-size: 1.8rem; }
+        }
+        @media (max-width: 480px) {
+            .about-hero h1 { font-size: 1.75rem; }
         }
     </style>
 </head>
