@@ -928,6 +928,11 @@ body::before {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+}
 
 /* Responsive */
 @media (max-width: 900px) {
