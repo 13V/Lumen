@@ -1576,7 +1576,7 @@ body::before {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .seo-package {
@@ -1598,12 +1598,11 @@ body::before {
 
 .seo-package-featured {
     border-color: var(--terracotta);
+    border-width: 2px;
     box-shadow: 0 8px 30px rgba(198, 93, 59, 0.15);
-    transform: translateY(-8px);
 }
 
 .seo-package-featured:hover {
-    transform: translateY(-12px);
     box-shadow: 0 24px 50px rgba(198, 93, 59, 0.2);
 }
 
@@ -1686,6 +1685,10 @@ body::before {
 
 .seo-package-features li:last-child {
     border-bottom: none;
+}
+
+.seo-package .btn-primary {
+    margin-top: auto;
 }
 
 .seo-btn {
