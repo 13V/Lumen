@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local SEO Adelaide | Rank on Page 1 in 8 Weeks | Lumen ADL</title>
+    <meta name="description" content="Local SEO for Adelaide small businesses. We got M&K Painting from page 3 to page 1 in 8 weeks. Packages from $700/mo. No lock-in contracts.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://lumenadl.app.n8n.cloud">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Landing page resets ── */
+        body { padding-bottom: 0; }
+
+        /* ── Minimal header ── */
+        .lp-header {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .lp-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .lp-header .logo {
+            font-size: 22px;
+        }
+        .lp-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .lp-phone svg { color: var(--terracotta); }
+
+        /* ── Hero ── */
+        .lp-hero {
+            padding: 72px 0 64px;
+            background: linear-gradient(160deg, #faf8f5 0%, #fff 60%);
+            border-bottom: 1px solid var(--border);
+        }
+        .lp-hero .container {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 64px;
+            align-items: center;
+        }
+        .lp-hero-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--terracotta);
+            margin-bottom: 16px;
+        }
+        .lp-hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        .lp-hero h1 em {
+            font-style: normal;
+            color: var(--terracotta);
+        }
+        .lp-hero-lead {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .lp-trust-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .lp-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .lp-trust-item::before {
+            content: "✓";
+            color: var(--terracotta);
+            font-weight: 700;
+        }
+
+        /* ── Hero form card ── */
+        .lp-form-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+        .lp-form-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .lp-form-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        /* ── Proof bar ── */
+        .lp-proof-bar {
+            background: var(--text);
+            padding: 28px 0;
+        }
+        .lp-proof-bar .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+        .lp-proof-stat strong {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--terracotta-light);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+        .lp-proof-stat span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.65);
+            font-weight: 500;
+        }
+
+        /* ── Pain section ── */
+        .lp-pain {
+            padding: 80px 0;
+            background: var(--beige);
+            border-bottom: 1px solid var(--border);
+        }
+        .lp-pain h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 48px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+        .lp-pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .lp-pain-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            border: 1px solid var(--border);
+        }
+        .lp-pain-card .pain-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .lp-pain-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .lp-pain-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── Case study ── */
+        .lp-case {
+            padding: 80px 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+        .lp-case .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .lp-case-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--terracotta);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .lp-case h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 38px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            line-height: 1.15;
+        }
+        .lp-case-body {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .lp-results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .lp-result {
+            background: var(--beige);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+        .lp-result strong {
+            display: block;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+        .lp-result span {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .lp-case-quote {
+            background: var(--beige);
+            border-left: 4px solid var(--terracotta);
+            border-radius: 0 12px 12px 0;
+            padding: 24px 28px;
+        }
+        .lp-case-quote p {
+            font-size: 17px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .lp-case-quote cite {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* ── How it works ── */
+        .lp-how {
+            padding: 80px 0;
+            background: var(--beige);
+            border-bottom: 1px solid var(--border);
+        }
+        .lp-how h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+        .lp-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .lp-step {
+            text-align: center;
+        }
+        .lp-step-num {
+            width: 52px;
+            height: 52px;
+            background: var(--gradient);
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .lp-step h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .lp-step p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── Pricing ── */
+        .lp-pricing {
+            padding: 80px 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+        }
+        .lp-pricing-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .lp-pricing-header h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 38px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .lp-pricing-header p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* ── FAQ ── */
+        .lp-faq {
+            padding: 80px 0;
+            background: var(--beige);
+            border-bottom: 1px solid var(--border);
+        }
+        .lp-faq h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: -0.02em;
+            margin-bottom: 40px;
+        }
+        .lp-faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .lp-faq-item {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+        }
+        .lp-faq-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .lp-faq-item p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── Bottom CTA ── */
+        .lp-bottom-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2D2420 0%, #3d3530 100%);
+            text-align: center;
+        }
+        .lp-bottom-cta h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .lp-bottom-cta p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .lp-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-white {
+            background: white;
+            color: var(--terracotta);
+            font-weight: 700;
+        }
+        .btn-white:hover {
+            background: #f8f5f3;
+            transform: translateY(-2px);
+        }
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+            font-weight: 600;
+        }
+        .btn-outline-white:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* ── Minimal footer ── */
+        .lp-footer {
+            padding: 24px 0;
+            background: #111827;
+        }
+        .lp-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #6b7280;
+        }
+        .lp-footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+        .lp-footer a:hover { color: white; }
+
+        /* ── Mobile ── */
+        @media (max-width: 900px) {
+            .lp-hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .lp-hero h1 { font-size: 38px; }
+            .lp-proof-bar .container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .lp-pain-grid { grid-template-columns: 1fr; }
+            .lp-case .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .lp-steps { grid-template-columns: 1fr; gap: 24px; }
+            .lp-bottom-cta h2 { font-size: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .lp-hero { padding: 48px 0 40px; }
+            .lp-hero h1 { font-size: 32px; }
+            .lp-proof-bar .container { grid-template-columns: repeat(2, 1fr); }
+            .lp-proof-stat strong { font-size: 26px; }
+            .lp-pain h2, .lp-how h2, .lp-faq h2 { font-size: 28px; }
+            .lp-case h2, .lp-pricing-header h2 { font-size: 30px; }
+            .lp-bottom-cta h2 { font-size: 28px; }
+            .lp-form-card { padding: 24px; }
+            .lp-footer .container { flex-direction: column; gap: 8px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .lp-proof-bar .container { grid-template-columns: 1fr 1fr; }
+            .lp-results-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Minimal header -->
+    <header class="lp-header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="48" height="48">Lumen
+            </a>
+            <a href="tel:+61421276482" class="lp-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                0421 276 482
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="lp-hero">
+            <div class="container">
+                <div>
+                    <span class="lp-hero-eyebrow">Local SEO &mdash; Adelaide</span>
+                    <h1>Your competitors are on<br><em>Page 1.</em> Are you?</h1>
+                    <p class="lp-hero-lead">We rank Adelaide small businesses on Google for the searches that matter &mdash; &ldquo;[your service] near me&rdquo;, &ldquo;[suburb] + [trade]&rdquo;, and more. Packages from $700/mo.</p>
+                    <div class="lp-trust-row">
+                        <span class="lp-trust-item">Page 1 results in 8 weeks</span>
+                        <span class="lp-trust-item">No lock-in contracts</span>
+                        <span class="lp-trust-item">Adelaide-based team</span>
+                    </div>
+                </div>
+                <div class="lp-form-card">
+                    <h2>Get a free SEO audit</h2>
+                    <p>We&rsquo;ll show you exactly why you&rsquo;re not ranking &mdash; and how to fix it.</p>
+                    <form id="seoLeadForm">
+                        <div class="form-group">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business name</label>
+                            <input type="text" id="business" name="business" placeholder="Smith Plumbing" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="jane@smithplumbing.com.au">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Your website URL</label>
+                            <input type="url" id="website" name="website" placeholder="https://yoursite.com.au">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="formBtn">Get My Free Audit</button>
+                        <p style="font-size:12px;color:var(--text-tertiary);text-align:center;margin-top:12px;">No obligation. We&rsquo;ll call within 1 business day.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof bar -->
+        <div class="lp-proof-bar">
+            <div class="container">
+                <div class="lp-proof-stat">
+                    <strong>8 wks</strong>
+                    <span>Page 3 to Page 1</span>
+                </div>
+                <div class="lp-proof-stat">
+                    <strong>#3</strong>
+                    <span>Ranking for &ldquo;painter Adelaide&rdquo;</span>
+                </div>
+                <div class="lp-proof-stat">
+                    <strong>2&times;</strong>
+                    <span>Increase in quote requests</span>
+                </div>
+                <div class="lp-proof-stat">
+                    <strong>$700</strong>
+                    <span>Starting from / month</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pain points -->
+        <section class="lp-pain">
+            <div class="container">
+                <h2>Sound familiar?</h2>
+                <div class="lp-pain-grid">
+                    <div class="lp-pain-card">
+                        <span class="pain-icon">&#128269;</span>
+                        <h3>You can&rsquo;t find yourself on Google</h3>
+                        <p>You search for your own business and it&rsquo;s buried on page 3 or 4 &mdash; your competitors are getting all the calls.</p>
+                    </div>
+                    <div class="lp-pain-card">
+                        <span class="pain-icon">&#128241;</span>
+                        <h3>Leads are drying up</h3>
+                        <p>Word of mouth only goes so far. You need a consistent stream of new customers finding you online every week.</p>
+                    </div>
+                    <div class="lp-pain-card">
+                        <span class="pain-icon">&#128176;</span>
+                        <h3>Sick of paying for ads</h3>
+                        <p>Google Ads stop working the moment you stop paying. SEO builds organic rankings that keep working 24/7 without an ongoing ad budget.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case study -->
+        <section class="lp-case">
+            <div class="container">
+                <div>
+                    <span class="lp-case-eyebrow">Real results &mdash; Adelaide client</span>
+                    <h2>From page 3 to page 1 in 8 weeks</h2>
+                    <p class="lp-case-body">M&amp;K Painting Services came to us with a website that nobody could find. We rebuilt their local SEO from scratch &mdash; optimised their Google Business Profile, built local citations, and created suburb-targeted content. Eight weeks later, their phone was ringing daily.</p>
+                    <div class="lp-results-grid">
+                        <div class="lp-result">
+                            <strong>#3</strong>
+                            <span>Ranking for &ldquo;painter Adelaide&rdquo;</span>
+                        </div>
+                        <div class="lp-result">
+                            <strong>8 wks</strong>
+                            <span>Page 3 &rarr; Page 1</span>
+                        </div>
+                        <div class="lp-result">
+                            <strong>83/100</strong>
+                            <span>SEO score</span>
+                        </div>
+                        <div class="lp-result">
+                            <strong>2&times;</strong>
+                            <span>Quote requests</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="mk-mockup-browser.png" alt="M&K Painting Services website" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.12);margin-bottom:28px;">
+                    <div class="lp-case-quote">
+                        <p>&ldquo;The phone started ringing within weeks. We&rsquo;re now booked out two months in advance.&rdquo;</p>
+                        <cite>&mdash; M&amp;K Painting Services, Adelaide</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="lp-how">
+            <div class="container">
+                <h2>How it works</h2>
+                <div class="lp-steps">
+                    <div class="lp-step">
+                        <div class="lp-step-num">1</div>
+                        <h3>Free audit</h3>
+                        <p>We analyse your current rankings, Google Business Profile, and competitors to find exactly what&rsquo;s holding you back.</p>
+                    </div>
+                    <div class="lp-step">
+                        <div class="lp-step-num">2</div>
+                        <h3>We get to work</h3>
+                        <p>Our team optimises your profile, builds citations, generates reviews, and creates content targeting your local area.</p>
+                    </div>
+                    <div class="lp-step">
+                        <div class="lp-step-num">3</div>
+                        <h3>You rank. You grow.</h3>
+                        <p>Watch your rankings climb with a monthly report. No jargon, no fluff &mdash; just your position and the results it&rsquo;s driving.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="lp-pricing">
+            <div class="container">
+                <div class="lp-pricing-header">
+                    <h2>Simple, transparent pricing</h2>
+                    <p>No lock-in contracts &mdash; cancel anytime. Pick the package that fits your goals.</p>
+                </div>
+                <div class="seo-packages-grid">
+
+                    <!-- Starter -->
+                    <div class="seo-package">
+                        <div class="seo-package-name">Starter</div>
+                        <div class="seo-package-price">$700<span>/mo</span></div>
+                        <p class="seo-package-desc">The essentials done right.</p>
+                        <ul class="seo-package-features">
+                            <li>Google Business Profile optimisation</li>
+                            <li>Local citation building</li>
+                            <li>Monthly ranking report</li>
+                            <li>1 SEO-optimised page/mo</li>
+                        </ul>
+                        <a href="#seoLeadForm" class="seo-btn">Get started</a>
+                    </div>
+
+                    <!-- Growth -->
+                    <div class="seo-package seo-package-featured">
+                        <div class="seo-package-badge">Most Popular</div>
+                        <div class="seo-package-name">Growth</div>
+                        <div class="seo-package-price">$1,200<span>/mo</span></div>
+                        <p class="seo-package-desc">For businesses serious about ranking.</p>
+                        <ul class="seo-package-features">
+                            <li>Everything in Starter</li>
+                            <li>Review generation system</li>
+                            <li>2 blog posts/mo</li>
+                            <li>Google Business posts (4&#215;/mo)</li>
+                            <li>Monthly strategy call</li>
+                        </ul>
+                        <a href="#seoLeadForm" class="btn btn-primary">Get started</a>
+                    </div>
+
+                    <!-- Dominate -->
+                    <div class="seo-package">
+                        <div class="seo-package-name">Dominate</div>
+                        <div class="seo-package-price">$1,900<span>/mo</span></div>
+                        <p class="seo-package-desc">Own your suburb. Crush the competition.</p>
+                        <ul class="seo-package-features">
+                            <li>Everything in Growth</li>
+                            <li>AI automation included</li>
+                            <li>4 blog posts/mo</li>
+                            <li>Quarterly landing page</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="#seoLeadForm" class="seo-btn">Get started</a>
+                    </div>
+
+                </div>
+                <p class="seo-no-lock" style="margin-top:24px;">All packages include a free SEO audit before you commit to anything.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="lp-faq">
+            <div class="container">
+                <h2>Common questions</h2>
+                <div class="lp-faq-list">
+                    <div class="lp-faq-item">
+                        <h3>How long does it take to see results?</h3>
+                        <p>Most clients see meaningful ranking improvements within 6&ndash;10 weeks. Our fastest result was 8 weeks (M&amp;K Painting, page 3 to page 1). SEO is not overnight but the results compound &mdash; unlike ads, which stop the moment you pause spending.</p>
+                    </div>
+                    <div class="lp-faq-item">
+                        <h3>Do I need a new website?</h3>
+                        <p>No &mdash; we work with your existing site. We&rsquo;ll tell you upfront if there are technical issues that would limit your results, but most Adelaide businesses can start ranking with what they have.</p>
+                    </div>
+                    <div class="lp-faq-item">
+                        <h3>Is there a lock-in contract?</h3>
+                        <p>No. All our SEO packages are month-to-month. We keep clients by getting results, not by trapping them in contracts. Cancel anytime with 30 days notice.</p>
+                    </div>
+                    <div class="lp-faq-item">
+                        <h3>What areas do you cover?</h3>
+                        <p>We specialise in northern Adelaide &mdash; Mawson Lakes, Golden Grove, Gawler, Modbury, Para Hills, Salisbury, Tea Tree Gully &mdash; but work with businesses across all of Adelaide and South Australia.</p>
+                    </div>
+                    <div class="lp-faq-item">
+                        <h3>What&rsquo;s included in the free audit?</h3>
+                        <p>We review your current Google rankings, Google Business Profile health, local citation consistency, website speed and mobile performance, and your top 3 competitors. You get a clear picture of where you stand and what needs fixing &mdash; no obligation to sign up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="lp-bottom-cta">
+            <div class="container">
+                <h2>Ready to rank on Page 1?</h2>
+                <p>Get your free SEO audit today. We&rsquo;ll show you exactly what&rsquo;s costing you customers &mdash; and how to fix it.</p>
+                <div class="lp-cta-buttons">
+                    <a href="#seoLeadForm" class="btn btn-white">Get my free audit</a>
+                    <a href="tel:+61421276482" class="btn btn-outline-white">Call 0421 276 482</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Minimal footer -->
+    <footer class="lp-footer">
+        <div class="container">
+            <span>&copy; 2026 Lumen ADL. Adelaide, SA.</span>
+            <div style="display:flex;gap:20px;">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/">lumenadl.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('seoLeadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = document.getElementById('formBtn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const data = {
+                name: form.name.value,
+                business: form.business.value,
+                phone: form.phone.value,
+                email: form.email.value,
+                website: form.website.value,
+                service: 'Local SEO',
+                submitted: new Date().toISOString(),
+                source: 'local-seo-landing'
+            };
+
+            try {
+                const res = await fetch('https://lumenadl.app.n8n.cloud/webhook/lumen-contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (res.ok) {
+                    form.innerHTML = '<div style="text-align:center;padding:32px 16px;"><div style="font-size:40px;margin-bottom:12px;">&#10003;</div><h3 style="color:var(--terracotta);margin-bottom:8px;font-size:20px;">You\'re all set!</h3><p style="color:var(--text-secondary);font-size:15px;">We\'ll review your site and call you within 1 business day with your free audit.</p></div>';
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch {
+                btn.textContent = 'Get My Free Audit';
+                btn.disabled = false;
+                alert('Something went wrong. Please call us on 0421 276 482.');
+            }
+        });
+    </script>
+</body>
+</html>
