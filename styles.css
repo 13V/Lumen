@@ -970,27 +970,6 @@ body::before {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Floating SMS Button */
-.sms-float {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
-    background: var(--gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(198, 93, 59, 0.4);
-    z-index: 999;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.sms-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 28px rgba(198, 93, 59, 0.5);
-}
 
 /* Sticky Mobile CTA Bar */
 .mobile-cta-bar {
@@ -1034,10 +1013,6 @@ body::before {
 @media (max-width: 768px) {
     .mobile-cta-bar {
         display: flex;
-    }
-
-    .sms-float {
-        display: none;
     }
 
     .nav-phone {
