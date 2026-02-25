@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7N1EJQXRJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7N1EJQXRJ');
+    </script>
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outreach Dashboard | Lumen ADL</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://lumenadl.app.n8n.cloud">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2.5px;
+            background: #C65D3B;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        @media (max-width: 768px) {
+            .header {
+                position: sticky;
+                top: 0;
+                z-index: 999;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+            }
+            .header .container {
+                position: relative;
+                max-width: 100%;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .nav {
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 16px;
+                right: 24px;
+                width: calc(100% - 32px);
+                min-width: calc(100% - 32px);
+                max-width: calc(100% - 32px);
+                background: white;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                gap: 4px;
+                border-radius: 20px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+                transform: translateY(-20px) scale(0.95);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 1000;
+                display: flex !important;
+                box-sizing: border-box;
+            }
+            .nav.active {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav a {
+                font-size: 17px;
+                padding: 16px 20px;
+                color: #1f2937 !important;
+                text-align: left;
+                display: flex !important;
+                align-items: center;
+                gap: 14px;
+                width: 100%;
+                text-decoration: none;
+                font-weight: 500;
+                border-radius: 12px;
+                transition: all 0.2s;
+            }
+            .nav a:hover {
+                background: #f3f4f6;
+            }
+            .nav a::before {
+                content: "";
+                width: 8px;
+                height: 8px;
+                background: #C65D3B;
+                border-radius: 50%;
+                opacity: 0.3;
+                transition: all 0.2s;
+            }
+            .nav a:hover::before {
+                opacity: 1;
+            }
+        }
+
+        /* Outreach page styles */
+        .outreach-hero {
+            padding: 60px 0 32px;
+            text-align: center;
+        }
+        .outreach-hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .outreach-hero .lead {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .outreach-section {
+            padding: 0 0 60px;
+        }
+
+        .outreach-card {
+            background: white;
+            padding: 36px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+        .outreach-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .outreach-card > p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Audit results */
+        .audit-panel {
+            background: var(--beige);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .audit-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .audit-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .issue-count {
+            background: var(--terracotta);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .issue-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .issue-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .issue-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .issue-dot.critical { background: #dc2626; }
+        .issue-dot.warning { background: #d97706; }
+        .issue-dot.info { background: #6b7280; }
+        .issue-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .issue-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .no-issues {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        .ranking-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .ranking-page1 { background: #ecfdf5; color: #059669; }
+        .ranking-page2 { background: #fef9ee; color: #d97706; }
+        .ranking-page3 { background: #fef3f0; color: var(--terracotta); }
+        .ranking-notfound { background: #fee2e2; color: #dc2626; }
+        .ranking-info {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .prospect-score {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+        }
+        .prospect-score-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        /* Search section */
+        .search-card {
+            background: white;
+            padding: 36px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+        .search-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .search-card > p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        .search-row {
+            display: flex;
+            gap: 12px;
+        }
+        .search-row input {
+            flex: 1;
+        }
+        .search-row button {
+            white-space: nowrap;
+        }
+        .search-results {
+            margin-top: 24px;
+        }
+        .search-result {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 8px;
+            background: var(--bg-warm);
+            transition: border-color 0.15s;
+        }
+        .search-result:hover {
+            border-color: var(--terracotta);
+        }
+        .search-result-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .search-result-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .search-result-info .result-website {
+            font-size: 12px;
+            color: var(--terracotta);
+            word-break: break-all;
+        }
+        .search-result button {
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--terracotta);
+            border-radius: 6px;
+            background: white;
+            color: var(--terracotta);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.15s;
+            flex-shrink: 0;
+        }
+        .search-result button:hover {
+            background: var(--terracotta);
+            color: white;
+        }
+        .search-empty {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        /* Email preview */
+        .email-panel {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .email-panel h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .email-panel label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+        .email-panel input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .email-panel input[type="text"]:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 4px rgba(198, 93, 59, 0.1);
+        }
+        .email-panel textarea {
+            width: 100%;
+            min-height: 320px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            resize: vertical;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .email-panel textarea:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 4px rgba(198, 93, 59, 0.1);
+        }
+        .email-note {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Prospect log */
+        .log-section {
+            padding: 60px 0;
+            background: var(--beige);
+            border-top: 1px solid var(--border);
+        }
+        .log-section h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .log-table th {
+            text-align: left;
+            padding: 14px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            background: var(--bg-warm);
+            border-bottom: 1px solid var(--border);
+        }
+        .log-table td {
+            padding: 14px 16px;
+            font-size: 14px;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .log-table tr:last-child td {
+            border-bottom: none;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .status-sent { background: #fef3f0; color: var(--terracotta); }
+        .status-followup { background: #fef9ee; color: #d97706; }
+        .status-replied { background: #ecfdf5; color: #059669; }
+        .status-not-interested { background: #f3f4f6; color: #6b7280; }
+        .status-closed { background: #f3f4f6; color: var(--text); }
+
+        .log-actions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .log-actions button {
+            padding: 4px 10px;
+            font-size: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.15s;
+        }
+        .log-actions button:hover {
+            border-color: var(--terracotta);
+            color: var(--terracotta);
+        }
+        .log-actions button.btn-delete {
+            border-color: transparent;
+            color: #9ca3af;
+        }
+        .log-actions button.btn-delete:hover {
+            color: #dc2626;
+        }
+        .log-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-tertiary);
+            font-size: 15px;
+        }
+        .log-date {
+            color: var(--text-tertiary);
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        /* Success message */
+        .send-success {
+            text-align: center;
+            padding: 24px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+        }
+        .send-success strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .send-success span {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .outreach-hero { padding: 40px 0 24px; }
+            .outreach-hero h1 { font-size: 32px; }
+            .outreach-card { padding: 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .audit-panel { padding: 20px; }
+            .email-panel { padding: 20px; }
+            .log-table { font-size: 13px; }
+            .log-table th, .log-table td { padding: 10px 12px; }
+            .log-actions { flex-direction: column; }
+            .col-hide-mobile { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="outreach-hero">
+            <div class="container">
+                <p class="eyebrow">Outreach Dashboard</p>
+                <h1>Cold Outreach</h1>
+                <p class="lead">Enter a prospect's website to auto-audit their SEO and generate a personalised outreach email.</p>
+            </div>
+        </section>
+
+        <section class="outreach-section">
+            <div class="container">
+
+                <!-- Search businesses -->
+                <div class="search-card">
+                    <h2>Find Businesses</h2>
+                    <p>Search Google Maps for Adelaide businesses by trade or industry.</p>
+                    <form id="searchForm" onsubmit="handleSearch(event)">
+                        <div class="search-row">
+                            <input type="text" id="searchQuery" placeholder="e.g. plumber Adelaide, dentist Golden Grove" required>
+                            <button type="submit" class="btn btn-primary" id="searchBtn">Search</button>
+                        </div>
+                    </form>
+                    <div id="searchResults" class="search-results hidden"></div>
+                </div>
+
+                <!-- Prospect input form -->
+                <div class="outreach-card">
+                    <h2>New Prospect</h2>
+                    <p>Enter the business details and we'll scan their site for SEO issues.</p>
+                    <form id="auditForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="url">Website URL</label>
+                                <input type="url" id="url" name="url" placeholder="https://example.com.au" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="businessName">Business Name</label>
+                                <input type="text" id="businessName" name="businessName" placeholder="Smith Plumbing" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Contact Name</label>
+                                <input type="text" id="contactName" name="contactName" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Contact Email <span style="font-weight:400;color:var(--text-tertiary)">(auto-detected if blank)</span></label>
+                                <input type="email" id="contactEmail" name="contactEmail" placeholder="john@smithplumbing.com.au">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="auditBtn">Run Audit</button>
+                    </form>
+                </div>
+
+                <!-- Audit results -->
+                <div id="auditResults" class="audit-panel hidden">
+                    <div class="audit-header">
+                        <h2>Audit Results</h2>
+                        <span class="issue-count" id="issueCount">0 issues</span>
+                    </div>
+                    <div class="issue-list" id="issueList"></div>
+                </div>
+
+                <!-- Email preview -->
+                <div id="emailPanel" class="email-panel hidden">
+                    <h2>Email Preview</h2>
+                    <label for="emailSubject">Subject</label>
+                    <input type="text" id="emailSubject">
+                    <label for="emailBody">Body (editable)</label>
+                    <textarea id="emailBody"></textarea>
+                    <button class="btn btn-primary btn-full" id="sendBtn" onclick="handleSend()">Send Outreach</button>
+                    <p class="email-note">Email will be sent via Outlook from hello@lumenadl.com</p>
+                    <div id="sendFeedback"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Prospect log -->
+        <section class="log-section">
+            <div class="container">
+                <h2>Outreach Log</h2>
+                <div id="prospectLog"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
+                    <p class="footer-tagline">Websites, SEO, and AI automation for Adelaide small businesses.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Nav</h4>
+                    <ul class="footer-links">
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Website Design</a></li>
+                        <li><a href="/#services">Local SEO</a></li>
+                        <li><a href="/#services">Bundle & Save</a></li>
+                        <li><a href="/contact.html">Free Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
+                        <li><a href="/contact.html">Adelaide, SA</a></li>
+                        <li><a href="/contact.html">Request a call</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lumen ADL. Built with care in Adelaide.</p>
+                <div class="footer-legal">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Config
+        const N8N_BASE = 'https://lumenadl.app.n8n.cloud/webhook';
+        const SEARCH_ENDPOINT = N8N_BASE + '/outreach-search';
+        const AUDIT_ENDPOINT = N8N_BASE + '/outreach-audit';
+        const SEND_ENDPOINT = N8N_BASE + '/outreach-send';
+        const STORAGE_KEY = 'lumen_outreach_log';
+
+        // State
+        let currentAudit = null;
+        let searchResultsData = [];
+        let lastSearchQuery = '';
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Search Google Places
+        async function handleSearch(e) {
+            e.preventDefault();
+            const btn = document.getElementById('searchBtn');
+            const query = document.getElementById('searchQuery').value.trim();
+            btn.innerHTML = '<span class="spinner"></span>Searching...';
+            btn.disabled = true;
+
+            const resultsEl = document.getElementById('searchResults');
+            resultsEl.classList.remove('hidden');
+            resultsEl.innerHTML = '<div class="search-empty">Searching Google Maps...</div>';
+
+            try {
+                const res = await fetch(SEARCH_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+
+                if (!res.ok) throw new Error('Search failed');
+
+                const data = await res.json();
+                searchResultsData = data.results || [];
+
+                if (searchResultsData.length === 0) {
+                    resultsEl.innerHTML = '<div class="search-empty">No businesses found. Try a different search.</div>';
+                } else {
+                    resultsEl.innerHTML = searchResultsData.map((r, i) => `
+                        <div class="search-result">
+                            <div class="search-result-info">
+                                <h3>${escapeHtml(r.name)}</h3>
+                                <p>${escapeHtml(r.address)}</p>
+                                ${r.website ? '<span class="result-website">' + escapeHtml(r.website) + '</span>' : '<span class="result-website" style="color:var(--text-tertiary)">No website found</span>'}
+                            </div>
+                            <button onclick="selectResult(${i})" ${!r.website ? 'disabled style="opacity:0.4;cursor:not-allowed"' : ''}>Audit</button>
+                        </div>
+                    `).join('');
+                }
+            } catch (err) {
+                resultsEl.innerHTML = '<div class="search-empty">Search failed. Check your n8n workflow is active.</div>';
+            } finally {
+                btn.innerHTML = 'Search';
+                btn.disabled = false;
+            }
+        }
+
+        function selectResult(index) {
+            const r = searchResultsData[index];
+            if (!r || !r.website) return;
+
+            document.getElementById('url').value = r.website;
+            document.getElementById('businessName').value = r.name;
+            document.getElementById('contactName').value = '';
+            document.getElementById('contactEmail').value = '';
+
+            // Store the search query so we can check ranking for it
+            lastSearchQuery = document.getElementById('searchQuery').value.trim();
+
+            // Scroll to the form
+            document.querySelector('.outreach-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Audit form submit
+        document.getElementById('auditForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('auditBtn');
+            btn.innerHTML = '<span class="spinner"></span>Analysing...';
+            btn.disabled = true;
+
+            // Hide previous results
+            document.getElementById('auditResults').classList.add('hidden');
+            document.getElementById('emailPanel').classList.add('hidden');
+            document.getElementById('sendFeedback').innerHTML = '';
+
+            const data = {
+                url: document.getElementById('url').value.trim(),
+                businessName: document.getElementById('businessName').value.trim(),
+                contactName: document.getElementById('contactName').value.trim(),
+                contactEmail: document.getElementById('contactEmail').value.trim(),
+                searchQuery: lastSearchQuery || ''
+            };
+
+            try {
+                const res = await fetch(AUDIT_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!res.ok) throw new Error('Audit request failed');
+
+                const result = await res.json();
+                currentAudit = { ...result, ...data };
+                renderAuditResults(result);
+                renderEmailPreview(result);
+
+                // If audit found emails on the site and contact email is empty, suggest them
+                if (result.foundEmails && result.foundEmails.length > 0 && !data.contactEmail) {
+                    document.getElementById('contactEmail').value = result.foundEmails[0];
+                    currentAudit.contactEmail = result.foundEmails[0];
+                    if (result.foundEmails.length > 1) {
+                        const emailHint = document.createElement('p');
+                        emailHint.style.cssText = 'font-size:12px;color:var(--terracotta);margin-top:4px;';
+                        emailHint.textContent = 'Also found: ' + result.foundEmails.slice(1).join(', ');
+                        document.getElementById('contactEmail').parentNode.appendChild(emailHint);
+                    }
+                }
+            } catch (err) {
+                alert('Audit failed. The site may be blocking requests or unreachable. Try another URL.');
+            } finally {
+                btn.innerHTML = 'Run Audit';
+                btn.disabled = false;
+            }
+        });
+
+        function renderAuditResults(data) {
+            const panel = document.getElementById('auditResults');
+            const countEl = document.getElementById('issueCount');
+            const listEl = document.getElementById('issueList');
+
+            countEl.textContent = data.issueCount + ' issue' + (data.issueCount !== 1 ? 's' : '') + ' found';
+
+            // Ranking badge
+            let rankingHtml = '';
+            if (data.rankingPage) {
+                let rankClass = 'ranking-notfound';
+                let icon = '';
+                if (data.rankingPage === 'Page 1') { rankClass = 'ranking-page1'; icon = 'Page 1 — pitch AI Automation'; }
+                else if (data.rankingPage === 'Page 2') { rankClass = 'ranking-page2'; icon = 'Page 2 — pitch AI Automation'; }
+                else if (data.rankingPage === 'Page 3') { rankClass = 'ranking-page3'; icon = 'Page 3 — pitch SEO'; }
+                else { icon = 'Not ranking — pitch SEO'; }
+
+                const queryLabel = data.searchQuery ? ' for "' + escapeHtml(data.searchQuery) + '"' : '';
+                const pitchLabel = data.pitchType === 'ai-automation' ? 'AI Automation' : 'SEO';
+                const pitchStyle = data.pitchType === 'ai-automation'
+                    ? 'background:#eff6ff;color:#2563eb;'
+                    : 'background:#fef3f0;color:var(--terracotta);';
+                rankingHtml = `<div class="prospect-score">
+                    <div>
+                        <span class="prospect-score-label">Google Ranking${queryLabel}</span>
+                        <div style="margin-top:6px;display:flex;align-items:center;gap:8px;">
+                            <span class="ranking-badge ${rankClass}">${data.rankingPage}${data.rankingPosition ? ' (#' + data.rankingPosition + ')' : ''}</span>
+                            <span class="ranking-badge" style="${pitchStyle}">Pitch: ${pitchLabel}</span>
+                        </div>
+                        <p class="ranking-info">${icon}</p>
+                    </div>
+                </div>`;
+            }
+
+            if (data.issues.length === 0) {
+                listEl.innerHTML = rankingHtml + '<div class="no-issues">No obvious SEO issues found. This site looks decent!</div>';
+            } else {
+                listEl.innerHTML = rankingHtml + data.issues.map(issue => `
+                    <div class="issue-item">
+                        <div class="issue-dot ${issue.severity}"></div>
+                        <div>
+                            <div class="issue-title">${issue.title}</div>
+                            <div class="issue-desc">${issue.description}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            panel.classList.remove('hidden');
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function renderEmailPreview(data) {
+            document.getElementById('emailSubject').value = data.emailSubject;
+            document.getElementById('emailBody').value = data.emailBody;
+            document.getElementById('emailPanel').classList.remove('hidden');
+        }
+
+        // Send outreach
+        async function handleSend() {
+            if (!currentAudit) return;
+
+            const btn = document.getElementById('sendBtn');
+            btn.innerHTML = '<span class="spinner"></span>Sending...';
+            btn.disabled = true;
+
+            const data = {
+                contactEmail: currentAudit.contactEmail,
+                contactName: currentAudit.contactName,
+                businessName: currentAudit.businessName,
+                websiteUrl: currentAudit.url,
+                emailSubject: document.getElementById('emailSubject').value,
+                emailBody: document.getElementById('emailBody').value
+            };
+
+            try {
+                const res = await fetch(SEND_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!res.ok) throw new Error('Send failed');
+
+                // Save to log
+                saveToLog({
+                    businessName: data.businessName,
+                    contactName: data.contactName,
+                    contactEmail: data.contactEmail,
+                    websiteUrl: data.websiteUrl,
+                    issueCount: currentAudit.issueCount
+                });
+
+                // Show success
+                document.getElementById('sendFeedback').innerHTML = '<div class="send-success"><strong>Outreach sent!</strong><span>Email delivered to ' + escapeHtml(data.contactEmail) + '. You\'ll get a Telegram reminder in 4 days.</span></div>';
+
+                // Reset form
+                document.getElementById('auditForm').reset();
+                document.getElementById('auditResults').classList.add('hidden');
+                document.getElementById('emailPanel').classList.add('hidden');
+                document.getElementById('emailSubject').value = '';
+                document.getElementById('emailBody').value = '';
+                currentAudit = null;
+            } catch (err) {
+                alert('Failed to send email. Check your n8n workflow is active.');
+            } finally {
+                btn.innerHTML = 'Send Outreach';
+                btn.disabled = false;
+            }
+        }
+
+        // LocalStorage helpers
+        function loadLog() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveToLog(prospect) {
+            const log = loadLog();
+            log.unshift({
+                id: Date.now(),
+                date: new Date().toISOString(),
+                businessName: prospect.businessName,
+                contactName: prospect.contactName,
+                contactEmail: prospect.contactEmail,
+                websiteUrl: prospect.websiteUrl,
+                issueCount: prospect.issueCount || 0,
+                status: 'Sent'
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(log));
+            renderLog();
+        }
+
+        function updateStatus(id, newStatus) {
+            const log = loadLog();
+            const entry = log.find(p => p.id === id);
+            if (entry) {
+                entry.status = newStatus;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(log));
+                renderLog();
+            }
+        }
+
+        function deleteProspect(id) {
+            if (!confirm('Remove this prospect from the log?')) return;
+            const log = loadLog().filter(p => p.id !== id);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(log));
+            renderLog();
+        }
+
+        function getStatusClass(status) {
+            const map = {
+                'Sent': 'status-sent',
+                'Follow-up Due': 'status-followup',
+                'Replied': 'status-replied',
+                'Not Interested': 'status-not-interested',
+                'Closed': 'status-closed'
+            };
+            return map[status] || 'status-sent';
+        }
+
+        function formatDate(iso) {
+            const d = new Date(iso);
+            return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderLog() {
+            const log = loadLog();
+            const container = document.getElementById('prospectLog');
+
+            if (log.length === 0) {
+                container.innerHTML = '<div class="log-empty">No outreach sent yet. Run an audit above to get started.</div>';
+                return;
+            }
+
+            const rows = log.map(p => {
+                const statusButtons = ['Sent', 'Follow-up Due', 'Replied', 'Not Interested', 'Closed']
+                    .filter(s => s !== p.status)
+                    .slice(0, 3)
+                    .map(s => `<button onclick="updateStatus(${p.id}, '${s}')">${s}</button>`)
+                    .join('');
+
+                return `<tr>
+                    <td class="log-date">${formatDate(p.date)}</td>
+                    <td><strong>${escapeHtml(p.businessName)}</strong></td>
+                    <td class="col-hide-mobile">${escapeHtml(p.contactName)}</td>
+                    <td class="col-hide-mobile">${escapeHtml(p.contactEmail)}</td>
+                    <td><span class="status-badge ${getStatusClass(p.status)}">${p.status}</span></td>
+                    <td>
+                        <div class="log-actions">
+                            ${statusButtons}
+                            <button class="btn-delete" onclick="deleteProspect(${p.id})">&#215;</button>
+                        </div>
+                    </td>
+                </tr>`;
+            }).join('');
+
+            container.innerHTML = `<table class="log-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Business</th>
+                        <th class="col-hide-mobile">Contact</th>
+                        <th class="col-hide-mobile">Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>`;
+        }
+
+        // Init
+        renderLog();
+    </script>
+</body>
+</html>

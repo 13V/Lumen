@@ -16,6 +16,79 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7N1EJQXRJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X7N1EJQXRJ');
+      gtag('config', 'AW-XXXXXXXXXX'); // Replace with your Google Ads ID when ready
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Lumen ADL",
+      "url": "https://www.lumenadl.com",
+      "telephone": "+61421276482",
+      "areaServed": {
+        "@type": "City",
+        "name": "Adelaide",
+        "containedInPlace": { "@type": "State", "name": "South Australia" }
+      },
+      "serviceType": ["Local SEO", "Search Engine Optimisation", "Google Business Profile Optimisation"],
+      "priceRange": "$700-$1900/mo"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most clients see meaningful ranking improvements within 6-10 weeks. Our fastest result was 8 weeks from page 3 to page 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a new website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — we work with your existing site. We'll tell you upfront if there are technical issues that would limit your results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a lock-in contract?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All our SEO packages are month-to-month. Cancel anytime with 30 days notice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialise in northern Adelaide — Mawson Lakes, Golden Grove, Gawler, Modbury, Para Hills, Salisbury, Tea Tree Gully — but work with businesses across all of Adelaide and South Australia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in the free audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We review your current Google rankings, Google Business Profile health, local citation consistency, website speed and mobile performance, and your top 3 competitors."
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* ── Landing page resets ── */
@@ -621,7 +694,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="mk-mockup-browser.png" alt="M&K Painting Services website" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.12);margin-bottom:28px;">
+                    <img src="mk-mockup-browser.png" alt="M&K Painting Services ranking on Google page 1 in Adelaide" loading="lazy" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.12);margin-bottom:28px;">
                     <div class="lp-case-quote">
                         <p>&ldquo;The phone started ringing within weeks. We&rsquo;re now booked out two months in advance.&rdquo;</p>
                         <cite>&mdash; M&amp;K Painting Services, Adelaide</cite>
@@ -674,7 +747,7 @@
                             <li>Monthly ranking report</li>
                             <li>1 SEO-optimised page/mo</li>
                         </ul>
-                        <a href="#seoLeadForm" class="seo-btn">Get started</a>
+                        <a href="#seoLeadForm" class="seo-btn">Get my free audit</a>
                     </div>
 
                     <!-- Growth -->
@@ -690,7 +763,7 @@
                             <li>Google Business posts (4&#215;/mo)</li>
                             <li>Monthly strategy call</li>
                         </ul>
-                        <a href="#seoLeadForm" class="btn btn-primary">Get started</a>
+                        <a href="#seoLeadForm" class="btn btn-primary">Get my free audit</a>
                     </div>
 
                     <!-- Dominate -->
@@ -705,7 +778,7 @@
                             <li>Quarterly landing page</li>
                             <li>Priority support</li>
                         </ul>
-                        <a href="#seoLeadForm" class="seo-btn">Get started</a>
+                        <a href="#seoLeadForm" class="seo-btn">Get my free audit</a>
                     </div>
 
                 </div>
@@ -805,6 +878,16 @@
                     body: JSON.stringify(data)
                 });
                 if (res.ok) {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            event_category: 'form',
+                            event_label: 'local_seo_audit',
+                            value: 700
+                        });
+                        gtag('event', 'conversion', {
+                            send_to: 'AW-XXXXXXXXXX/CONVERSION_LABEL'
+                        });
+                    }
                     form.innerHTML = '<div style="text-align:center;padding:32px 16px;"><div style="font-size:40px;margin-bottom:12px;">&#10003;</div><h3 style="color:var(--terracotta);margin-bottom:8px;font-size:20px;">You\'re all set!</h3><p style="color:var(--text-secondary);font-size:15px;">We\'ll review your site and call you within 1 business day with your free audit.</p></div>';
                 } else {
                     throw new Error('Failed');

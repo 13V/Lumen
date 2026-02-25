@@ -1,0 +1,764 @@
+{
+  "name": "Lumen - Outreach Audit & Send",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "outreach-search",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://www.lumenadl.com,https://lumenadl.com"
+        }
+      },
+      "id": "search-webhook",
+      "name": "Search Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        250,
+        -100
+      ],
+      "webhookId": "outreach-search"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://places.googleapis.com/v1/places:searchText",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Goog-Api-Key",
+              "value": "AIzaSyB8rneI75N9NSf4zTYW9PHjitpafggjhHg"
+            },
+            {
+              "name": "X-Goog-FieldMask",
+              "value": "places.displayName,places.formattedAddress,places.websiteUri,places.nationalPhoneNumber"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ textQuery: $json.body.query, maxResultCount: 20 }) }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "search-places",
+      "name": "Search Google Places",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        -100
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst places = response.places || [];\n\nconst results = places.map(p => ({\n  name: p.displayName?.text || 'Unknown',\n  address: p.formattedAddress || '',\n  website: p.websiteUri || '',\n  phone: p.nationalPhoneNumber || ''\n}));\n\nreturn [{ json: { results: results, count: results.length } }];"
+      },
+      "id": "format-results",
+      "name": "Format Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        750,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "search-respond",
+      "name": "Return Search Results",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "outreach-audit",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://www.lumenadl.com,https://lumenadl.com"
+        }
+      },
+      "id": "audit-webhook",
+      "name": "Audit Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        250,
+        300
+      ],
+      "webhookId": "outreach-audit"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.body.url }}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true,
+              "maxRedirects": 5
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 15000
+        }
+      },
+      "id": "fetch-website",
+      "name": "Fetch Website",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $('Audit Webhook').first().json.body.url.replace(/\\/$/, '') }}/sitemap.xml",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "check-sitemap",
+      "name": "Check Sitemap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $('Audit Webhook').first().json.body.url.replace(/\\/$/, '') }}/robots.txt",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "check-robots",
+      "name": "Check Robots",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.googleapis.com/customsearch/v1?key=AIzaSyB8rneI75N9NSf4zTYW9PHjitpafggjhHg&cx=a170c77afe8d04186&q={{ encodeURIComponent($('Audit Webhook').first().json.body.searchQuery || $('Audit Webhook').first().json.body.businessName + ' Adelaide') }}&num=10&start=1&gl=au",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "check-ranking-p1",
+      "name": "Check Ranking Page 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        450
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.googleapis.com/customsearch/v1?key=AIzaSyB8rneI75N9NSf4zTYW9PHjitpafggjhHg&cx=a170c77afe8d04186&q={{ encodeURIComponent($('Audit Webhook').first().json.body.searchQuery || $('Audit Webhook').first().json.body.businessName + ' Adelaide') }}&num=10&start=11&gl=au",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "check-ranking-p2",
+      "name": "Check Ranking Page 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        450
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.googleapis.com/customsearch/v1?key=AIzaSyB8rneI75N9NSf4zTYW9PHjitpafggjhHg&cx=a170c77afe8d04186&q={{ encodeURIComponent($('Audit Webhook').first().json.body.searchQuery || $('Audit Webhook').first().json.body.businessName + ' Adelaide') }}&num=10&start=21&gl=au",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "check-ranking-p3",
+      "name": "Check Ranking Page 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        450
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "append"
+      },
+      "id": "merge-audit-branches",
+      "name": "Merge Audit Branches",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        1250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const webhookData = $('Audit Webhook').first().json.body;\nconst websiteResponse = $('Fetch Website').first().json;\nconst sitemapResponse = $('Check Sitemap').first().json;\nconst robotsResponse = $('Check Robots').first().json;\nconst rankingP1 = $('Check Ranking Page 1').first().json;\nconst rankingP2 = $('Check Ranking Page 2').first().json;\nconst rankingP3 = $('Check Ranking Page 3').first().json;\n\nconst url = webhookData.url || '';\nconst businessName = webhookData.businessName || 'your business';\nconst contactName = webhookData.contactName || 'there';\nconst contactEmail = webhookData.contactEmail || '';\n\nconst html = typeof websiteResponse.body === 'string' ? websiteResponse.body : (websiteResponse.data || '');\nconst issues = [];\n\n// Extract emails from website\nconst emailRegex = /[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}/g;\nconst rawEmails = html.match(emailRegex) || [];\nconst foundEmails = [...new Set(rawEmails)].filter(e => !e.match(/example|test|noreply|no-reply|wordpress|wix|squarespace|sentry|webpack|domain\\.com|company\\.com|yourname|youremail|name@|user@|email@|info@company|admin@company/i) && !e.match(/\\.(png|jpg|jpeg|gif|svg|webp|ico|bmp|tiff|pdf|zip|css|js|json|xml|txt|mp4|mp3|woff|woff2|ttf|eot)$/i) &&\n  !e.includes('%') &&\n  /^[a-zA-Z0-9]/.test(e)).slice(0, 5);\n\n// 1. Check HTTPS\nif (url && !url.startsWith('https')) {\n  issues.push({\n    title: 'Not Using HTTPS',\n    description: \"Your site isn't using a secure connection (HTTPS), which Google has confirmed hurts your rankings. Most visitors will also see a 'Not Secure' warning in their browser.\",\n    severity: 'critical'\n  });\n}\n\n// 2. Title tag\nconst titleMatch = html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i);\nconst title = titleMatch ? titleMatch[1].trim() : '';\nif (!title) {\n  issues.push({ title: 'Missing Page Title', description: \"Your homepage doesn't have a page title set. This is the blue clickable text people see in Google search results. Without it, Google will guess what to show, and it's usually not great.\", severity: 'critical' });\n} else if (title.length < 20) {\n  issues.push({ title: 'Page Title Too Short', description: \"Your page title is under 20 characters. This means you're wasting valuable space in Google search results where you could be telling customers what you do and where you are.\", severity: 'warning' });\n} else if (title.length > 60) {\n  issues.push({ title: 'Page Title Too Long', description: \"Your page title is over 60 characters, which means Google will cut it off in search results. Potential customers won't see your full business name or what you offer.\", severity: 'warning' });\n}\n\n// 3. Meta description\nconst metaDescMatch = html.match(/<meta[^>]*name=[\"']description[\"'][^>]*content=[\"']([^\"']*)[\"'][^>]*>/i) || html.match(/<meta[^>]*content=[\"']([^\"']*)[\"'][^>]*name=[\"']description[\"'][^>]*>/i);\nconst metaDesc = metaDescMatch ? metaDescMatch[1].trim() : '';\nif (!metaDesc) {\n  issues.push({ title: 'Missing Meta Description', description: \"Your site doesn't have a description set for Google, so Google is picking random text from your page to show in search results. This means potential customers might not click through.\", severity: 'critical' });\n} else if (metaDesc.length > 160) {\n  issues.push({ title: 'Meta Description Too Long', description: \"Your meta description is over 160 characters. Google will truncate it in search results, cutting off your message to potential customers mid-sentence.\", severity: 'warning' });\n}\n\n// 4. H1 tags\nconst h1Matches = html.match(/<h1[\\s>]/gi) || [];\nif (h1Matches.length === 0) {\n  issues.push({ title: 'Missing H1 Heading', description: \"Your homepage doesn't have a clear main heading telling Google what your business does. This is one of the easiest wins for local rankings.\", severity: 'critical' });\n} else if (h1Matches.length > 1) {\n  issues.push({ title: 'Multiple H1 Headings', description: \"Your page has multiple main headings (H1 tags), which confuses Google about what your page is really about. You should have exactly one clear H1 per page.\", severity: 'warning' });\n}\n\n// 5. Viewport\nconst hasViewport = /<meta[^>]*name=[\"']viewport[\"']/i.test(html);\nif (!hasViewport) {\n  issues.push({ title: 'Not Mobile-Friendly', description: \"Your site doesn't have a mobile viewport tag, which means it probably looks terrible on phones. Google now ranks mobile-friendly sites higher, and over 60% of searches happen on mobile.\", severity: 'critical' });\n}\n\n// 6. Schema/JSON-LD\nconst hasSchema = /<script[^>]*type=[\"']application\\/ld\\+json[\"']/i.test(html) || /itemtype=[\"']https?:\\/\\/schema\\.org/i.test(html);\nif (!hasSchema) {\n  issues.push({ title: 'No Structured Data', description: \"Your site doesn't use structured data markup, which means Google can't show rich info (like star ratings, business hours, or phone number) in search results.\", severity: 'warning' });\n}\n\n// 7. Images without alt text\nconst imgTags = html.match(/<img[^>]*>/gi) || [];\nlet missingAltCount = 0;\nfor (const img of imgTags) {\n  if (!/alt=[\"'][^\"']+[\"']/i.test(img)) {\n    missingAltCount++;\n  }\n}\nif (missingAltCount > 0) {\n  issues.push({ title: 'Images Missing Alt Text', description: missingAltCount + \" images on your site are missing descriptions (alt text), which means Google can't 'see' them or use them to understand what your business offers.\", severity: 'warning' });\n}\n\n// 8. Open Graph\nconst hasOG = /<meta[^>]*property=[\"']og:/i.test(html);\nif (!hasOG) {\n  issues.push({ title: 'Missing Social Share Tags', description: \"Your site doesn't have Open Graph tags, which means when someone shares your website on Facebook or LinkedIn, it'll look plain with no image or description.\", severity: 'warning' });\n}\n\n// 9. Sitemap check\nconst sitemapStatus = sitemapResponse.statusCode || 0;\nconst sitemapBody = typeof sitemapResponse.body === 'string' ? sitemapResponse.body : (sitemapResponse.data || '');\nconst hasSitemap = sitemapStatus >= 200 && sitemapStatus < 400 && sitemapBody.includes('<urlset');\nif (!hasSitemap) {\n  issues.push({ title: 'No Sitemap Found', description: \"Your site doesn't have a sitemap.xml file, which makes it harder for Google to discover and index all your pages.\", severity: 'warning' });\n}\n\n// 10. Robots.txt check\nconst robotsStatus = robotsResponse.statusCode || 0;\nconst robotsBody = typeof robotsResponse.body === 'string' ? robotsResponse.body : (robotsResponse.data || '');\nconst hasRobots = robotsStatus >= 200 && robotsStatus < 400 && robotsBody.toLowerCase().includes('user-agent');\nif (!hasRobots) {\n  issues.push({ title: 'No Robots.txt Found', description: \"Your site doesn't have a robots.txt file. While not critical, this file helps guide Google on how to crawl your site efficiently.\", severity: 'info' });\n}\n\n// Ranking check\nlet rankingPosition = 0;\nlet rankingPage = 'Not found';\nconst prospectDomain = url.replace(/^https?:\\/\\//, '').replace(/\\/.*$/, '').replace(/^www\\./, '').toLowerCase();\n\nfunction findInResults(data, offset) {\n  const body = data.body || data;\n  const items = body.items || data.items || [];\n  for (let i = 0; i < items.length; i++) {\n    const link = (items[i].link || '').toLowerCase();\n    if (link.includes(prospectDomain)) {\n      return offset + i + 1;\n    }\n  }\n  return 0;\n}\n\nrankingPosition = findInResults(rankingP1, 0) || findInResults(rankingP2, 10) || findInResults(rankingP3, 20);\n\nif (rankingPosition >= 1 && rankingPosition <= 10) {\n  rankingPage = 'Page 1';\n} else if (rankingPosition >= 11 && rankingPosition <= 20) {\n  rankingPage = 'Page 2';\n} else if (rankingPosition >= 21 && rankingPosition <= 30) {\n  rankingPage = 'Page 3';\n} else {\n  rankingPage = 'Not in top 30';\n  rankingPosition = 0;\n}\n\n// Sort: critical first, then warning, then info\nconst severityOrder = { critical: 0, warning: 1, info: 2 };\nissues.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);\n\n// Generate email — SEO pitch for page 3+, AI Automation pitch for pages 1-2\nconst topIssues = issues.slice(0, 3);\nconst bulletPoints = topIssues.map((issue, i) => (i + 1) + '. ' + issue.description).join('\\n\\n');\n\nconst isAiPitch = rankingPage === 'Page 1' || rankingPage === 'Page 2';\n\nlet emailSubject, emailBody;\n\nconst industryKeywords = {\n  trades:       /plumb|electr|builder|carpent|paint|tiler|roofer|landscap|concret|pest|locksmith|handyman|fenc|paving|gutter|air.?con|refriger|weld/i,\n  health:       /dentist|physio|chiro|osteo|doctor|optom|podiat|medical|clinic|psych|speech|health/i,\n  beauty:       /hair|barber|beauty|nail|skin|massage|spa|salon|wax|brow|lash|cosmetic/i,\n  automotive:   /mechanic|car.?service|smash|detailing|tyre|tire|motor/i,\n  hospitality:  /restaurant|cafe|catering|pizza|bakery|coffee/i,\n  professional: /account|solicitor|lawyer|financial|mortgage|broker|legal|convey/i,\n  realestate:   /real.?estate|property.?agent|rental/i,\n  fitness:      /gym|personal.?train|yoga|pilates|fitness|coach|childcare/i\n};\nconst searchQ = (webhookData.searchQuery || '').toLowerCase();\nlet industry = 'general';\nfor (const [key, regex] of Object.entries(industryKeywords)) {\n  if (regex.test(searchQ)) { industry = key; break; }\n}\n\nif (isAiPitch) {\n  const subjects = {\n    trades:       'Quick question about ' + businessName + '\\'s missed calls',\n    health:       'Quick question about ' + businessName + '\\'s appointment gaps',\n    beauty:       'Quick question about ' + businessName + '\\'s rebooking rate',\n    automotive:   'Quick question about ' + businessName + '\\'s service reminders',\n    hospitality:  'Quick question about ' + businessName + '\\'s online reviews',\n    professional: 'Quick question about ' + businessName + '\\'s lead follow-up',\n    realestate:   'Quick question about ' + businessName + '\\'s lead response time',\n    fitness:      'Quick question about ' + businessName + '\\'s client retention',\n    general:      'Quick question about ' + businessName + '\\'s missed leads'\n  };\n  const bodies = {\n    trades:       'Hi ' + contactName + ',\\n\\nNoticed ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Good to see you showing up well.\\n\\nQuick question - when you\\'re on a job and miss a call, what happens? We set up missed call text-back and automated follow-ups for Adelaide tradies so no job walks out the door. Also handles quote follow-ups, Google review requests, and online booking, all hands-free.\\n\\nWe also do websites and SEO for a lot of clients but happy to start with the automation side.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    health:       'Hi ' + contactName + ',\\n\\nCame across ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. You\\'re showing up well.\\n\\nDo you have a system to remind patients before appointments and follow up those who are overdue? We set up automated recall and reminder sequences for Adelaide clinics that cut no-shows and keep the books full, no manual work involved.\\n\\nWe also do websites and SEO but happy to start wherever\\'s most useful.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    beauty:       'Hi ' + contactName + ',\\n\\nNoticed ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Looking good on Google.\\n\\nMost salons lose clients simply because no one followed up. We set up automated rebook reminders for Adelaide salons that reach out 4-6 weeks after each visit, win back lapsed clients, and collect Google reviews, all in the background.\\n\\nWe also do websites and SEO but happy to start with the retention side.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    automotive:   'Hi ' + contactName + ',\\n\\nCame across ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Good to see you ranking well.\\n\\nMost workshops leave money on the table because they don\\'t remind past customers when they\\'re due for their next service. We set that up for Adelaide mechanics along with online booking and automatic Google review requests after each job.\\n\\nWe also do websites and SEO but happy to start with the automation side.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    hospitality:  'Hi ' + contactName + ',\\n\\nCame across ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Great to see you showing up well.\\n\\nGoogle reviews drive most of the foot traffic for cafes and restaurants but most owners are too busy to ask consistently. We automate the whole process so reviews come in passively after each visit, plus reservation reminders to cut no-shows.\\n\\nWe also do websites and SEO but happy to focus on the reviews side first.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    professional: 'Hi ' + contactName + ',\\n\\nCame across ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Good to see you ranking well.\\n\\nHow fast do you follow up new enquiries? Most professional service businesses lose clients because they don\\'t hear back fast enough. We build automated follow-up sequences that respond within minutes, qualify leads, and book consultations automatically, even outside business hours.\\n\\nWe also do websites and SEO but happy to focus on the lead side first.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    realestate:   'Hi ' + contactName + ',\\n\\nNoticed ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Good to see you ranking well.\\n\\nIn real estate the agent who responds first usually wins the listing. We build AI-powered follow-up systems for Adelaide agents that instantly respond to every enquiry 24/7, qualify buyers and sellers, and keep them warm until they\\'re ready to move.\\n\\nWe also do websites and SEO but happy to start with the lead response side.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    fitness:      'Hi ' + contactName + ',\\n\\nNoticed ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. Great to see you ranking well.\\n\\nConverting trial clients to members and keeping them coming back is the hardest part. We set up automated follow-up sequences for Adelaide gyms and studios that do exactly that, plus Google review collection on autopilot.\\n\\nWe also do websites and SEO but happy to start with the retention side.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach',\n    general:      'Hi ' + contactName + ',\\n\\nCame across ' + businessName + ' while searching for ' + (webhookData.searchQuery || 'your service') + ' in Adelaide. You\\'re showing up well on Google.\\n\\nWhen a customer calls and can\\'t get through, or fills out a form and doesn\\'t hear back quickly, they usually move on. We build automated follow-up systems for Adelaide businesses that make sure every lead gets a response, even outside business hours.\\n\\nWe also do websites and SEO but happy to start with the automation side.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach'\n  };\n  emailSubject = subjects[industry] || subjects.general;\n  emailBody = bodies[industry] || bodies.general;\n} else {\n  emailSubject = 'Quick question about ' + businessName + '\\'s Google visibility';\n  emailBody = 'Hi ' + contactName + ',\\n\\nHad a quick look at ' + businessName + '\\'s website and spotted a few things that could be holding you back on Google:\\n\\n' + bulletPoints + '\\n\\nEasy fixes. Happy to do a free 10 min walkthrough showing exactly what to sort out. No strings.\\n\\nWe also do AI automation for local businesses (missed calls, review requests, booking systems) if that\\'s ever on your radar.' + '\\n\\nWorth a quick chat?\\n\\nTroy\\nLumen ADL\\nhttps://lumenadl.com?utm_source=cold-email&utm_medium=email&utm_campaign=outreach';\n}\nreturn [{\n  json: {\n    issues: issues,\n    issueCount: issues.length,\n    pitchType: isAiPitch ? 'ai-automation' : 'seo',\n    industry: industry,\n    emailSubject: emailSubject,\n    emailBody: emailBody,\n    businessName: businessName,\n    contactName: contactName,\n    contactEmail: contactEmail,\n    foundEmails: foundEmails,\n    rankingPosition: rankingPosition,\n    rankingPage: rankingPage,\n    searchQuery: webhookData.searchQuery || '',\n    url: url\n  }\n}];"
+      },
+      "id": "analyse-seo",
+      "name": "Analyse SEO Issues",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "audit-respond",
+      "name": "Return Audit Results",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1750,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "outreach-send",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://www.lumenadl.com,https://lumenadl.com"
+        }
+      },
+      "id": "send-webhook",
+      "name": "Send Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        250,
+        800
+      ],
+      "webhookId": "outreach-send"
+    },
+    {
+      "parameters": {
+        "toRecipients": "={{ $json.body.contactEmail }}",
+        "subject": "={{ $json.body.emailSubject }}",
+        "bodyContent": "={{ $json.body.emailBody }}",
+        "bodyContentType": "text",
+        "options": {}
+      },
+      "id": "send-email",
+      "name": "Send Outreach Email",
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        900,
+        950
+      ],
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "",
+          "name": "Microsoft Outlook"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6059709311",
+        "text": "=📤 *Outreach Sent*\n\n*Business:* {{ $('Send Webhook').first().json.body.businessName }}\n*Contact:* {{ $('Send Webhook').first().json.body.contactName }}\n*Email:* {{ $('Send Webhook').first().json.body.contactEmail }}\n*Website:* {{ $('Send Webhook').first().json.body.websiteUrl }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-sent",
+      "name": "Telegram: Outreach Sent",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1300,
+        950
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({success: true, message: \"Outreach email sent successfully.\"}) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "send-respond",
+      "name": "Send Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        950
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 4,
+        "unit": "days"
+      },
+      "id": "wait-followup",
+      "name": "Wait 4 Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1700,
+        950
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "6059709311",
+        "text": "=⏰ *Follow-Up Reminder*\n\nFollow up with *{{ $('Send Webhook').first().json.body.businessName }}* ({{ $('Send Webhook').first().json.body.contactName }})\n\n*Email:* {{ $('Send Webhook').first().json.body.contactEmail }}\n*Website:* {{ $('Send Webhook').first().json.body.websiteUrl }}\n\nOutreach was sent 4 days ago.",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-followup",
+      "name": "Telegram: Follow-Up Reminder",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1900,
+        950
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.sentEmails) staticData.sentEmails = [];\nconst contactEmail = ($json.body.contactEmail || '').toLowerCase();\nconst isDuplicate = staticData.sentEmails.includes(contactEmail);\nreturn [{ json: { ...$json, isDuplicate } }];"
+      },
+      "id": "check-duplicate",
+      "name": "Check Duplicate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "dup-check",
+              "leftValue": "={{ $json.isDuplicate }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-duplicate",
+      "name": "Already Contacted?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        700,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({success: false, duplicate: true, message: \"Already contacted this business.\"}) }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "duplicate-response",
+      "name": "Already Contacted Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        900,
+        650
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.sentEmails) staticData.sentEmails = [];\nconst contactEmail = ($('Send Webhook').first().json.body.contactEmail || '').toLowerCase();\nif (!staticData.sentEmails.includes(contactEmail)) {\n  staticData.sentEmails.push(contactEmail);\n}\nreturn $input.all();"
+      },
+      "id": "mark-as-sent",
+      "name": "Mark as Sent",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        950
+      ]
+    }
+  ],
+  "connections": {
+    "Search Webhook": {
+      "main": [
+        [
+          {
+            "node": "Search Google Places",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Google Places": {
+      "main": [
+        [
+          {
+            "node": "Format Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Results": {
+      "main": [
+        [
+          {
+            "node": "Return Search Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audit Webhook": {
+      "main": [
+        [
+          {
+            "node": "Fetch Website",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Ranking Page 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Website": {
+      "main": [
+        [
+          {
+            "node": "Check Sitemap",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Sitemap": {
+      "main": [
+        [
+          {
+            "node": "Check Robots",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Robots": {
+      "main": [
+        [
+          {
+            "node": "Merge Audit Branches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Ranking Page 1": {
+      "main": [
+        [
+          {
+            "node": "Check Ranking Page 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Ranking Page 2": {
+      "main": [
+        [
+          {
+            "node": "Check Ranking Page 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Ranking Page 3": {
+      "main": [
+        [
+          {
+            "node": "Merge Audit Branches",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Audit Branches": {
+      "main": [
+        [
+          {
+            "node": "Analyse SEO Issues",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyse SEO Issues": {
+      "main": [
+        [
+          {
+            "node": "Return Audit Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Outreach Email": {
+      "main": [
+        [
+          {
+            "node": "Telegram: Outreach Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram: Outreach Sent": {
+      "main": [
+        [
+          {
+            "node": "Mark as Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 4 Days": {
+      "main": [
+        [
+          {
+            "node": "Telegram: Follow-Up Reminder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Webhook": {
+      "main": [
+        [
+          {
+            "node": "Check Duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Already Contacted?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Already Contacted?": {
+      "main": [
+        [
+          {
+            "node": "Already Contacted Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Outreach Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as Sent": {
+      "main": [
+        [
+          {
+            "node": "Send Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Success Response": {
+      "main": [
+        [
+          {
+            "node": "Wait 4 Days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "Lumen"
+    }
+  ]
+}
