@@ -423,6 +423,219 @@
             flex-shrink: 0;
         }
 
+        /* ── SMS Visual ── */
+        .lp-visual {
+            padding: 80px 0;
+            background: white;
+        }
+        .visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 48px;
+        }
+        .visual-copy h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        .visual-copy p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 0.97rem;
+        }
+        .visual-copy ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .visual-copy ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+        }
+        .visual-copy ul li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .phone-mockup {
+            background: #1a1a2e;
+            border-radius: 40px;
+            padding: 16px;
+            max-width: 300px;
+            margin: 0 auto;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+        }
+        .phone-screen {
+            background: #f0f0f5;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+        .phone-status {
+            background: #f0f0f5;
+            padding: 12px 20px 4px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .sms-header {
+            background: white;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .sms-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .sms-header-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .sms-header-sub {
+            font-size: 0.7rem;
+            color: #888;
+        }
+        .sms-body {
+            padding: 16px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 280px;
+            background: #f0f0f5;
+        }
+        .sms-bubble {
+            max-width: 82%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            font-size: 0.78rem;
+            line-height: 1.5;
+        }
+        .sms-bubble.practice {
+            background: white;
+            color: #1a1a1a;
+            border-bottom-left-radius: 4px;
+            align-self: flex-start;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .sms-bubble.patient {
+            background: #34c759;
+            color: white;
+            border-bottom-right-radius: 4px;
+            align-self: flex-end;
+        }
+        .sms-bubble.practice-reply {
+            background: white;
+            color: #1a1a1a;
+            border-bottom-left-radius: 4px;
+            align-self: flex-start;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .sms-time {
+            font-size: 0.65rem;
+            color: #999;
+            text-align: center;
+            margin: 4px 0;
+        }
+        .sms-input-bar {
+            background: white;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-top: 1px solid #e5e5e5;
+        }
+        .sms-input-fake {
+            flex: 1;
+            background: #f0f0f5;
+            border-radius: 20px;
+            height: 32px;
+            font-size: 0.75rem;
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+
+        /* ── FAQ ── */
+        .lp-faq {
+            padding: 80px 0;
+            background: var(--bg-warm);
+        }
+        .faq-list {
+            margin-top: 48px;
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: white;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 22px 28px;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: background 0.15s;
+        }
+        .faq-q:hover { background: var(--bg-warm); }
+        .faq-q svg {
+            flex-shrink: 0;
+            transition: transform 0.25s;
+            color: var(--terracotta);
+        }
+        .faq-item.open .faq-q svg { transform: rotate(45deg); }
+        .faq-a {
+            display: none;
+            padding: 0 28px 22px;
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-a { display: block; }
+
         /* ── Mobile ── */
         @media (max-width: 768px) {
             .lp-hero { padding: 72px 0 60px; }
@@ -430,8 +643,11 @@
             .how-steps { grid-template-columns: 1fr; gap: 32px; }
             .how-steps::before { display: none; }
             .included-grid { grid-template-columns: 1fr; gap: 40px; }
-            .lp-pain, .lp-how, .lp-included, .lp-cta { padding: 60px 0; }
+            .lp-pain, .lp-how, .lp-included, .lp-cta, .lp-visual, .lp-faq { padding: 60px 0; }
             .trust-bar { gap: 20px; }
+            .visual-grid { grid-template-columns: 1fr; gap: 40px; }
+            .faq-q { padding: 18px 20px; font-size: 0.93rem; }
+            .faq-a { padding: 0 20px 18px; }
         }
     </style>
 </head>
@@ -492,15 +708,62 @@
                     </div>
                     <div class="pain-card reveal reveal-delay-1">
                         <span class="pain-icon">🔄</span>
-                        <div class="pain-stat">40%</div>
-                        <h3>Overdue recall patients who never rebook</h3>
-                        <p>Patients who are 6+ months overdue don't come back unless someone reaches out. Most practices don't have time to chase them manually.</p>
+                        <div class="pain-stat">Silently</div>
+                        <h3>Overdue recall patients drifting away</h3>
+                        <p>Patients who are 6+ months overdue don't come back unless someone reaches out. Most practices don't have time to chase them manually — so they just disappear.</p>
                     </div>
                     <div class="pain-card reveal reveal-delay-2">
                         <span class="pain-icon">🌙</span>
                         <div class="pain-stat">9pm</div>
                         <h3>New patients enquiring after hours</h3>
                         <p>Someone fills out your form tonight. If they don't hear back within minutes, they book the next practice that comes up on Google.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMS Visual -->
+        <section class="lp-visual">
+            <div class="container">
+                <div class="lp-section-label">What It Looks Like</div>
+                <div class="visual-grid">
+                    <div class="visual-copy reveal">
+                        <h3>A patient gets this the night before their appointment</h3>
+                        <p>A simple, personalised SMS lands 48 hours and 2 hours before their visit. One tap to confirm. One tap to reschedule. No phone tag, no manual work from your front desk.</p>
+                        <p>If they don't respond, we follow up automatically. If they cancel, the gap can trigger a recall message to another patient on the waitlist.</p>
+                        <ul>
+                            <li>Sent 48 hours and 2 hours before each appointment</li>
+                            <li>One-tap confirm or reschedule</li>
+                            <li>Automatic follow-up if no response</li>
+                            <li>Works alongside your existing booking system</li>
+                        </ul>
+                    </div>
+                    <div class="reveal reveal-delay-1">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <div class="phone-status">
+                                    <span>9:41</span>
+                                    <span>●●●</span>
+                                </div>
+                                <div class="sms-header">
+                                    <div class="sms-avatar">ADC</div>
+                                    <div>
+                                        <div class="sms-header-name">Adelaide Dental Care</div>
+                                        <div class="sms-header-sub">text message</div>
+                                    </div>
+                                </div>
+                                <div class="sms-body">
+                                    <div class="sms-time">Yesterday 4:30pm</div>
+                                    <div class="sms-bubble practice">Hi Sarah, just a reminder about your appointment <strong>tomorrow at 10am</strong> with Dr Johnson at Adelaide Dental Care.<br><br>Reply <strong>Y</strong> to confirm or call (08) 8123 4567 to reschedule.</div>
+                                    <div class="sms-time">Yesterday 6:12pm</div>
+                                    <div class="sms-bubble patient">Y</div>
+                                    <div class="sms-bubble practice-reply">Great, we'll see you tomorrow at 10am! If anything changes, call us on (08) 8123 4567. See you then 😊</div>
+                                </div>
+                                <div class="sms-input-bar">
+                                    <div class="sms-input-fake">iMessage</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -590,8 +853,8 @@
                         <p class="aside-body">Most practices see a meaningful drop in no-shows within the first month. Recall patients start rebooking without anyone chasing them. New enquiries convert at a higher rate because they get an instant response.</p>
                         <div class="aside-stat">
                             <div class="aside-stat-item">
-                                <div class="aside-stat-num">50%</div>
-                                <div class="aside-stat-label">average reduction in no-shows after SMS reminders go live</div>
+                                <div class="aside-stat-num">~50%</div>
+                                <div class="aside-stat-label">reduction in no-shows typically seen after SMS reminders go live</div>
                             </div>
                             <div class="aside-stat-item">
                                 <div class="aside-stat-num">3–5</div>
@@ -607,6 +870,46 @@
             </div>
         </section>
 
+        <!-- FAQ -->
+        <section class="lp-faq">
+            <div class="container">
+                <div class="lp-section-label">Common Questions</div>
+                <h2 class="lp-section-heading">Everything you're probably wondering</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q">Will this work with our booking system?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-a">Most likely yes. We work with the booking and practice management systems commonly used by Adelaide dental practices including Dental4Windows, Exact, Cliniko, Zedmed, and others. We'll confirm compatibility in the first call before anything is set up.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">How long does setup take?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-a">Typically 3–5 business days from the first call to everything going live. We handle all the technical setup. Your front desk doesn't need to change anything about how they work — the automations run entirely in the background.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Will patients find SMS messages intrusive?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-a">In our experience, patients appreciate appointment reminders — they're genuinely useful, not promotional. Every message includes a clear opt-out so patients are always in control. Recall and review messages are sent with appropriate timing and frequency so they never feel like spam.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">What does it cost?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-a">We price based on the size of the practice and which automations are needed. We'll put together a clear quote after the demo call so you know exactly what you're getting before committing to anything. There are no lock-in contracts.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Do we need to do anything differently day-to-day?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-a">No. Once set up, the automations run entirely on their own. Your front desk books appointments as normal — the reminders, recall messages, and review requests all fire automatically based on what's in your system. You'll get a simple monthly summary showing what ran.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA -->
         <section class="lp-cta" id="get-started">
             <div class="container">
@@ -616,7 +919,7 @@
                 <form class="cta-form" id="ctaForm">
                     <input type="text" name="name" placeholder="Your name" required>
                     <input type="email" name="email" placeholder="Practice email" required>
-                    <button type="submit" onclick="gtag('event','form_submit',{'event_category':'cta','event_label':'dental_landing'});">Get in Touch</button>
+                    <button type="submit">Book My Demo</button>
                 </form>
                 <div class="cta-form-success" id="ctaSuccess">
                     Thanks! Troy will be in touch within one business day.
@@ -672,6 +975,9 @@
     </footer>
 
     <script>
+        // ── Webhook URL — paste your n8n dental lead webhook URL here ──
+        const DENTAL_WEBHOOK = 'PASTE_N8N_WEBHOOK_URL_HERE';
+
         // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
@@ -679,15 +985,45 @@
         }, { threshold: 0.12 });
         reveals.forEach(el => observer.observe(el));
 
-        // Form submit — sends to hello@lumenadl.com via mailto fallback
-        document.getElementById('ctaForm').addEventListener('submit', function(e) {
+        // Form submit — POST to n8n webhook
+        document.getElementById('ctaForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const name = this.name.value;
-            const email = this.email.value;
-            // Open mailto as fallback — swap for a real endpoint when ready
-            window.location.href = 'mailto:hello@lumenadl.com?subject=Dental Automation Enquiry from ' + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email) + '%0A%0AInterested in the dental no-show automation.';
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const btn = this.querySelector('button');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            gtag('event', 'form_submit', { event_category: 'cta', event_label: 'dental_landing' });
+
+            try {
+                if (DENTAL_WEBHOOK !== 'PASTE_N8N_WEBHOOK_URL_HERE') {
+                    await fetch(DENTAL_WEBHOOK, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, source: 'dental-landing', timestamp: new Date().toISOString() })
+                    });
+                } else {
+                    // Fallback: mailto if webhook not configured yet
+                    window.open('mailto:hello@lumenadl.com?subject=Dental Automation Enquiry&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email));
+                }
+            } catch(err) {
+                // Still show success to user even if fetch fails
+                console.error('Webhook error:', err);
+            }
+
             document.getElementById('ctaForm').style.display = 'none';
             document.getElementById('ctaSuccess').style.display = 'block';
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
         });
     </script>
 
