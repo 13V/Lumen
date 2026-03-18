@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7N1EJQXRJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7N1EJQXRJ');
+        // Fire conversion event for Meta pixel lead tracking
+        gtag('event', 'conversion', {
+            'event_category': 'lead',
+            'event_label': 'free_audit_request'
+        });
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1424178938827996');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+    </script>
+    <noscript><img height='1' width='1' style='display:none'
+    src='https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1'
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks! We'll be in touch — Lumen ADL</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thankyou-section {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: var(--bg-warm);
+        }
+        .thankyou-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 64px 56px;
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(45, 36, 32, 0.06);
+        }
+        .thankyou-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+        }
+        .thankyou-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #2e7d32;
+        }
+        .thankyou-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--terracotta-light);
+            margin-bottom: 12px;
+        }
+        .thankyou-heading {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.2rem;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .thankyou-body {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 36px;
+        }
+        .thankyou-steps {
+            text-align: left;
+            background: var(--bg-warm);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 36px;
+        }
+        .thankyou-steps h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-tertiary);
+            margin-bottom: 16px;
+        }
+        .thankyou-step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+        .thankyou-step:last-child {
+            margin-bottom: 0;
+        }
+        .step-number {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .step-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .step-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .thankyou-cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 600px) {
+            .thankyou-card {
+                padding: 40px 24px;
+            }
+            .thankyou-heading {
+                font-size: 1.75rem;
+            }
+            .thankyou-cta-group {
+                flex-direction: column;
+            }
+            .thankyou-cta-group .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="/work.html">Work</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="nav-cta">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="thankyou-section">
+            <div class="thankyou-card">
+                <div class="thankyou-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <p class="thankyou-eyebrow">Audit Request Received</p>
+                <h1 class="thankyou-heading">Thanks — we'll be in touch within 24 hours.</h1>
+                <p class="thankyou-body">
+                    Your free website audit request is in. We'll take a look at your site
+                    and come back to you with honest, practical feedback — no sales pitch.
+                </p>
+                <div class="thankyou-steps">
+                    <h3>What happens next</h3>
+                    <div class="thankyou-step">
+                        <div class="step-number">1</div>
+                        <p class="step-text"><strong>We review your website</strong> — checking speed, mobile usability, SEO basics, and lead conversion.</p>
+                    </div>
+                    <div class="thankyou-step">
+                        <div class="step-number">2</div>
+                        <p class="step-text"><strong>We reach out</strong> — usually by phone or text within 24 hours to walk you through what we found.</p>
+                    </div>
+                    <div class="thankyou-step">
+                        <div class="step-number">3</div>
+                        <p class="step-text"><strong>You decide what's next</strong> — no pressure, no obligation. You keep the audit either way.</p>
+                    </div>
+                </div>
+                <div class="thankyou-cta-group">
+                    <a href="/" class="btn btn-secondary">Back to Home</a>
+                    <a href="/work.html" class="btn btn-primary">See Our Work</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
+                    <p class="footer-tagline">Websites, SEO, and AI automation for Adelaide small businesses.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Nav</h4>
+                    <ul class="footer-links">
+                        <li><a href="/work.html">Work</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Website Design</a></li>
+                        <li><a href="/#services">Local SEO</a></li>
+                        <li><a href="/#services">Bundle &amp; Save</a></li>
+                        <li><a href="/contact.html">Free Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
+                        <li><a href="/contact.html">Adelaide, SA</a></li>
+                        <li><a href="/contact.html">Request a call</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lumen ADL. Built with care in Adelaide.</p>
+                <div class="footer-legal">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
