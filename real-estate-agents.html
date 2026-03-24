@@ -363,16 +363,27 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .lp-hero { padding: 80px 0 60px; }
+            /* Cancel styles.css padding-bottom added for mobile CTA bar (not used on this page) */
+            body { padding-bottom: 0 !important; }
+
+            .lp-hero { padding: 90px 0 60px; }
+
+            /* Hero buttons: full-width stacked for easy tapping */
+            .lp-hero-cta { flex-direction: column; align-items: stretch; gap: 12px; max-width: 340px; margin: 0 auto; }
+            .btn-hero, .btn-ghost { justify-content: center; width: 100%; padding: 16px 20px; }
+
+            /* Trust bar: 2×2 grid on small screens */
+            .trust-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; justify-items: start; }
+
             .pain-grid { grid-template-columns: 1fr; gap: 16px; }
             .how-steps { grid-template-columns: 1fr; gap: 32px; }
             .how-steps::before { display: none; }
             .included-grid { grid-template-columns: 1fr; gap: 40px; }
             .testimonials-grid { grid-template-columns: 1fr; }
-            .trust-bar { gap: 20px; }
             .lp-pain, .lp-how, .lp-included, .lp-testimonials, .lp-faq, .lp-cta { padding: 60px 0; }
             .faq-q { padding: 18px 20px; font-size: 0.93rem; }
             .faq-a { padding: 0 20px 18px; }
+            .aside-stat { flex-direction: row; flex-wrap: wrap; gap: 20px; }
         }
     </style>
 </head>
