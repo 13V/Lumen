@@ -1,570 +1,143 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7N1EJQXRJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-X7N1EJQXRJ');
-    </script>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1424178938827996');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height='1' width='1' style='display:none'
-    src='https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1'
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Web Design, SEO &amp; AI Automation Questions | Lumen ADL</title>
-    <meta name="description"
-        content="Frequently asked questions about Lumen ADL's web design, local SEO &amp; AI automation services for Adelaide small businesses. No jargon.">
-
-
-
-
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.lumenadl.com/faq.html">
-    <link rel="alternate" hreflang="en-au" href="https://www.lumenadl.com/faq.html">
-    <!-- Open Graph -->
-    <meta property="og:title" content="FAQ | Web Design, SEO &amp; AI Automation Questions | Lumen ADL">
-    <meta property="og:description" content="Frequently asked questions about Lumen ADL's web design, local SEO &amp; AI automation services for Adelaide small businesses. No jargon.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.lumenadl.com/faq.html">
-    <meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
-    <meta property="og:locale" content="en_AU">
-    <meta property="og:site_name" content="Lumen ADL">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FAQ | Web Design, SEO &amp; AI Automation Questions | Lumen ADL">
-    <meta name="twitter:description" content="Frequently asked questions about Lumen ADL's web design, local SEO &amp; AI automation services for Adelaide small businesses. No jargon.">
-    <meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-    <style>
-        .faq-hero {
-            padding: 120px 0 60px;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            text-align: center;
-        }
-        .faq-hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        .faq-hero p {
-            font-size: 20px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .faq-section {
-            padding: 80px 0;
-        }
-        .faq-section:nth-child(even) {
-            background: var(--bg-warm);
-        }
-        .faq-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        .faq-grid {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 16px;
-            overflow: hidden;
-        }
-        .faq-question {
-            padding: 24px 32px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-        }
-        .faq-question:hover {
-            background: var(--bg-warm);
-        }
-        .faq-question::after {
-            content: '+';
-            font-size: 24px;
-            color: var(--purple);
-            transition: transform 0.3s;
-        }
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            padding: 0 32px 24px;
-            font-size: 16px;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            display: none;
-        }
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-        .faq-answer a {
-            color: var(--purple);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .faq-answer ul {
-            margin: 16px 0;
-            padding-left: 24px;
-        }
-        .faq-answer li {
-            margin-bottom: 8px;
-        }
-        .still-have-questions {
-            padding: 80px 0;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-        }
-        .still-have-questions h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .still-have-questions p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 500px;
-            margin: 0 auto 32px;
-        }
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-        .contact-method {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 24px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            transition: background 0.2s;
-        }
-        .contact-method:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        .contact-method-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-        .contact-method-label {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 4px;
-        }
-        .contact-method-value {
-            font-size: 18px;
-            font-weight: 600;
-        }
-        @media (max-width: 600px) {
-            .faq-hero h1 {
-                font-size: 36px;
-            }
-            .faq-question {
-                padding: 20px 24px;
-                font-size: 16px;
-            }
-            .faq-answer {
-                padding: 0 24px 20px;
-            }
-        }
-        /* Mobile Menu Styles */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 28px;
-            height: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
-        }
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 2.5px;
-            background: #C65D3B;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        @media (max-width: 768px) {
-            .faq-hero { padding: 60px 0 40px; }
-            .faq-hero h1 { font-size: 32px; }
-            .faq-section { padding: 48px 0; }
-            .still-have-questions { padding: 48px 0; }
-            .still-have-questions h2 { font-size: 24px; }
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "How much does a website cost?", "acceptedAnswer": {"@type": "Answer", "text": "Our custom websites start at $2,500. This includes custom design (no templates), mobile-first development, SEO-optimized structure, 2-week delivery, and Google Business integration. We also offer a Bundle ($3,000) that includes the website plus 3 months of SEO services, saving you $700."}},
-        {"@type": "Question", "name": "What's included in your SEO service?", "acceptedAnswer": {"@type": "Answer", "text": "Our Local SEO packages start from $700/month. Starter ($700/mo) includes Google Business optimisation, citation building, and monthly reports. Growth ($1,200/mo) adds review generation, blog posts, and a monthly strategy call. Dominate ($1,900/mo) includes everything plus AI automation and priority support. No lock-in contracts, cancel anytime."}},
-        {"@type": "Question", "name": "Do you require a deposit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we require a 50% deposit to start work, with the remaining 50% due on completion. For SEO services, payment is monthly in advance."}},
-        {"@type": "Question", "name": "Are there any hidden fees?", "acceptedAnswer": {"@type": "Answer", "text": "No. The price we quote is the price you pay. Domain registration and hosting are separate (we can help you set these up), but there are no surprise charges from us."}},
-        {"@type": "Question", "name": "How long does a website take?", "acceptedAnswer": {"@type": "Answer", "text": "Most websites are delivered in 2 weeks from start to finish. Week 1: Discovery, design, and content. Week 2: Development, testing, and launch. More complex sites may take longer � we'll give you a clear timeline upfront."}},
-        {"@type": "Question", "name": "Do you use templates?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every website we build is custom-designed and coded from scratch. Templates are slow, bloated, and bad for SEO. We write clean, fast code that's optimized for your business."}},
-        {"@type": "Question", "name": "What if I don't like the design?", "acceptedAnswer": {"@type": "Answer", "text": "We work closely with you during the design phase to make sure you love it before we build. We include 2 rounds of revisions in our standard package. Our goal is your complete satisfaction."}},
-        {"@type": "Question", "name": "Will I be able to update the site myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We build sites that are easy to update. For simple changes (text, photos), you can do it yourself. For more complex updates, we're always here to help, or we can show you how."}},
-        {"@type": "Question", "name": "Do you write the content?", "acceptedAnswer": {"@type": "Answer", "text": "We can, but we prefer you do. You know your business best. We provide guidance on what to write and optimize it for SEO. If you need help, we can recommend copywriters or write basic content for an additional fee."}},
-        {"@type": "Question", "name": "How long does SEO take to work?", "acceptedAnswer": {"@type": "Answer", "text": "Most clients see initial improvements within 2-4 weeks, with significant results in 6-8 weeks. SEO is a long game � the work we do now compounds over time. Our case study with M&K Painting saw them hit #3 for their target keyword in 8 weeks."}},
-        {"@type": "Question", "name": "Do you guarantee rankings?", "acceptedAnswer": {"@type": "Answer", "text": "No one can guarantee #1 rankings � and you should be suspicious of anyone who does. What we guarantee is that we'll follow best practices, do the work, and give you transparent reporting. Most of our clients see significant ranking improvements."}},
-        {"@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": {"@type": "Answer", "text": "We're based in Adelaide and specialize in the northern suburbs: Mawson Lakes, Golden Grove, Gawler, Modbury, Para Hills, and surrounding areas. We work with clients across all of South Australia."}},
-        {"@type": "Question", "name": "Can I just do SEO without a new website?", "acceptedAnswer": {"@type": "Answer", "text": "You can, but results are limited. If your current site is slow, not mobile-friendly, or poorly structured, you're fighting an uphill battle. We often recommend starting with a solid foundation (new site) and then layering SEO on top."}},
-        {"@type": "Question", "name": "What happens after the site launches?", "acceptedAnswer": {"@type": "Answer", "text": "We don't disappear. All websites include 30 days of free support after launch. After that, we're available for updates at our standard hourly rate, or you can sign up for one of our maintenance packages."}},
-        {"@type": "Question", "name": "Do you offer website maintenance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We offer monthly maintenance packages that include security updates, performance monitoring, regular backups, and small content updates."}},
-        {"@type": "Question", "name": "Who owns the website?", "acceptedAnswer": {"@type": "Answer", "text": "You do. Once the final payment is made, the website is 100% yours. We use no proprietary technology � it's clean HTML, CSS, and JavaScript that any developer can work with."}}
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.lumenadl.com/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://www.lumenadl.com/faq.html"}]}
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FAQ &middot; iOS App Development &middot; Lumen Adelaide</title>
+<meta name="description" content="Costs, timelines, Apple Developer accounts, code ownership and App Store review - common questions about building a native iOS app with Lumen.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#08080B">
+<link rel="canonical" href="https://www.lumenadl.com/faq.html">
+<link rel="alternate" hreflang="en-au" href="https://www.lumenadl.com/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumen">
+<meta property="og:locale" content="en_AU">
+<meta property="og:url" content="https://www.lumenadl.com/faq.html">
+<meta property="og:title" content="FAQ &middot; iOS App Development &middot; Lumen Adelaide">
+<meta property="og:description" content="Costs, timelines, Apple Developer accounts, code ownership and App Store review - common questions about building a native iOS app with Lumen.">
+<meta property="og:image" content="https://www.lumenadl.com/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ &middot; iOS App Development &middot; Lumen Adelaide">
+<meta name="twitter:description" content="Costs, timelines, Apple Developer accounts, code ownership and App Store review - common questions about building a native iOS app with Lumen.">
+<meta name="twitter:image" content="https://www.lumenadl.com/images/og-image.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/lumen.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X7N1EJQXRJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X7N1EJQXRJ');
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1424178938827996');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1"></noscript>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does an iOS app cost to build?","acceptedAnswer":{"@type":"Answer","text":"It depends almost entirely on scope, so we do not publish a headline number that would be wrong for you. A discovery sprint produces a fixed quote for the whole build before you commit to it, and that document is yours regardless of who ends up building the app."}},{"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"For a focused first version, usually three to five months from first conversation to App Store. Discovery and design take three to five weeks, the build six to twelve, then field testing and review on top."}},{"@type":"Question","name":"Why native Swift instead of React Native or Flutter?","acceptedAnswer":{"@type":"Answer","text":"Cross-platform makes sense when you need Android and iOS on one budget and the app is mostly forms and lists. It costs you when the app leans on the device &mdash; location, camera, background behaviour, widgets &mdash; or when you want new iOS features on release day. If Android matters as much as iOS to you, we will say so and point you to a cross-platform team."}},{"@type":"Question","name":"Do we need our own Apple Developer account?","acceptedAnswer":{"@type":"Answer","text":"Yes, in your company&rsquo;s name. It is USD&nbsp;99 a year. We will walk you through enrolment, including the D-U-N-S number Apple asks organisations for, and we publish under your account so the listing is never tied to us."}},{"@type":"Question","name":"Who owns the code?","acceptedAnswer":{"@type":"Answer","text":"You do, on final payment &mdash; source, repository history and the App Store listing. No proprietary platform you have to keep paying to escape."}},{"@type":"Question","name":"What if Apple rejects the app?","acceptedAnswer":{"@type":"Answer","text":"We handle it. Most rejections concern permission strings, account deletion or sign-in requirements, and we design around the common ones from the start. Submission is scheduled with a rejection budgeted in."}},{"@type":"Question","name":"Do you build the backend as well?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most business apps need one. If you already have an API we will build against it and tell you plainly if something in it will make the app worse."}},{"@type":"Question","name":"Can you take over an app somebody else built?","acceptedAnswer":{"@type":"Answer","text":"Often. We start with a paid audit and give you an honest read: what is salvageable, what needs replacing, and the cost either way. Sometimes the answer is that a rebuild is cheaper than the rescue, and we will say so."}},{"@type":"Question","name":"What does it cost to keep an app running?","acceptedAnswer":{"@type":"Answer","text":"Budget for an annual compatibility pass around each September iOS release, your Apple Developer membership, and backend hosting. Our Care Plan bundles the compatibility work with a monthly block of feature time."}},{"@type":"Question","name":"Do you still do websites, SEO and AI automation?","acceptedAnswer":{"@type":"Answer","text":"Yes, for clients who want them &mdash; often alongside an app build. Apps are the focus of the studio now, but that work has not stopped."}},{"@type":"Question","name":"Do you work outside Adelaide?","acceptedAnswer":{"@type":"Answer","text":"Anywhere in Australia. Discovery works best in person, so for interstate projects we usually travel for that week and run the rest remotely."}},{"@type":"Question","name":"How do we start?","acceptedAnswer":{"@type":"Answer","text":"Send a short message describing who would use the app and what goes wrong today. We will reply within a business day and, if it looks like a fit, set up a call."}}]}</script>
 </head>
+
 <body>
-        <header class="header">
-        <div class="container">
-            <a href="/" class="logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640">Lumen</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav" id="mainNav">
-                <a href="/work.html">Work</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/faq.html">FAQ</a>
-                <a href="/ai-automation.html" class="nav-ai">AI Automation</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html" class="nav-cta">Get in touch</a>
-            </nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a href="/" class="brand"><img src="/images/lumen-icon.png" alt="" width="32" height="32">Lumen</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/ios-app-development.html">iOS Development</a>
+      <a href="/work.html">Work</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html" class="btn btn-primary nav-cta">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div class="section-head reveal" style="max-width:820px">
+        <p class="eyebrow">FAQ</p>
+        <h1 class="display">Questions,<br><span class="grad-text">answered.</span></h1>
+        <p class="lead" style="margin-top:22px">The things people ask before starting an app project. If yours is not here, just ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap wrap-narrow">
+      <div class="faq reveal"><details><summary>What does an iOS app cost to build?</summary><div class="faq-body"><p>It depends almost entirely on scope, so we do not publish a headline number that would be wrong for you. A discovery sprint produces a fixed quote for the whole build before you commit to it, and that document is yours regardless of who ends up building the app.</p></div></details><details><summary>How long does it take?</summary><div class="faq-body"><p>For a focused first version, usually three to five months from first conversation to App Store. Discovery and design take three to five weeks, the build six to twelve, then field testing and review on top.</p></div></details><details><summary>Why native Swift instead of React Native or Flutter?</summary><div class="faq-body"><p>Cross-platform makes sense when you need Android and iOS on one budget and the app is mostly forms and lists. It costs you when the app leans on the device &mdash; location, camera, background behaviour, widgets &mdash; or when you want new iOS features on release day. If Android matters as much as iOS to you, we will say so and point you to a cross-platform team.</p></div></details><details><summary>Do we need our own Apple Developer account?</summary><div class="faq-body"><p>Yes, in your company&rsquo;s name. It is USD&nbsp;99 a year. We will walk you through enrolment, including the D-U-N-S number Apple asks organisations for, and we publish under your account so the listing is never tied to us.</p></div></details><details><summary>Who owns the code?</summary><div class="faq-body"><p>You do, on final payment &mdash; source, repository history and the App Store listing. No proprietary platform you have to keep paying to escape.</p></div></details><details><summary>What if Apple rejects the app?</summary><div class="faq-body"><p>We handle it. Most rejections concern permission strings, account deletion or sign-in requirements, and we design around the common ones from the start. Submission is scheduled with a rejection budgeted in.</p></div></details><details><summary>Do you build the backend as well?</summary><div class="faq-body"><p>Yes. Most business apps need one. If you already have an API we will build against it and tell you plainly if something in it will make the app worse.</p></div></details><details><summary>Can you take over an app somebody else built?</summary><div class="faq-body"><p>Often. We start with a paid audit and give you an honest read: what is salvageable, what needs replacing, and the cost either way. Sometimes the answer is that a rebuild is cheaper than the rescue, and we will say so.</p></div></details><details><summary>What does it cost to keep an app running?</summary><div class="faq-body"><p>Budget for an annual compatibility pass around each September iOS release, your Apple Developer membership, and backend hosting. Our Care Plan bundles the compatibility work with a monthly block of feature time.</p></div></details><details><summary>Do you still do websites, SEO and AI automation?</summary><div class="faq-body"><p>Yes, for clients who want them &mdash; often alongside an app build. Apps are the focus of the studio now, but that work has not stopped.</p></div></details><details><summary>Do you work outside Adelaide?</summary><div class="faq-body"><p>Anywhere in Australia. Discovery works best in person, so for interstate projects we usually travel for that week and run the rest remotely.</p></div></details><details><summary>How do we start?</summary><div class="faq-body"><p>Send a short message describing who would use the app and what goes wrong today. We will reply within a business day and, if it looks like a fit, set up a call.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Still wondering?</h2>
+        <p class="lead">Ask directly &mdash; you will get a straight answer, not a brochure.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Start a project <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a href="mailto:hello@lumenadl.com" class="btn btn-ghost btn-lg">hello@lumenadl.com</a>
         </div>
-    </header>
-    <main>
-    <!-- Hero -->
-    <section class="faq-hero">
-        <div class="container">
-            <h1>Frequently Asked Questions</h1>
-            <p>Everything you need to know about working with us. Can't find what you're looking for? Just ask.</p>
-        </div>
-    </section>
-    <!-- Pricing FAQs -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>Pricing & Payments</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">How much does a website cost?</div>
-                    <div class="faq-answer">
-                        <p>Our custom websites start at <strong>$2,500</strong>. This includes:</p>
-                        <ul>
-                            <li>Custom design (no templates)</li>
-                            <li>Mobile-first development</li>
-                            <li>SEO-optimized structure</li>
-                            <li>2-week delivery</li>
-                            <li>Google Business integration</li>
-                        </ul>
-                        <p>We also offer a <strong><a href="/#services">Bundle</a></strong> ($3,000) that includes the website plus 3 months of
-                            SEO services � saving you $700.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What's included in your SEO service?</div>
-                    <div class="faq-answer">
-                        <p>Our Local SEO packages start from <strong>$700/month</strong> with no lock-in contracts:</p>
-                        <ul>
-                            <li><strong>Starter &mdash; $700/mo:</strong> Google Business optimisation, citation building, monthly ranking report, 1 SEO page/mo</li>
-                            <li><strong>Growth &mdash; $1,200/mo:</strong> Everything in Starter + review generation, 2 blog posts/mo, Google Business posts, monthly strategy call</li>
-                            <li><strong>Dominate &mdash; $1,900/mo:</strong> Everything in Growth + AI automation included, 4 blog posts/mo, quarterly landing page, priority support</li>
-                        </ul>
-                        <p>Cancel anytime &mdash; no lock-in contracts.</p>
-                        <p>Looking for automation too? Check out our <a href="/ai-automation.html">AI Automation</a> service.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you require a deposit?</div>
-                    <div class="faq-answer">
-                        <p>Yes, we require a <strong>50% deposit</strong> to start work, with the remaining 50% due on
-                            completion. For SEO services, payment is monthly in advance.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Are there any hidden fees?</div>
-                    <div class="faq-answer">
-                        <p><strong>No.</strong> The price we quote is the price you pay. Domain registration and hosting
-                            are separate (we can help you set these up), but there are no surprise charges from us.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Process FAQs -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>How We Work</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">How long does a website take?</div>
-                    <div class="faq-answer">
-                        <p>Most websites are delivered in <strong>2 weeks</strong> from start to finish. Here's the
-                            typical timeline:</p>
-                        <ul>
-                            <li><strong>Week 1:</strong> Discovery, design, and content</li>
-                            <li><strong>Week 2:</strong> Development, testing, and launch</li>
-                        </ul>
-                        <p>More complex sites may take longer � we'll give you a clear timeline upfront.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you use templates?</div>
-                    <div class="faq-answer">
-                        <p><strong>No.</strong> Every website we build is custom-designed and coded from scratch.
-                            Templates are slow, bloated, and bad for SEO. We write clean, fast code that's optimized for
-                            your business.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What if I don't like the design?</div>
-                    <div class="faq-answer">
-                        <p>We work closely with you during the design phase to make sure you love it before we build. We
-                            include <strong>2 rounds of revisions</strong> in our standard package. Our goal is your
-                            complete satisfaction.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Will I be able to update the site myself?</div>
-                    <div class="faq-answer">
-                        <p>Yes. We build sites that are easy to update. For simple changes (text, photos), you can do it
-                            yourself. For more complex updates, we're always here to help � or we can show you how.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you write the content?</div>
-                    <div class="faq-answer">
-                        <p>We can, but we prefer you do. You know your business best. We provide guidance on what to
-                            write and optimize it for SEO. If you need help, we can recommend copywriters or write basic
-                            content for an additional fee.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SEO FAQs -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>About SEO</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">How long does SEO take to work?</div>
-                    <div class="faq-answer">
-                        <p>Most clients see initial improvements within <strong>2-4 weeks</strong>, with significant
-                            results in <strong>6-8 weeks</strong>. SEO is a long game � the work we do now compounds
-                            over time. Our case study with <a href="/work.html">M&K Painting</a> saw them hit #3 for their target keyword in 8
-                            weeks.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you guarantee rankings?</div>
-                    <div class="faq-answer">
-                        <p><strong>No one can guarantee #1 rankings</strong> � and you should be suspicious of anyone
-                            who does. What we guarantee is that we'll follow best practices, do the work, and give you
-                            transparent reporting. Most of our clients see significant ranking improvements.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What areas do you serve?</div>
-                    <div class="faq-answer">
-                        <p>We're based in Adelaide and specialize in the <strong>northern suburbs</strong>: <a href="/blog/web-design-mawson-lakes.html">Mawson
-                            Lakes</a>, Golden Grove, Gawler, Modbury, Para Hills, and surrounding areas. That said, we work
-                            with clients across all of South Australia.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Can I just do SEO without a new website?</div>
-                    <div class="faq-answer">
-                        <p>You can, but results are limited. If your current site is slow, not mobile-friendly, or
-                            poorly structured, you're fighting an uphill battle. We often recommend starting with a
-                            <a href="/#services">solid foundation (new site)</a> and then layering SEO on top.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Support FAQs -->
-    <section class="faq-section">
-        <div class="container">
-            <h2>Support & Maintenance</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">What happens after the site launches?</div>
-                    <div class="faq-answer">
-                        <p>We don't disappear. All websites include <strong>30 days of free support</strong> after
-                            launch. After that, we're available for updates at our standard hourly rate, or you can sign
-                            up for one of our maintenance packages.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you offer website maintenance?</div>
-                    <div class="faq-answer">
-                        <p>Yes. We offer monthly maintenance packages that include:</p>
-                        <ul>
-                            <li>Security updates</li>
-                            <li>Performance monitoring</li>
-                            <li>Regular backups</li>
-                            <li>Small content updates</li>
-                        </ul>
-                        <p>Ask us for details if you're interested.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Who owns the website?</div>
-                    <div class="faq-answer">
-                        <p><strong>You do.</strong> Once the final payment is made, the website is 100% yours. We use no
-                            proprietary technology � it's clean HTML, CSS, and JavaScript that any developer can work
-                            with.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Still Have Questions -->
-    <section class="still-have-questions">
-        <div class="container">
-            <h2>Still Have Questions?</h2>
-            <p>Can't find the answer you're looking for? Reach out � we're happy to help.</p>
-            <div class="contact-methods">
-                <a href="mailto:hello@lumenadl.com" class="contact-method">
-                    <div class="contact-method-icon">??</div>
-                    <div class="contact-method-label">Email us</div>
-                    <div class="contact-method-value">hello@lumenadl.com</div>
-                </a>
-                <a href="tel:+61412345678" class="contact-method">
-                    <div class="contact-method-icon">??</div>
-                    <div class="contact-method-label">Call us</div>
-                    <div class="contact-method-value">Available on request</div>
-                </a>
-                <a href="/contact.html" class="contact-method">
-                    <div class="contact-method-icon">??</div>
-                    <div class="contact-method-label">Contact form</div>
-                    <div class="contact-method-value">Send a message ?</div>
-                </a>
-            </div>
-        </div>
-    </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="/" class="footer-logo"><img src="images/lumen-icon.png" alt="Lumen logo" class="logo-icon" width="640" height="640" loading="lazy">Lumen</a>
-                    <p class="footer-tagline">Websites, SEO, and AI automation for Adelaide small businesses.</p>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-heading">Nav</h4>
-                    <ul class="footer-links">
-                        <li><a href="/work.html">Work</a></li>
-                        <li><a href="/blog.html">Blog</a></li>
-                        <li><a href="/faq.html">FAQ</a></li>
-                        <li><a href="/about.html">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h4 class="footer-heading">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="/#services">Website Design</a></li>
-                        <li><a href="/#services">Local SEO</a></li>
-                        <li><a href="/#services">Bundle & Save</a></li>
-                        <li><a href="/contact.html">Free Audit</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4 class="footer-heading">Contact</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
-                        <li><a href="/contact.html">Adelaide, SA</a></li>
-                        <li><a href="/contact.html">Request a call</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Lumen ADL. Built with care in Adelaide.</p>
-                <div class="footer-legal">
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="/sitemap.xml">Sitemap</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-        // Simple accordion functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const isActive = item.classList.contains('active');
-                // Close all others
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    faq.classList.remove('active');
-                });
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-    </script>
-    <script>const menuToggle = document.getElementById("menuToggle"), mainNav = document.getElementById("mainNav"); menuToggle.addEventListener("click", (() => { menuToggle.classList.toggle("active"), mainNav.classList.toggle("active") })), document.querySelectorAll(".nav a").forEach((e => { e.addEventListener("click", (() => { menuToggle.classList.remove("active"), mainNav.classList.remove("active") })) }));</script>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><img src="/images/lumen-icon.png" alt="" width="32" height="32" loading="lazy">Lumen</a>
+        <p>Native iOS app design and development, made in Adelaide, South Australia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="/ios-app-development.html">iOS Development</a></li>
+          <li><a href="/work.html">Work</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Also</h4>
+        <ul>
+          <li><a href="/ai-automation.html">AI Automation</a></li>
+          <li><a href="/local-seo-adelaide.html">Local SEO</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@lumenadl.com">hello@lumenadl.com</a></li>
+          <li><a href="/contact.html">Adelaide, SA</a></li>
+          <li><a href="https://apps.apple.com/au/app/proven-for-tilers/id6801437421" target="_blank" rel="noopener">Proven on the App Store</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lumen ADL. Built in Adelaide.</p>
+      <nav aria-label="Legal">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
+    <p class="credit">iPhone 17 Pro 3D model by <a href="https://sketchfab.com/stockpikkme" target="_blank" rel="noopener">stockpikkme</a>, licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>. Apple, iPhone, iOS, Swift, SwiftUI, TestFlight and App Store are trademarks of Apple Inc. Lumen is not affiliated with or endorsed by Apple Inc.</p>
+  </div>
+</footer>
+
+<script src="/lumen.js" defer></script>
 </body>
 </html>
-
