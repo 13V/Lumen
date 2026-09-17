@@ -520,8 +520,7 @@ src="https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1"></n
           </dl>
         </div>
 
-        <form class="form card reveal d1" name="enquiry" method="POST" data-netlify="true" aria-label="Project enquiry">
-          <input type="hidden" name="form-name" value="enquiry">
+        <form class="form card reveal d1" id="enquiryForm" data-endpoint="https://lumenadl.app.n8n.cloud/webhook/lumen-contact" aria-label="Project enquiry" novalidate>
           <div class="field-row">
             <div class="field">
               <label for="f-name">Name</label>
@@ -529,7 +528,7 @@ src="https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1"></n
             </div>
             <div class="field">
               <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com.au" required>
+              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com.au">
             </div>
           </div>
           <div class="field">
@@ -537,8 +536,12 @@ src="https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1"></n
             <input id="f-company" name="business" type="text" autocomplete="organization" placeholder="Your business name">
           </div>
           <div class="field">
-            <label for="f-type">What do you need?</label>
-            <select id="f-type" name="project_type" required>
+            <label for="f-phone">Phone (optional)</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="04.. ... ...">
+          </div>
+          <div class="field">
+            <label for="f-service">What do you need?</label>
+            <select id="f-service" name="service">
               <option value="">Select&hellip;</option>
               <option value="new-ios-app">A new iOS app</option>
               <option value="discovery">A discovery sprint</option>
@@ -553,7 +556,7 @@ src="https://www.facebook.com/tr?id=1424178938827996&ev=PageView&noscript=1"></n
             <textarea id="f-msg" name="message" rows="5" placeholder="Who uses it, what they do now, and what goes wrong."></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full btn-lg">Send enquiry</button>
-          <p class="form-note">No newsletter, no sales sequence. We read it and reply.</p>
+          <p class="form-note">Email or phone &mdash; either is enough. No newsletter, no sales sequence.</p>
         </form>
       </div>
     </div>

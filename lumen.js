@@ -186,3 +186,84 @@
       .catch(function () { /* textures unavailable — static screen is fine */ });
   }, { once: true });
 })();
+
+/* ---------------------------------------------------------------
+   Enquiry form -> n8n webhook.
+   Same endpoint and payload shape the previous site used, so the
+   existing workflow (email + Telegram alert) keeps working.
+   --------------------------------------------------------------- */
+(function () {
+  'use strict';
+
+  var form = document.getElementById('enquiryForm');
+  if (!form) return;
+
+  var endpoint = form.getAttribute('data-endpoint');
+  if (!endpoint) return;
+
+  function val(name) {
+    var el = form.elements[name];
+    return el && el.value ? el.value.trim() : '';
+  }
+
+  // Deep links like /contact.html?service=new-ios-app preselect the dropdown.
+  var wanted = new URLSearchParams(window.location.search).get('service');
+  if (wanted) {
+    var sel = form.elements.service;
+    if (sel) {
+      Array.prototype.forEach.call(sel.options, function (o) {
+        if (o.value === wanted) o.selected = true;
+      });
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var email = val('email'), phone = val('phone');
+    if (!email && !phone) {
+      var first = form.elements.email || form.elements.phone;
+      if (first) first.focus();
+      note('Add an email or a phone number so we can reply.', true);
+      return;
+    }
+
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn ? btn.textContent : '';
+    if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: val('name'),
+        email: email,
+        phone: phone,
+        business: val('business'),
+        service: val('service'),
+        message: val('message'),
+        submitted: new Date().toISOString(),
+        source: 'lumenadl.com' + window.location.pathname
+      })
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('bad status ' + res.status);
+        form.innerHTML =
+          '<div style="text-align:center;padding:34px 12px">' +
+          '<h3 style="margin-bottom:10px">Thanks &mdash; that\'s come through.</h3>' +
+          '<p class="muted" style="font-size:var(--t-sm)">We reply personally, usually within one business day.</p>' +
+          '</div>';
+      })
+      .catch(function () {
+        if (btn) { btn.textContent = label; btn.disabled = false; }
+        note('Something went wrong. Please email hello@lumenadl.com instead.', true);
+      });
+  });
+
+  function note(msg, isError) {
+    var el = form.querySelector('.form-note');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.color = isError ? '#FF8A6B' : '';
+  }
+})();
