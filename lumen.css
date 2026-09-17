@@ -51,18 +51,32 @@
   --t-xs:      0.8125rem;
 
   /* Radii — iOS continuous-corner feel */
-  --r-xs: 10px;
-  --r-sm: 14px;
-  --r:    20px;
-  --r-lg: 28px;
-  --r-xl: 36px;
-  --r-pill: 999px;
+  /* Apple radius grammar: 5 / 8 / 11 / 18 / pill. Nothing in between,
+     and the pill is reserved for things that read as an action. */
+  --r-xs: 5px;
+  --r-sm: 8px;
+  --r-md: 11px;
+  --r:    18px;
+  --r-lg: 18px;
+  --r-xl: 18px;
+  --r-pill: 9999px;
 
   /* Elevation */
   --sh-sm: 0 1px 2px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.35);
   --sh:    0 18px 48px -14px rgba(0,0,0,.75);
   --sh-lg: 0 44px 90px -24px rgba(0,0,0,.85);
+  /* Apple uses exactly ONE drop-shadow, and only under product renders */
+  --sh-product: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
   --glow:  0 0 70px -18px rgba(10,132,255,.55);
+
+  /* Spacing (Apple scale) */
+  --sp-xxs: 4px;
+  --sp-xs:  8px;
+  --sp-sm:  12px;
+  --sp-md:  17px;
+  --sp-lg:  24px;
+  --sp-xl:  32px;
+  --sp-xxl: 48px;
 
   /* Layout */
   --wrap: 1180px;
@@ -87,14 +101,15 @@ html {
 
 body {
   font-family: var(--font);
-  font-size: var(--t-body);
-  line-height: 1.65;
+  font-size: var(--t-body);   /* 17px, not 16px - Apple's reading pace */
+  line-height: 1.44;          /* 1.47 tightened by 0.03 for the Inter substitute */
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   font-synthesis-weight: none;
+  font-feature-settings: "ss03";  /* Inter's SF-like single-storey 'a' */
 }
 
 /* Ambient field — sits behind everything, never intercepts input */
@@ -165,9 +180,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------- 4. Type ---------- */
 h1, h2, h3, h4 {
-  font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.033em;
+  font-weight: 600;          /* Apple headlines sit at 600, not 700 */
+  line-height: 1.1;
+  letter-spacing: -0.015em;  /* -0.28px @56px, plus the -0.01em Inter nudge */
   text-wrap: balance;
 }
 h1 { font-size: var(--t-h1); }
@@ -176,9 +191,9 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
 
 .display {
   font-size: var(--t-display);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.042em;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.018em;
 }
 
 .grad-text {
@@ -190,7 +205,7 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
 
 .lead {
   font-size: var(--t-lead);
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--ink-2);
   text-wrap: pretty;
 }
@@ -249,13 +264,12 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--hairline-hi); }
-.btn:active { transform: translateY(0); }
+.btn:active { transform: scale(0.95); }   /* Apple's system-wide press state */
 
 .btn-primary {
   border-color: transparent;
   background: var(--grad);
   color: #fff;
-  box-shadow: 0 10px 30px -10px rgba(10,132,255,.6);
 }
 .btn-primary::after {
   content: "";
@@ -266,7 +280,6 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
   opacity: 0;
   transition: opacity .28s var(--ease);
 }
-.btn-primary:hover { box-shadow: 0 18px 44px -12px rgba(10,132,255,.72); }
 .btn-primary:hover::after { opacity: 1; }
 
 .btn-ghost { background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
@@ -321,7 +334,7 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
 .appstore svg { flex: none; }
 .appstore-txt { display: flex; flex-direction: column; line-height: 1.15; }
 .appstore-txt small { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-2); }
-.appstore-txt strong { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+.appstore-txt strong { font-size: 17px; font-weight: 600; letter-spacing: -0.015em; }
 
 /* ---------- 6. Header ---------- */
 .site-header {
@@ -359,7 +372,7 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
 .nav a {
   padding: 9px 15px;
   font-size: var(--t-sm);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ink-2);
   border-radius: var(--r-pill);
   transition: color .22s, background .22s;
@@ -375,7 +388,7 @@ h3 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
   justify-content: center;
   background: var(--glass);
   border: 1px solid var(--hairline);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   cursor: pointer;
 }
 .burger span {
@@ -494,7 +507,7 @@ model-viewer:active { cursor: grabbing; }
   border-radius: calc(var(--dev-w) * .165);
   padding: calc(var(--dev-w) * .0335);
   background: linear-gradient(152deg, #5B5F6B 0%, #1A1C22 26%, #0B0C10 52%, #3A3E48 78%, #101116 100%);
-  box-shadow: var(--sh-lg), 0 0 0 1px rgba(255,255,255,.07) inset;
+  box-shadow: var(--sh-product), 0 0 0 1px rgba(255,255,255,.07) inset;
   flex: none;
 }
 .device-screen {
@@ -557,7 +570,7 @@ model-viewer:active { cursor: grabbing; }
   width: 46px; height: 46px;
   display: grid;
   place-items: center;
-  border-radius: 13px;
+  border-radius: var(--r-md);
   background: rgba(255,255,255,.07);
   border: 1px solid var(--hairline);
   margin-bottom: 20px;
@@ -654,7 +667,7 @@ model-viewer:active { cursor: grabbing; }
   gap: 9px;
   padding: 10px 17px;
   font-size: var(--t-sm);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ink-2);
   border: 1px solid var(--hairline);
   border-radius: var(--r-pill);
@@ -693,7 +706,7 @@ model-viewer:active { cursor: grabbing; }
 .case-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
 .case-icon {
   width: 60px; height: 60px;
-  border-radius: 14px;
+  border-radius: var(--r-md);
   border: 1px solid var(--hairline);
   flex: none;
 }
@@ -712,7 +725,7 @@ model-viewer:active { cursor: grabbing; }
 }
 .spec:last-child { border-bottom: 1px solid var(--hairline); }
 .spec dt { color: var(--ink-3); }
-.spec dd { color: var(--ink); font-weight: 500; text-align: right; }
+.spec dd { color: var(--ink); font-weight: 600; text-align: right; }
 
 .feature-list { list-style: none; display: grid; gap: 14px; margin: 24px 0; }
 .feature-list li {
@@ -746,8 +759,8 @@ model-viewer:active { cursor: grabbing; }
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 1.6vw, 22px); align-items: start; }
 .tier { display: flex; flex-direction: column; height: 100%; }
 .tier-name { font-size: var(--t-xs); letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
-.tier-price { font-size: clamp(2rem, 1.5rem + 1.6vw, 2.6rem); font-weight: 700; letter-spacing: -0.04em; margin: 14px 0 4px; }
-.tier-price small { font-size: var(--t-sm); font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
+.tier-price { font-size: clamp(2rem, 1.5rem + 1.6vw, 2.6rem); font-weight: 600; letter-spacing: -0.018em; margin: 14px 0 4px; }
+.tier-price small { font-size: var(--t-sm); font-weight: 400; color: var(--ink-3); letter-spacing: 0; }
 .tier-desc { font-size: var(--t-sm); color: var(--ink-2); margin-bottom: 22px; }
 .tier ul { list-style: none; display: grid; gap: 11px; margin-bottom: 28px; font-size: var(--t-sm); color: var(--ink-2); }
 .tier ul li { display: grid; grid-template-columns: 18px 1fr; gap: 11px; align-items: start; }
@@ -822,7 +835,7 @@ model-viewer:active { cursor: grabbing; }
 /* ---------- 18. Forms ---------- */
 .form { display: grid; gap: 18px; }
 .field { display: grid; gap: 8px; }
-.field label { font-size: var(--t-sm); font-weight: 500; color: var(--ink-2); }
+.field label { font-size: var(--t-sm); font-weight: 400; color: var(--ink-2); }
 .field input, .field select, .field textarea {
   width: 100%;
   padding: 14px 17px;
@@ -1073,5 +1086,5 @@ model-viewer:not(:defined) [slot="progress-bar"] { display: none; }
 }
 .mv-dots:empty { display: none; }
 
-/* Diagonal tilt for the CSS poster, so it matches the 3D framing */
-.device-tilt { transform: rotate(-9deg); }
+/* The poster phone stands upright, matching the 3D framing */
+.device-tilt { transform: none; }
